@@ -15,7 +15,7 @@ public class ContactDetailsTest {
         ContactDetails contactDetails = new ContactDetailsBuilder()
                 .telephoneNumber("07856 345 234")
                 .toContactDetails();
-
+        
         TelephoneNumber actualTelephoneNumber = contactDetails.getTelephoneNumber();
 
         assertEquals("telephoneNumber", new TelephoneNumber("07856 345 234"), actualTelephoneNumber);
