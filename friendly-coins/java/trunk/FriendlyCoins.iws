@@ -92,15 +92,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FriendlyRecognizer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/FriendlyRecognizer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="6" selection-start="42" selection-end="42" vertical-scroll-proportion="0.06153846">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="HighestFirstSolver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/HighestFirstSolver.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -137,11 +128,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MinNumCoinsSolverTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MinNumCoinsSolverTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/MinNumCoinsSolverTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="30" selection-start="331" selection-end="331" vertical-scroll-proportion="0.2769231">
+            <state line="7" column="13" selection-start="141" selection-end="141" vertical-scroll-proportion="0.12307692">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FriendlyRecognizerTest.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/FriendlyRecognizerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="34" selection-start="1360" selection-end="1360" vertical-scroll-proportion="0.232">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -313,6 +315,9 @@
     <property name="RunManagerConfig.showSettingsBeforeRunnig" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="IntroduceConstantDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.thoughtworks.cschuyle" />
     </key>
@@ -321,7 +326,32 @@
     <RUBY_DOC NAME="DEFAULTS" VALUE="true" />
     <RUBY_DOC NAME="NUMBER" VALUE="0" />
   </component>
-  <component name="RunManager" selected="JUnit.All">
+  <component name="RunManager" selected="JUnit.FriendlyRecognizerTest.testScalability">
+    <tempConfiguration default="false" name="FriendlyRecognizerTest.testScalability" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
+      <pattern value="com.thoughtworks.cschuyle.*" />
+      <module name="FriendlyCoins" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.thoughtworks.cschuyle" />
+      <option name="MAIN_CLASS_NAME" value="com.thoughtworks.cschuyle.FriendlyRecognizerTest" />
+      <option name="METHOD_NAME" value="testScalability" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="ADDITIONAL_CLASS_PATH" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </tempConfiguration>
     <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
@@ -463,8 +493,9 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="JUnit.All" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.FriendlyRecognizerTest.testScalability" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -633,13 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/FriendlyRecognizerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="25" selection-start="1294" selection-end="1294" vertical-scroll-proportion="0.424">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/CoinSet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="131" column="0" selection-start="3627" selection-end="3627" vertical-scroll-proportion="0.8153846">
@@ -682,13 +706,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/Solution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="22" selection-start="88" selection-end="88" vertical-scroll-proportion="0.12307692">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/MinNumCoinsSolver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="4" selection-start="88" selection-end="88" vertical-scroll-proportion="0.03076923">
@@ -717,10 +734,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="22" selection-start="88" selection-end="88" vertical-scroll-proportion="0.12307692">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/MinNumCoinsSolverTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="30" selection-start="331" selection-end="331" vertical-scroll-proportion="0.2769231">
+        <state line="7" column="13" selection-start="141" selection-end="141" vertical-scroll-proportion="0.12307692">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/FriendlyRecognizerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="34" selection-start="1360" selection-end="1360" vertical-scroll-proportion="0.232">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

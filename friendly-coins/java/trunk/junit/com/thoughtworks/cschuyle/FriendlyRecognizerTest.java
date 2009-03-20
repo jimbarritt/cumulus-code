@@ -2,9 +2,13 @@ package com.thoughtworks.cschuyle;
 
 import junit.framework.TestCase;
 
+import java.util.Collection;
+import java.util.ArrayList;
+
 public class FriendlyRecognizerTest extends TestCase {
 
-    final int TEN_THOUSAND = 10000;
+    private static final int TEN_THOUSAND = 10000;
+    private static final int ONE_HUNDRED = 100;
 
     public void testFriendly() {
         DenominationSet denominations = new DenominationSet( 1, 2, 5 );
@@ -31,11 +35,16 @@ public class FriendlyRecognizerTest extends TestCase {
         }
     }
 
-    // TODO Takes 30-40 secs.  Optimize sufficiantly to enable.
+    // TODO Takes a minute or more.  Optimize sufficiantly to enable.
     public void DISABLED_testScalability() {
         final FriendlyRecognizer recognizer = new FriendlyRecognizer();
+        Collection<Integer> ints = new ArrayList<Integer>();
+        for(int i = 1; i <= ONE_HUNDRED; ++i ) {
+            ints.add( i );
+        }
+        Integer[] intsArr = ints.toArray( new Integer[ONE_HUNDRED] );
         try {
-            DenominationSet denominations = new DenominationSet( 1, 2, 5 );
+            DenominationSet denominations = new DenominationSet( intsArr );
             assertTrue ( recognizer.isFriendly( denominations, TEN_THOUSAND ));
         } catch ( Error e ) {
             return;
