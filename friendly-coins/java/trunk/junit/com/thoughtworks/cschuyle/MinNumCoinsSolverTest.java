@@ -5,7 +5,7 @@ import junit.framework.TestCase;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class AllSolutionsSolverTest extends TestCase {
+public class MinNumCoinsSolverTest extends TestCase {
 
 
     static class CoinSetList extends ArrayList<CoinSet> {
@@ -50,49 +50,82 @@ public class AllSolutionsSolverTest extends TestCase {
         }
     }
 
-    public void testTrivialCase() {
+    final static SolutionFactory COMPLETE_SOLUTION_FACTORY = new SolutionFactory() {
+
+        public Solution createSolution(Collection<CoinSet> coinSets) {
+            return new CompleteSolution(coinSets);
+        }
+    };
+
+    final static SolutionFactory OPTIMIZED_SOLUTION_FACTORY = new SolutionFactory() {
+
+        public Solution createSolution(Collection<CoinSet> coinSets) {
+            return new OptimizedSolution(coinSets);
+        }
+    };
+
+
+    public void testTrivialCase_OPTIMIZED() {
+        testTrivialCase( OPTIMIZED_SOLUTION_FACTORY );
+    }
+    public void testTrivialCase_COMPLETE() {
+        testTrivialCase( COMPLETE_SOLUTION_FACTORY );
+    }
+
+    private void testTrivialCase( SolutionFactory solutionFactory) {
         DenominationSet denominations = DenominationSetReader.readLine("1");
         final int solveFor = 1;
-        AllSolutionsSolver solver = new AllSolutionsSolver( denominations );
+        MinNumCoinsSolver solver = new MinNumCoinsSolver( denominations );
+        solver.solutionFactory = solutionFactory;
         solver.solve( solveFor );
 
-        AllSolutionsSolver.Solution solution = solver.getMemoizedSolution( solveFor );
+        Solution solution = solver.getMemoizedSolution( solveFor );
 
-        CoinSet expected = new CoinSet( solveFor );
+        CoinSet expected = CoinSet.createCoinSet( solveFor );
 
         final CoinSet firstCoinSet = solution.getCoinSets().iterator().next();
         assertEquals( expected, firstCoinSet );
         assertEquals( firstCoinSet, expected );
     }
 
-    public void testTrivialCaseNegative() {
+    public void testTrivialCaseNegative_OPTIMIZED() {
+        testTrivialCaseNegative( OPTIMIZED_SOLUTION_FACTORY );
+    }
+    public void testTrivialCaseNegative_COMPLETE() {
+        testTrivialCaseNegative( COMPLETE_SOLUTION_FACTORY );
+    }
+
+    private void testTrivialCaseNegative( SolutionFactory solutionFactory ) {
         DenominationSet denominations = DenominationSetReader.readLine("1");
         final int solveFor = 1;
-        AllSolutionsSolver solver = new AllSolutionsSolver( denominations );
+        MinNumCoinsSolver solver = new MinNumCoinsSolver( denominations );
+        solver.solutionFactory = solutionFactory;
         solver.solve( solveFor );
-        AllSolutionsSolver.Solution solution = solver.getMemoizedSolution( solveFor );
-        CoinSet expected = new CoinSet( solveFor + 1 );
+        Solution solution = solver.getMemoizedSolution( solveFor );
+        CoinSet expected = CoinSet.createCoinSet( solveFor + 1 );
 
         final CoinSet firstCoinSet = solution.getCoinSets().iterator().next();
         assertFalse( expected.equals(firstCoinSet) );
         assertFalse( firstCoinSet.equals(expected) );
     }
 
-    public void testSimpleCase() {
+    // Can only use complete; optimized throws some away ...
+    public void testMultipleSolutionCase() {
         DenominationSet denominations = DenominationSetReader.readLine("1 2");
         final int solveFor = 2;
-        AllSolutionsSolver solver = new AllSolutionsSolver( denominations );
+        MinNumCoinsSolver solver = new MinNumCoinsSolver( denominations );
+        solver.solutionFactory = COMPLETE_SOLUTION_FACTORY;
         solver.solve( solveFor );
 
-        AllSolutionsSolver.Solution solution = solver.getMemoizedSolution( solveFor );
+        Solution solution = solver.getMemoizedSolution( solveFor );
 
         CoinSetList expectedList = new CoinSetList();
         {
-            CoinSet expected = new CoinSet( new Integer[] { 1, 1 } );
+            CoinSet expected = CoinSet.createCoinSet( new Integer[] { 1, 1 } );
             expectedList.add( expected );
         }
         {
-            CoinSet expected = new CoinSet( solveFor );
+            CoinSet expected = CoinSet.createCoinSet( solveFor );
             expectedList.add( expected );
         }
 

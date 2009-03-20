@@ -8,10 +8,10 @@ class HighestFirstSolver {
     
     public static CoinSet solve( DenominationSet denominations, int total ) {
         if( null == denominations || 0 == denominations.size() ) {
-            throw new RuntimeException("No solution - empty denominations");
+            throw new NoSolutionException( "No solution - empty denominations set" );
         }
         final List<Integer> ordered = denominations.getSortedList();
-        CoinSet ret = new CoinSet();
+        CoinSet ret = CoinSet.createCoinSet();
         while( ret.sum() < total) {
             int index = ordered.size() - 1;
             while( index >= 0 && ordered.get(index) > total - ret.sum()) {
@@ -21,7 +21,7 @@ class HighestFirstSolver {
                 throw new NoSolutionException( denominations, total );
             }
             final Integer toAdd = ordered.get(index);
-            ret = CoinSet.createAugmentedCoinSet( ret, toAdd ); // TODO inefficient!
+            ret = CoinSet.createAugmentedCoinSet( ret, toAdd );
         }
         if( total != ret.sum() ) {
             throw new IllegalStateException( "Internal Error" );

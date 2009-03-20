@@ -1,27 +1,43 @@
 package com.thoughtworks.cschuyle;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 class CoinSet {
 
-    public CoinSet( int denomination ) {
-        add( denomination );
+    private static Map<CoinSet, CoinSet> hash = Collections.synchronizedMap(new HashMap<CoinSet, CoinSet>());
+
+    // Private constructors, you must use factory methods
+    
+    private static CoinSet intern( final CoinSet instance ) {
+        final CoinSet existingInstance = getInstance( instance );
+        if( null != existingInstance ) {
+            return existingInstance;
+        }
+        hash.put( instance, instance );
+        return instance;
     }
 
-    public CoinSet( Integer... denominations ) {
+    private static CoinSet getInstance( CoinSet instance ) {
+        return hash.get( instance );
+    }
+
+    private CoinSet( Integer... denominations ) {
         for(int d : denominations ) {
-            add( d );
+            incrementDenomination( d );
         }
     }
-    
-    public static CoinSet createAugmentedCoinSet(CoinSet coinSet, int denomination) {
-        return new CoinSet(coinSet, denomination);
+
+    // Factory methods
+
+    public static CoinSet createCoinSet(Integer... denominations) {
+        return intern( new CoinSet( denominations ) );
     }
 
-    public static CoinSet createClone(CoinSet rhs) {
-        return new CoinSet(rhs);
+    public static CoinSet createAugmentedCoinSet(CoinSet coinSet, int denomination) {
+        return intern( new CoinSet( coinSet, denomination ) );
     }
+
+    //
 
     public int sum() {
         return sum;
@@ -51,6 +67,10 @@ class CoinSet {
         return this.denominations.equals( ((CoinSet)rhs).denominations);
     }
 
+    @Override public int hashCode() {
+        return toString().hashCode();
+    }
+
     @Override public String toString() {
         String ret = this.getClass().getSimpleName() + "<";
         boolean first = true;
@@ -76,7 +96,7 @@ class CoinSet {
 
     private CoinSet( CoinSet coinSet, int denomination ) {
         this( coinSet );
-        add ( denomination );
+        incrementDenomination( denomination );
     }
 
     Map<Integer, Integer> denominations = new HashMap<Integer, Integer>() {
@@ -95,10 +115,6 @@ class CoinSet {
             return( this.size() == rhs.size() );
         }
     };
-
-    private void add(int i) {
-        incrementDenomination( i );
-    }
 
     boolean containsDenomination( int i ) {
         return denominations.containsKey( i );

@@ -5,7 +5,6 @@ import junit.framework.TestCase;
 public class FriendlyRecognizerTest extends TestCase {
 
     final int TEN_THOUSAND = 10000;
-    // TODO This doesn't scale to ten thousand.  Boo.
 
     public void testFriendly() {
         DenominationSet denominations = new DenominationSet( 1, 2, 5 );
@@ -32,15 +31,14 @@ public class FriendlyRecognizerTest extends TestCase {
         }
     }
 
+    // TODO Takes 30-40 secs.  Optimize sufficiantly to enable.
     public void DISABLED_testScalability() {
-        for( int total = 1 ; total <= TEN_THOUSAND ; ++total ) {
-            final FriendlyRecognizer recognizer = new FriendlyRecognizer();
-            try {
-                DenominationSet denominations = new DenominationSet( 1, 2, 5 );
-                assertTrue ( recognizer.isFriendly( denominations, total ));
-            } catch ( Error e ) {
-                return;
-            }
+        final FriendlyRecognizer recognizer = new FriendlyRecognizer();
+        try {
+            DenominationSet denominations = new DenominationSet( 1, 2, 5 );
+            assertTrue ( recognizer.isFriendly( denominations, TEN_THOUSAND ));
+        } catch ( Error e ) {
+            return;
         }
     }
 

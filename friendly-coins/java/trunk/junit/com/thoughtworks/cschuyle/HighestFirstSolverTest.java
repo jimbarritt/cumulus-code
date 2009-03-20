@@ -7,28 +7,28 @@ public class HighestFirstSolverTest extends TestCase {
     public void testTrivialCase() {
         DenominationSet denominations = DenominationSetReader.readLine("1");
         CoinSet solution = HighestFirstSolver.solve( denominations, 1 );
-        CoinSet expected = new CoinSet( 1 );
+        CoinSet expected = CoinSet.createCoinSet( 1 );
         assertEquals(expected, solution);
     }
 
     public void testSimpleCase() {
         DenominationSet denominations = DenominationSetReader.readLine("1 2");
         CoinSet solution = HighestFirstSolver.solve( denominations, 2 );
-        CoinSet expected = new CoinSet( 2 );
+        CoinSet expected = CoinSet.createCoinSet( 2 );
         assertEquals(expected, solution);
     }
 
     public void testNonSimpleCase() {
         DenominationSet denominations = DenominationSetReader.readLine("1 2 5");
         CoinSet solution = HighestFirstSolver.solve( denominations, 4 );
-        CoinSet expected = new CoinSet( 2, 2 );
+        CoinSet expected = CoinSet.createCoinSet( 2, 2 );
         assertEquals(expected, solution);
     }
 
     public void testAnotherNonSimpleCase() {
         DenominationSet denominations = DenominationSetReader.readLine("1 4 5");
         CoinSet solution = HighestFirstSolver.solve( denominations, 8 );
-        CoinSet expected = new CoinSet( 1, 1, 1, 5 );
+        CoinSet expected = CoinSet.createCoinSet( 1, 1, 1, 5 );
         assertEquals(expected, solution);
         assertEquals( "CoinSet<1's:3,5's:1>", solution.toString() );
     }

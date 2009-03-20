@@ -3,7 +3,7 @@ package com.thoughtworks.cschuyle;
 class FriendlyRecognizer {
 
     public boolean isFriendly( DenominationSet den, int checkUpToTotal ) {
-        final AllSolutionsSolver solver = new AllSolutionsSolver( den );
+        final MinNumCoinsSolver solver = new MinNumCoinsSolver( den );
         if( checkUpToTotal < 1) {
             throw new IllegalArgumentException( "Must check up to at least total=1!" );
         }
