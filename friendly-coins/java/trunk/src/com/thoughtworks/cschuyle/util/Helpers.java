@@ -8,30 +8,19 @@ public class Helpers {
         StringBuilder builder = new StringBuilder();
         boolean first = true;
         for( Object o : objects ) {
-            if( ! first ) {
-                builder.append( joiner );
-            } else {
-                first = false;
-            }
-            builder.append( (null == o) ? "null" : o.toString() );
+            first = stringJoinAppend( o, joiner, builder, first );
         }
         return builder.toString();
     }
 
-    public static abstract class Foreach {
-        private Iterable<?> objs;
-
-        public Foreach( Iterable<?> objs ) {
-            this.objs = objs;
+    private static boolean stringJoinAppend( Object o, String joiner, StringBuilder builder, boolean first ) {
+        if( ! first ) {
+            builder.append( joiner );
+        } else {
+            first = false;
         }
-
-        public void apply() {
-            for( Object o : objs ) {
-                each( o );
-            }
-        }
-
-        protected abstract void each( Object o );
-
+        builder.append( (null == o) ? "null" : o.toString() );        
+        return first;
     }
+
 }

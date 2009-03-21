@@ -55,4 +55,7 @@ public class DenominationSet {
         list.add(i);
     }
 
+    public boolean isEmpty() {
+        return ( 0 == list.size() );
+    }
 }

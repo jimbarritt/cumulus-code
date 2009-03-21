@@ -39,16 +39,20 @@ public class TestApp {
         try {
             String line = reader.readLine();
             DenominationSet den = DenominationSetReader.read( line );
-            int total = 1000;
-            processLine(recognizer, den, total);
+            processLine( recognizer, den );
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private static void processLine(FriendlyRecognizer recognizer, DenominationSet den, int total) {
+    private final static int UP_TO = 1000;
+
+    private static void processLine(FriendlyRecognizer recognizer, DenominationSet den) {
+        if( den.isEmpty() ) {
+            return;
+        }
         try {
-            boolean friendly = recognizer.isFriendly( den,  total );
+            boolean friendly = recognizer.isFriendly( den,  UP_TO );
             System.out.println( friendly ? "Friendly" : "Not Friendly" );
         } catch( NoSolutionException e) {
             System.out.println( "Not Complete: " + e.getMessage() );

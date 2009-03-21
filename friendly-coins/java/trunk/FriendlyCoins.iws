@@ -113,10 +113,19 @@
       <file leaf-file-name="DenominationSet.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/DenominationSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="13" selection-start="118" selection-end="118" vertical-scroll-proportion="-0.10769231">
+            <state line="58" column="22" selection-start="1406" selection-end="1406" vertical-scroll-proportion="1.7846154">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Helpers.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/util/Helpers.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="8" selection-start="721" selection-end="721" vertical-scroll-proportion="0.6769231">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -133,16 +142,16 @@
       <file leaf-file-name="CoinSet.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/CoinSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="12" selection-start="2393" selection-end="2393" vertical-scroll-proportion="0.35384616">
+            <state line="84" column="48" selection-start="2363" selection-end="2363" vertical-scroll-proportion="0.6703297">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestApp.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TestApp.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/main/TestApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="21" selection-start="1209" selection-end="1209" vertical-scroll-proportion="0.26153848">
+            <state line="50" column="21" selection-start="1469" selection-end="1469" vertical-scroll-proportion="0.6923077">
               <folding />
             </state>
           </provider>
@@ -170,15 +179,6 @@
         <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/NoSolutionException.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="10" column="16" selection-start="345" selection-end="345" vertical-scroll-proportion="0.30769232">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NotFriendlyException.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/NotFriendlyException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="16" selection-start="770" selection-end="770" vertical-scroll-proportion="0.4923077">
               <folding />
             </state>
           </provider>
@@ -608,7 +608,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="22" width="1440" height="791" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
@@ -625,7 +625,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3298351" order="2" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3298351" order="2" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24946082" order="2" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39940387" order="4" />
@@ -697,15 +697,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/FriendlyRecognizerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="141" selection-end="141" vertical-scroll-proportion="0.224">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/SolutionFactoryInventory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="11" selection-start="396" selection-end="396" vertical-scroll-proportion="0.46153846">
@@ -785,15 +776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/DenominationSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="118" selection-end="118" vertical-scroll-proportion="-0.10769231">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/CompleteSolution.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="0" selection-start="787" selection-end="787" vertical-scroll-proportion="0.87435895">
@@ -803,14 +785,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/CoinSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="12" selection-start="2393" selection-end="2393" vertical-scroll-proportion="0.35384616">
+        <state line="84" column="48" selection-start="2363" selection-end="2363" vertical-scroll-proportion="0.6703297">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/main/TestApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="21" selection-start="1209" selection-end="1209" vertical-scroll-proportion="0.26153848">
+        <state line="50" column="21" selection-start="1469" selection-end="1469" vertical-scroll-proportion="0.6923077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/DenominationSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="22" selection-start="1406" selection-end="1406" vertical-scroll-proportion="1.7846154">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/util/Helpers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="8" selection-start="721" selection-end="721" vertical-scroll-proportion="0.6769231">
           <folding />
         </state>
       </provider>

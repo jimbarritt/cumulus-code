@@ -75,20 +75,18 @@ class CoinSet {
 
 
     @Override public String toString() {
-        final Collection<Object> items = new ArrayList<Object>();
-        new Foreach( denominations.keySet() ) {
-            public @Override void each( Object o ) {
-                denominationToString(o, items);
-            }
-        }.apply();
+        final Collection<String> items = new ArrayList<String>();
+        for( int item : denominations.keySet() ) {
+            items.add( denominationToString( item ) );
+        }
         return this.getClass().getSimpleName() + "<" + Helpers.stringJoin( items, "," ) + ">";
     }
 
-    private void denominationToString(Object o, Collection<Object> items) {
-        String item = o.toString();
+    private String denominationToString( int den ) {
+        String item = new Integer( den ).toString();
         item += "'s:";
-        item += denominations.get( o );
-        items.add( item );
+        item += denominations.get( den );
+        return item;
     }
 
     private CoinSet( CoinSet rhs ) {

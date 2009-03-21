@@ -4,6 +4,73 @@ Object Calisthenics Notes
 
 Moved a lot of loops into their own methods.
 
+I noticed a pattern I used to find min, and also stringJoin.  Old:
+
+public static String stringJoin( Collection<?> objects, String joiner ) {
+    StringBuilder builder = new StringBuilder();
+    boolean first = true;
+    for( Object o : objects ) {
+        if( ! first ) {
+            builder.append( joiner );
+        } else {
+            first = false;
+        }
+        builder.append( (null == o) ? "null" : o.toString() );
+    }
+    return builder.toString();
+}
+
+new:
+
+public static String stringJoin( Collection<?> objects, String joiner ) {
+    StringBuilder builder = new StringBuilder();
+    boolean first = true;
+    for( Object o : objects ) {
+        first = stringJoinAppend( o, joiner, builder, first );
+    }
+    return builder.toString();
+}
+
+private static boolean stringJoinAppend( Object o, String joiner, StringBuilder builder, boolean first ) {
+    if( ! first ) {
+        builder.append( joiner );
+    } else {
+        first = false;
+    }
+    builder.append( (null == o) ? "null" : o.toString() );        
+    return first;
+}
+
+The key point is - There is a state variable (in the case, first - in the case of findMin, min).  Ths variable is modified by the helper and reassigned in the body.  The impl of findMin seemed more "tricky" to me:
+
+BEFORE:
+private CoinSet findMinimalCoinCountSolution(Collection<CoinSet> coinSets) {
+     CoinSet theLeast = null;
+     for( CoinSet coinSet : coinSets ) {
+	     if( null == theLeast || coinSet.getNumCoins() < theLeast.getNumCoins() ) {
+	         theLeast = coinSet;
+	     }
+     }
+     return theLeast;
+ }
+
+AFTER:
+
+private CoinSet findMinimalCoinCountSolution(Collection<CoinSet> coinSets) {
+     CoinSet theLeast = null;
+     for( CoinSet coinSet : coinSets ) {
+         theLeast = isItLess( theLeast, coinSet );
+     }
+     return theLeast;
+ }
+
+ private CoinSet isItLess(CoinSet theLeast, CoinSet coinSet) {
+     if( null == theLeast || coinSet.getNumCoins() < theLeast.getNumCoins() ) {
+         theLeast = coinSet;
+     }
+     return theLeast;
+ }
+
 Tricky were the try/catches - in this case, there are 0 levels if indent inside the try/catch.  These are almost like a lopp-removal but tend to be more woven into the rest of the method.  This particular refoactor smelled a little bad to me.
 
 Also tricky: one instance of a "collect" pattern - before:
@@ -37,7 +104,7 @@ I tried to get tricky and introduce a first-class "foreach" in order to use an a
       return this.getClass().getSimpleName() + "<" + Helpers.stringJoin( items, "," ) + ">";
   }
 
-This looks bad.  The boilerplate is uglt.  Actually what I ended up liking better was this:
+This looks bad.  The boilerplate is ugly.  Actually what I ended up liking better was this:
 
  @Override public String toString() {
       final Collection<Object> items = new ArrayList<Object>();
@@ -68,5 +135,17 @@ new Collect( denominations.keySet() ) {
 collect { }
 
 - you see where I'm coming from.
+
+
+#2: Do not use the "else" keyword.
+
+Well, fortunately I had only 5:
+
+./src/com/thoughtworks/cschuyle/CoinSet.java:        } else {
+./src/com/thoughtworks/cschuyle/CompleteSolution.java:        } else if( coinSet.sum() != total ) {
+./src/com/thoughtworks/cschuyle/MinNumCoinsSolver.java:                else if solve x-den
+./src/com/thoughtworks/cschuyle/MinNumCoinsSolver.java:        } else if( denomination < total ) {
+./src/com/thoughtworks/cschuyle/util/Helpers.java:        } else {
+
 
 
