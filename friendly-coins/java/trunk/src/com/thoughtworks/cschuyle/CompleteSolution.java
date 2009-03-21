@@ -42,7 +42,9 @@ class CompleteSolution extends Solution {
     private void accumulateTotal(CoinSet coinSet) {
         if( 0 == total ) {
             total = coinSet.sum();
-        } else if( coinSet.sum() != total ) {
+            return;
+        }
+        if( coinSet.sum() != total ) {
             throw new IllegalStateException( "All coinSets must have the same sum" );
         }
     }

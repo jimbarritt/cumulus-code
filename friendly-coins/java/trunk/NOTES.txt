@@ -147,5 +147,49 @@ Well, fortunately I had only 5:
 ./src/com/thoughtworks/cschuyle/MinNumCoinsSolver.java:        } else if( denomination < total ) {
 ./src/com/thoughtworks/cschuyle/util/Helpers.java:        } else {
 
+Dead easy.  Most of then I could insert "return"s.  This flies in the face of those who would have me have one exit point.  These faces I generally am skeptical towards anyhow.
+
+BEFORE:
+
+public static String stringJoin( Collection<?> objects, String joiner ) {
+    StringBuilder builder = new StringBuilder();
+    String useJoiner = "";
+	boolean first = true;
+    for( Object o : objects ) {
+        first = stringJoinAppend( o, useJoiner, builder, first );
+    }
+    return builder.toString();
+}
+
+private static boolean stringJoinAppend( Object o, String joiner, StringBuilder builder, boolean first ) {
+    if( ! first ) {
+        builder.append( joiner );
+    } else {
+		first = false;
+	}
+    builder.append( (null == o) ? "null" : o.toString() );        
+    return first;
+}
+
+AFTER:
+
+public static String stringJoin( Collection<?> objects, String joiner ) {
+    StringBuilder builder = new StringBuilder();
+    String useJoiner = "";
+    for( Object o : objects ) {
+        stringJoinAppend( o, useJoiner, builder );
+        useJoiner = joiner;
+    }
+    return builder.toString();
+}
+
+private static void stringJoinAppend( Object o, String joiner, StringBuilder builder ) {
+    builder.append( joiner );
+    builder.append( (null == o) ? "null" : o.toString() );
+}
+
+Great - 5 fewer lines and one fewer variable.  Now it smells about as good as my findMin refactor (whereas before, it was rather more rank).
+
+
 
 

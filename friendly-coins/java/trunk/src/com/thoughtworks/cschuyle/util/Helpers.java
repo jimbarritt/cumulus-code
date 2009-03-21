@@ -6,21 +6,17 @@ public class Helpers {
     
     public static String stringJoin( Collection<?> objects, String joiner ) {
         StringBuilder builder = new StringBuilder();
-        boolean first = true;
+        String useJoiner = "";
         for( Object o : objects ) {
-            first = stringJoinAppend( o, joiner, builder, first );
+            stringJoinAppend( o, useJoiner, builder );
+            useJoiner = joiner;
         }
         return builder.toString();
     }
 
-    private static boolean stringJoinAppend( Object o, String joiner, StringBuilder builder, boolean first ) {
-        if( ! first ) {
-            builder.append( joiner );
-        } else {
-            first = false;
-        }
-        builder.append( (null == o) ? "null" : o.toString() );        
-        return first;
+    private static void stringJoinAppend( Object o, String joiner, StringBuilder builder ) {
+        builder.append( joiner );
+        builder.append( (null == o) ? "null" : o.toString() );
     }
 
 }

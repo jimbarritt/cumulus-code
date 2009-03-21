@@ -2,7 +2,6 @@ package com.thoughtworks.cschuyle;
 
 import java.util.*;
 import com.thoughtworks.cschuyle.util.Helpers;
-import com.thoughtworks.cschuyle.util.Helpers.*;
 
 class CoinSet {
 
@@ -48,9 +47,8 @@ class CoinSet {
     public int getCardinality( int denomination ) {
         if(containsDenomination( denomination )) {
             return denominations.get( denomination );
-        } else {
-            return 0;
         }
+        return 0;
     }
 
     public int getNumCoins() {

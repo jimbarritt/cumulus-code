@@ -54,7 +54,9 @@ class MinNumCoinsSolver {
         if( denomination == total ) {
             CoinSet coinSet = CoinSet.createCoinSet( denomination );
             coinSets.add( coinSet );
-        } else if( denomination < total ) {
+            return;
+        }
+        if( denomination < total ) {
             recurse(total, coinSets, denomination);
         }
     }
