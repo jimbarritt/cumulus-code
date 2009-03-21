@@ -4,6 +4,7 @@ import junit.framework.TestCase;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import static com.thoughtworks.cschuyle.SolutionFactoryInventory.*;
 
 public class MinNumCoinsSolverTest extends TestCase {
 
@@ -49,21 +50,6 @@ public class MinNumCoinsSolverTest extends TestCase {
             return false;
         }
     }
-
-    final static SolutionFactory COMPLETE_SOLUTION_FACTORY = new SolutionFactory() {
-
-        public Solution createSolution(Collection<CoinSet> coinSets) {
-            return new CompleteSolution(coinSets);
-        }
-    };
-
-    final static SolutionFactory OPTIMIZED_SOLUTION_FACTORY = new SolutionFactory() {
-
-        public Solution createSolution(Collection<CoinSet> coinSets) {
-            return new OptimizedSolution(coinSets);
-        }
-    };
-
 
     public void testTrivialCase_OPTIMIZED() {
         testTrivialCase( OPTIMIZED_SOLUTION_FACTORY );

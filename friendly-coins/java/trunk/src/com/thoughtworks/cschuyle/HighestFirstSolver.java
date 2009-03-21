@@ -13,20 +13,26 @@ class HighestFirstSolver {
         final List<Integer> ordered = denominations.getSortedList();
         CoinSet ret = CoinSet.createCoinSet();
         while( ret.sum() < total) {
-            int index = ordered.size() - 1;
-            while( index >= 0 && ordered.get(index) > total - ret.sum()) {
-                --index;
-            }
-            if( index < 0 ) {
-                throw new NoSolutionException( denominations, total );
-            }
-            final Integer toAdd = ordered.get(index);
-            ret = CoinSet.createAugmentedCoinSet( ret, toAdd );
+            ret = accumulateHighestPossibleValue(denominations, total, ordered, ret);
         }
         if( total != ret.sum() ) {
             throw new IllegalStateException( "Internal Error" );
         }
         return ret;
     }
-    
+
+    private static CoinSet accumulateHighestPossibleValue(
+            DenominationSet denominations, int total, List<Integer> ordered, CoinSet ret) {
+        int index = ordered.size() - 1;
+        while( index >= 0 && ordered.get(index) > total - ret.sum()) {
+            --index;
+        }
+        if( index < 0 ) {
+            throw new NoSolutionException( denominations, total );
+        }
+        final Integer toAdd = ordered.get(index);
+        ret = CoinSet.createAugmentedCoinSet( ret, toAdd );
+        return ret;
+    }
+
 }

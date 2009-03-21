@@ -1,6 +1,8 @@
 package com.thoughtworks.cschuyle;
 
 import java.util.*;
+import com.thoughtworks.cschuyle.util.Helpers;
+import com.thoughtworks.cschuyle.util.Helpers.*;
 
 class CoinSet {
 
@@ -71,20 +73,22 @@ class CoinSet {
         return toString().hashCode();
     }
 
+
     @Override public String toString() {
-        String ret = this.getClass().getSimpleName() + "<";
-        boolean first = true;
-        for( int k : denominations.keySet() ) {
-            if( ! first ) {
-                ret += ",";
-            } else {
-                first = false;
+        final Collection<Object> items = new ArrayList<Object>();
+        new Foreach( denominations.keySet() ) {
+            public @Override void each( Object o ) {
+                denominationToString(o, items);
             }
-            ret += k;
-            ret += "'s:";
-            ret += denominations.get( k );
-        }
-        return ret + ">";
+        }.apply();
+        return this.getClass().getSimpleName() + "<" + Helpers.stringJoin( items, "," ) + ">";
+    }
+
+    private void denominationToString(Object o, Collection<Object> items) {
+        String item = o.toString();
+        item += "'s:";
+        item += denominations.get( o );
+        items.add( item );
     }
 
     private CoinSet( CoinSet rhs ) {
@@ -99,22 +103,7 @@ class CoinSet {
         incrementDenomination( denomination );
     }
 
-    Map<Integer, Integer> denominations = new HashMap<Integer, Integer>() {
-        // TODO unnecessary? remove
-        @Override public boolean equals(Object rhsObj) {
-            if( null == rhsObj || !( rhsObj instanceof Map ) ) {
-                return false;
-            }
-            HashMap<Integer, Integer> rhs = (HashMap<Integer, Integer>)rhsObj;
-            for(int k : this.keySet()) {
-                if( ! rhs.containsKey( k ))
-                    return false;
-                if(! rhs.get( k ).equals( this.get( k ) ) )
-                    return false;
-            }
-            return( this.size() == rhs.size() );
-        }
-    };
+    Map<Integer, Integer> denominations = new HashMap<Integer, Integer>();
 
     boolean containsDenomination( int i ) {
         return denominations.containsKey( i );

@@ -12,14 +12,24 @@ class OptimizedSolution extends Solution {
 
     public OptimizedSolution(Collection<CoinSet> coinSets) {
         super();
-        CoinSet theLeast = null;
-        for( CoinSet coinSet : coinSets ) {
-            if( null == theLeast || coinSet.getNumCoins() < theLeast.getNumCoins() ) {
-                theLeast = coinSet;
-            }
-        }
+        CoinSet theLeast = findMinimalCoinCountSolution(coinSets);
         this.solution = theLeast;
         this.total = theLeast.sum();
+    }
+
+    private CoinSet findMinimalCoinCountSolution(Collection<CoinSet> coinSets) {
+        CoinSet theLeast = null;
+        for( CoinSet coinSet : coinSets ) {
+            theLeast = isItLess( theLeast, coinSet );
+        }
+        return theLeast;
+    }
+
+    private CoinSet isItLess(CoinSet theLeast, CoinSet coinSet) {
+        if( null == theLeast || coinSet.getNumCoins() < theLeast.getNumCoins() ) {
+            theLeast = coinSet;
+        }
+        return theLeast;
     }
 
     CoinSet solution;

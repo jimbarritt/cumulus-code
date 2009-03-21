@@ -4,8 +4,8 @@ import java.util.Collection;
 
 class CompleteSolution extends Solution {
 
-    Collection<CoinSet> coinSets;
-    int total;
+    private Collection<CoinSet> coinSets;
+    private int total;
 
     public @Override int getTotal() {
         return total;
@@ -14,11 +14,8 @@ class CompleteSolution extends Solution {
     public @Override CoinSet getFewestCoinsSolution() {
         CoinSet leastSolution = null;
 
-        // TODO There must be an algorithm for this
-        for( CoinSet coinSet: coinSets) {
-            if( null == leastSolution || coinSet.getNumCoins() < leastSolution.getNumCoins() ) {
-                leastSolution = coinSet;
-            }
+        for( CoinSet coinSet: coinSets ) {
+            leastSolution = isItLess( leastSolution, coinSet );
         }
         return leastSolution;
     }
@@ -27,18 +24,27 @@ class CompleteSolution extends Solution {
         super();
         this.coinSets = coinSets;
         for( CoinSet coinSet: coinSets ) {
-            if( 0 == total ) {
-                total = coinSet.sum();
-            } else {
-                if( coinSet.sum() != total ) {
-                    throw new IllegalStateException( "All coinSets must have the same sum" );
-                }
-            }
+            accumulateTotal(coinSet);
         }
-    }
+    }    
 
     protected Collection<CoinSet> getCoinSets() {
         return coinSets;
+    }
+    
+    private CoinSet isItLess(CoinSet leastSolution, CoinSet coinSet) {
+        if( null == leastSolution || coinSet.getNumCoins() < leastSolution.getNumCoins() ) {
+            leastSolution = coinSet;
+        }
+        return leastSolution;
+    }
+
+    private void accumulateTotal(CoinSet coinSet) {
+        if( 0 == total ) {
+            total = coinSet.sum();
+        } else if( coinSet.sum() != total ) {
+            throw new IllegalStateException( "All coinSets must have the same sum" );
+        }
     }
 
 }

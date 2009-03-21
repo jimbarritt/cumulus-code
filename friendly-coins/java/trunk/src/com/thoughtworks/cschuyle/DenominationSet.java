@@ -1,8 +1,10 @@
 package com.thoughtworks.cschuyle;
 
+import com.thoughtworks.cschuyle.util.Helpers;
+
 import java.util.*;
 
-class DenominationSet {
+public class DenominationSet {
 
     Collection<Integer> list;
 
@@ -29,7 +31,6 @@ class DenominationSet {
         return list.contains( i );
     }
 
-
     public List<Integer> getSortedList() {
         ArrayList<Integer> ret = new ArrayList<Integer>( this.list );
         Collections.sort( ret );
@@ -45,17 +46,9 @@ class DenominationSet {
     }
 
     public @Override String toString() {
-        String ret = null;
         List<Integer> orderedList = new ArrayList<Integer>( list );
         Collections.sort(orderedList);
-        for( int i : orderedList ) {
-            if( null == ret ) {
-                ret = Integer.toString( i );
-            } else {
-                ret += "," + i;
-            }
-        }
-        return this.getClass().getSimpleName() + "<" + ret + ">";
+        return this.getClass().getSimpleName() + "<" + Helpers.stringJoin( orderedList, "," ) + ">";
     }
 
     private void add(int i) {

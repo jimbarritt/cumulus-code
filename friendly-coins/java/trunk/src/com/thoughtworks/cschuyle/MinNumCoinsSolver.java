@@ -27,18 +27,7 @@ class MinNumCoinsSolver {
         }
         Collection<CoinSet> coinSets = new ArrayList<CoinSet>();
         for( int denomination: denominations.getSortedList() ) {
-            if( denomination == total ) {
-                CoinSet coinSet = CoinSet.createCoinSet( denomination );
-                coinSets.add( coinSet );
-            } else if( denomination < total ) {
-                solve( total - denomination );
-                if( isMemoized( total - denomination )) {
-                    Solution partialSolution = getMemoizedSolution( total - denomination );
-                    for( CoinSet coinSet: partialSolution.getCoinSets() ) {
-                        coinSets.add( CoinSet.createAugmentedCoinSet( coinSet, denomination ) );
-                    }
-                }
-            }
+            processDenomination(total, coinSets, denomination);
         }
         if( coinSets.size() > 0 ) {
             final Solution solution = getSolutionFactory().createSolution(coinSets);
@@ -60,17 +49,35 @@ class MinNumCoinsSolver {
         Solution solution = getMemoizedSolution( total );
         return solution.getFewestCoinsSolution();
     }
-    
+        
+    private void processDenomination(int total, Collection<CoinSet> coinSets, int denomination) {
+        if( denomination == total ) {
+            CoinSet coinSet = CoinSet.createCoinSet( denomination );
+            coinSets.add( coinSet );
+        } else if( denomination < total ) {
+            recurse(total, coinSets, denomination);
+        }
+    }
+
+    private void recurse(int total, Collection<CoinSet> coinSets, int denomination) {
+        solve( total - denomination );
+        if( isMemoized( total - denomination )) {
+            Solution partialSolution = getMemoizedSolution( total - denomination );
+            mergePartialSolution(coinSets, denomination, partialSolution);
+        }
+    }
+
+    private void mergePartialSolution(Collection<CoinSet> coinSets, int denomination, Solution partialSolution) {
+        for( CoinSet coinSet: partialSolution.getCoinSets() ) {
+            coinSets.add( CoinSet.createAugmentedCoinSet( coinSet, denomination ) );
+        }
+    }
+
     SolutionFactory solutionFactory;
 
     private SolutionFactory getSolutionFactory() {
         if( null == solutionFactory ) {
-            solutionFactory = new SolutionFactory() {
-
-                public Solution createSolution(Collection<CoinSet> coinSets) {
-                    return new OptimizedSolution( coinSets );
-                }
-            };
+            solutionFactory = SolutionFactoryInventory.OPTIMIZED_SOLUTION_FACTORY;
         }
         return solutionFactory;
     }
