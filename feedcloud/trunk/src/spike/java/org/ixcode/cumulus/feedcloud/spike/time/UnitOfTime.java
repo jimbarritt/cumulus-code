@@ -35,7 +35,7 @@ abstract class UnitOfTime<T extends UnitOfTime> {
         return String.format(toStringFormat, longValue);
     }
 
-    protected long getLongValue() {
+    public long longValue() {
         return longValue;
     }
 
