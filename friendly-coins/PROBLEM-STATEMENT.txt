@@ -1,0 +1,36 @@
+---------------------
+1) FRIENDLY COIN SET 
+---------------------
+The mathematicians in the world have decided to form a new country called 'Republic of Mathematica'. They have decided to have their own currency and use only coins as currency. They first need to decide the coin denominations. One of the scientists has suggested using a coin set with 'friendly' denominations which he calls as the 'friendly coin set'. Here is how he explains a friendly coin set.
+
+A friendly coin set is set of coin values from which it is possible to provide the minimum number of coins change by applying the "give highest coin" principle, for all possible amounts of change.
+For example, if you have the coin set 1,2,5,10 and give change for 32 cents using the "give highest coin" principle, you will give 10+10+10+2, which is four coins and the minimum number of coins for that value of change using that coin set. You will find that for all values of change, the coin set 1,2,5,10 will give you the minimum number of coins when giving change by the "give highest coin" principle. Thus, 1,2,5,10 is a friendly coin set.
+The coin set 1,4,5 is not friendly because if you are giving 8 cents change, you will give 5+1+1+1, which is four coins. However, it is easy to see that it would be better to give 4+4, which is only two coins. An unfriendly coin set is one for which the "give highest coin" does not give the smallest number of coins for one or more change values.
+
+Can you write a program to help the mathematicians determine, which coin set is friendly and which one is not? 
+
+INPUT FORMAT
+The input format will be one line per coin set. Each line will contain the coin values in ascending order. The maximum number of coins will be 10, and the minimum 1. The lowest coin value will be 1 and the highest 100. Your algorithm should check all change values up to 10000 cents.
+
+OUTPUT FORMAT
+The output will be a single line containing the word "Friendly" or the words "Not Friendly", one line for each coin set in the input.
+
+INPUT 1:
+1 2 5 10 20
+OUTPUT 1:
+Friendly
+
+INPUT 2:
+1 3 4
+OUTPUT 2:
+Not Friendly
+
+INPUT 3:
+1 7 9 12 20 40 100
+OUTPUT 3:
+Not Friendly
+
+INPUT 4:
+1 2 3 4 5 6
+OUTPUT 4:
+Friendly

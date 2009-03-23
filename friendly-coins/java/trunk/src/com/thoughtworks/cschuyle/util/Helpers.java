@@ -3,10 +3,12 @@ package com.thoughtworks.cschuyle.util;
 import java.util.Collection;
 
 public class Helpers {
-    
+
+    public static final String EMPTY_STRING = "";
+
     public static String stringJoin( Collection<?> objects, String joiner ) {
         StringBuilder builder = new StringBuilder();
-        String useJoiner = "";
+        String useJoiner = EMPTY_STRING;
         for( Object o : objects ) {
             stringJoinAppend( o, useJoiner, builder );
             useJoiner = joiner;
