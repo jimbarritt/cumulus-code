@@ -1,5 +1,7 @@
 package org.ixcode.cumulus.feedcloud.spike.timer;
 
+import org.ixcode.cumulus.feedcloud.spike.time.*;
+
 public class StopWatch {
 
     private SystemClock clock;

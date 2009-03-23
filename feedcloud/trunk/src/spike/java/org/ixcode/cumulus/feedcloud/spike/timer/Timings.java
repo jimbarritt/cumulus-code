@@ -1,5 +1,7 @@
 package org.ixcode.cumulus.feedcloud.spike.timer;
 
+import org.ixcode.cumulus.feedcloud.spike.time.*;
+
 class Timings {
 
     private Milliseconds startTime;

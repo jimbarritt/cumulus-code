@@ -3,6 +3,7 @@ package org.ixcode.cumulus.feedcloud.spike.timer;
 import static org.junit.Assert.*;
 import org.junit.*;
 import static org.mockito.Mockito.*;
+import org.ixcode.cumulus.feedcloud.spike.time.*;
 
 public class StopWatchTest {
 
