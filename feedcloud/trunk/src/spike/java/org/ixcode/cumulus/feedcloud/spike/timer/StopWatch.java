@@ -27,6 +27,7 @@ public class StopWatch {
         return timings.getElapsedTime();
     }
 
+
     private static class Timings {
 
         private Milliseconds startTime;
@@ -43,5 +44,6 @@ public class StopWatch {
         public Milliseconds getElapsedTime() {
             return stopTime.elapsedFrom(startTime);
         }
+
     }
 }

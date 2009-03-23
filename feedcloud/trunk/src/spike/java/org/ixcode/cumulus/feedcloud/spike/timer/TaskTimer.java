@@ -4,14 +4,15 @@ import org.ixcode.cumulus.feedcloud.spike.time.*;
 
 public class TaskTimer {
 
-    Runnable task;
+    private final Runnable task;
+    private final StopWatch stopWatch;
 
-    public TaskTimer(Runnable task) {
+    public TaskTimer(Runnable task, StopWatch stopWatch) {
         this.task = task;
+        this.stopWatch = stopWatch;
     }
 
     public Milliseconds time(int numberOfExecutions) {
-        StopWatch stopWatch = StopWatch.newInstance();
         stopWatch.start();
 
         for (int i=0;i<numberOfExecutions;++i) {
