@@ -1,9 +1,9 @@
 package org.ixcode.cumulus.feedcloud.spike.time;
 
-import org.ixcode.cumulus.feedcloud.spike.time.convert.*;
 import org.apache.commons.lang.builder.*;
+import org.ixcode.cumulus.feedcloud.spike.time.convert.*;
 
-abstract class UnitOfTime {
+abstract class UnitOfTime<T extends UnitOfTime> {
     private long longValue;
     private String toStringFormat;
 
@@ -15,12 +15,19 @@ abstract class UnitOfTime {
     protected long getLongValue() {
         return longValue;
     }
-  
+
     public long convert(TimeConverter timeConverter) {
         return timeConverter.convertFrom(longValue);
     }
 
-    public boolean equals(Object other)  {
+    public T elapsedFrom(T startTime) {
+        return newInstance(longValue - startTime.longValue);
+    }
+
+    protected abstract T newInstance(long longValue);
+
+
+    public boolean equals(Object other) {
         return EqualsBuilder.reflectionEquals(this, other);
     }
 
