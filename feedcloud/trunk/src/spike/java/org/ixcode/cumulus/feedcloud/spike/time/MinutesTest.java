@@ -1,22 +1,29 @@
 package org.ixcode.cumulus.feedcloud.spike.time;
 
 import static junit.framework.Assert.*;
-import static junit.framework.Assert.assertEquals;
+import org.ixcode.cumulus.feedcloud.spike.time.convert.*;
 import org.junit.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class MinutesTest {
 
     @Test
-    public void providesLongValue() {
-        Minutes minutes = new Minutes(666);
+    public void canConvert() {
+        TimeConverter timeConverter = mock(TimeConverter.class);
 
-        assertEquals("longValue", 666L, minutes.longValue());
+        Minutes minutes = new Minutes(666L);
+
+        when(timeConverter.convertFrom(666L)).thenReturn(234L);
+        long result = minutes.convert(timeConverter);
+
+        assertEquals(234L, result);
     }
 
     @Test
     public void providesAppropriateStringRepresentation() {
         Minutes minutes = new Minutes(34);
-        assertEquals("toString", "34 min", minutes.toString());
+        assertEquals("34 min", minutes.toString());
     }
 
     @Test
@@ -25,13 +32,11 @@ public class MinutesTest {
         Minutes minutesEqual = new Minutes(34);
         Minutes minutesNotEqual = new Minutes(666);
 
-        assertEquals("equal", minutes, minutesEqual);
-        assertFalse("not-equal", minutes.equals(minutesNotEqual));
+        assertEquals(minutes, minutesEqual);
+        assertFalse(minutes.equals(minutesNotEqual));
 
-        assertEquals("equal.hashcode", minutes.hashCode(), minutesEqual.hashCode());
-        assertFalse("not-equal.hashcode", minutes.hashCode() == minutesNotEqual.hashCode());
+        assertEquals(minutes.hashCode(), minutesEqual.hashCode());
+        assertFalse(minutes.hashCode() == minutesNotEqual.hashCode());
     }    
-
-
 
 }

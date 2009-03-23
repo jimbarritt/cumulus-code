@@ -2,14 +2,23 @@ package org.ixcode.cumulus.feedcloud.spike.time;
 
 import static junit.framework.Assert.*;
 import org.junit.*;
+import org.ixcode.cumulus.feedcloud.spike.time.convert.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class SecondsTest {
 
-    @Test
-    public void providesLongValue() {
-        Seconds seconds = new Seconds(666);
 
-        assertEquals("longValue", 666L, seconds.longValue());
+    @Test
+    public void canConvert() {
+        TimeConverter timeConverter = mock(TimeConverter.class);
+
+        Seconds seconds = new Seconds(666L);
+
+        when(timeConverter.convertFrom(666L)).thenReturn(234L);
+        long result = seconds.convert(timeConverter);
+
+        assertEquals(234L, result);
     }
 
     @Test

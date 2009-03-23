@@ -1,17 +1,21 @@
 package org.ixcode.cumulus.feedcloud.spike.time;
 
 import org.apache.commons.lang.builder.*;
+import org.ixcode.cumulus.feedcloud.spike.time.convert.*;
 
-public class Minutes {
+public class Minutes implements TimeUnit {
     private long minutes;
 
     public Minutes(long minutes) {
         this.minutes = minutes;
     }
 
-
     public String toString() {
         return minutes + " min";
+    }
+
+    public long convert(TimeConverter timeConverter) {
+        return timeConverter.convertFrom(minutes);
     }
 
     public boolean equals(Object other) {
@@ -22,7 +26,4 @@ public class Minutes {
         return HashCodeBuilder.reflectionHashCode(this);
     }
 
-    public long longValue() {
-        return minutes;        
-    }
 }

@@ -1,8 +1,9 @@
 package org.ixcode.cumulus.feedcloud.spike.time;
 
 import org.apache.commons.lang.builder.*;
+import org.ixcode.cumulus.feedcloud.spike.time.convert.*;
 
-public class Seconds {
+public class Seconds implements TimeUnit {
 
     private long seconds;
 
@@ -10,15 +11,12 @@ public class Seconds {
         this.seconds = seconds;
     }
 
-    public long longValue() {
-        return seconds;
-    }
-
-    public Minutes toMinutes() {
-        return new Minutes(seconds / 60);
-    }
     public String toString() {
         return seconds + " s";
+    }
+
+    public long convert(TimeConverter timeConverter) {
+        return timeConverter.convertFrom(seconds);
     }
 
     public boolean equals(Object other) {
@@ -28,4 +26,6 @@ public class Seconds {
     public int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
     }
+
+
 }
