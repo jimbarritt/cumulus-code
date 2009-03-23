@@ -12,19 +12,15 @@ abstract class UnitOfTime<T extends UnitOfTime> {
         this.toStringFormat = toStringFormat;
     }
 
-    protected long getLongValue() {
-        return longValue;
-    }
-
-    public long convert(TimeCalculation timeCalculation) {
-        return timeCalculation.calculateFrom(longValue);
-    }
-
     public T elapsedFrom(T startTime) {
         return newInstance(longValue - startTime.longValue);
     }
 
     protected abstract T newInstance(long longValue);
+
+    long convert(TimeCalculation timeCalculation) {
+        return timeCalculation.calculateFrom(longValue);
+    }
 
 
     public boolean equals(Object other) {
@@ -38,4 +34,9 @@ abstract class UnitOfTime<T extends UnitOfTime> {
     public String toString() {
         return String.format(toStringFormat, longValue);
     }
+
+    protected long getLongValue() {
+        return longValue;
+    }
+
 }
