@@ -2,7 +2,7 @@ package org.ixcode.cumulus.feedcloud.spike.timer;
 
 import org.ixcode.cumulus.feedcloud.spike.time.*;
 
-class TaskTimer {
+public class TaskTimer {
 
     Runnable task;
 

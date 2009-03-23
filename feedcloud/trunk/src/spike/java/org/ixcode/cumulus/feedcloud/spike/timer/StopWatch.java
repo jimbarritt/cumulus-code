@@ -22,8 +22,26 @@ public class StopWatch {
     public void stop() {
         timings.stoppedAt(new Milliseconds(clock.getCurrentTimeMilliseconds()));
     }
-    
+
     public Milliseconds getElapsedTime() {
         return timings.getElapsedTime();
+    }
+
+    private static class Timings {
+
+        private Milliseconds startTime;
+        private Milliseconds stopTime;
+
+        public void startedAt(Milliseconds startTime) {
+            this.startTime = startTime;
+        }
+
+        public void stoppedAt(Milliseconds stopTime) {
+            this.stopTime = stopTime;
+        }
+
+        public Milliseconds getElapsedTime() {
+            return stopTime.elapsedFrom(startTime);
+        }
     }
 }
