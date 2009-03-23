@@ -1,7 +1,7 @@
 package org.ixcode.cumulus.feedcloud.spike.time;
 
 import org.junit.*;
-import org.ixcode.cumulus.feedcloud.spike.time.convert.*;
+import org.ixcode.cumulus.feedcloud.spike.time.calculation.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static junit.framework.Assert.assertEquals;
@@ -11,12 +11,12 @@ public class UnitOfTimeTest {
 
     @Test
     public void canConvert() {
-        TimeConverter timeConverter = mock(TimeConverter.class);
+        TimeCalculation timeCalculation = mock(TimeCalculation.class);
 
         ExampleUnitOfTime exampleUnitOfTime = new ExampleUnitOfTime(666L);
 
-        when(timeConverter.convertFrom(666L)).thenReturn(234L);
-        long result = exampleUnitOfTime.convert(timeConverter);
+        when(timeCalculation.calculateFrom(666L)).thenReturn(234L);
+        long result = exampleUnitOfTime.convert(timeCalculation);
 
         assertEquals(234L, result);
     }

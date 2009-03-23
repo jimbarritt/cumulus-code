@@ -1,4 +1,4 @@
-package org.ixcode.cumulus.feedcloud.spike.time.convert;
+package org.ixcode.cumulus.feedcloud.spike.time.calculation;
 
 import org.junit.*;
 import static junit.framework.Assert.assertEquals;
@@ -9,7 +9,7 @@ public class DivideByTest {
     public void dividesByAFactor() {
         DivideBy divideBy = new DivideBy(10);
 
-        long result = divideBy.convertFrom(1000);
+        long result = divideBy.calculateFrom(1000);
 
         assertEquals(100, result);
     }

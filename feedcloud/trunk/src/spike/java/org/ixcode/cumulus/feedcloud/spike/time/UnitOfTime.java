@@ -1,7 +1,7 @@
 package org.ixcode.cumulus.feedcloud.spike.time;
 
 import org.apache.commons.lang.builder.*;
-import org.ixcode.cumulus.feedcloud.spike.time.convert.*;
+import org.ixcode.cumulus.feedcloud.spike.time.calculation.*;
 
 abstract class UnitOfTime<T extends UnitOfTime> {
     private long longValue;
@@ -16,8 +16,8 @@ abstract class UnitOfTime<T extends UnitOfTime> {
         return longValue;
     }
 
-    public long convert(TimeConverter timeConverter) {
-        return timeConverter.convertFrom(longValue);
+    public long convert(TimeCalculation timeCalculation) {
+        return timeCalculation.calculateFrom(longValue);
     }
 
     public T elapsedFrom(T startTime) {

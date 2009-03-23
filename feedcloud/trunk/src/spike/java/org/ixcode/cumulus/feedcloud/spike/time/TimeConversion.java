@@ -1,7 +1,6 @@
 package org.ixcode.cumulus.feedcloud.spike.time;
 
-import org.ixcode.cumulus.feedcloud.spike.time.*;
-import org.ixcode.cumulus.feedcloud.spike.time.convert.*;
+import org.ixcode.cumulus.feedcloud.spike.time.calculation.*;
 
 public class TimeConversion {
 
@@ -13,11 +12,11 @@ public class TimeConversion {
         return new Seconds(minutes.convert(multiplyBy(60)));
     }
 
-    private static TimeConverter divideBy(long factor) {
+    private static TimeCalculation divideBy(long factor) {
         return new DivideBy(factor);                        
     }
 
-    private static TimeConverter multiplyBy(long factor) {
+    private static TimeCalculation multiplyBy(long factor) {
         return new MultiplyBy(factor);
     }
 }
