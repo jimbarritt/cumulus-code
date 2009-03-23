@@ -28,13 +28,13 @@ public class MillisecondsTest {
 
         Milliseconds elapsed = stop.elapsedFrom(start);
 
-        assertEquals("elapsed", new Milliseconds(10L), elapsed);
+        assertEquals(new Milliseconds(10L), elapsed);
     }
 
     @Test
     public void providesAppropriateStringRepresentation() {
         Milliseconds milliseconds = new Milliseconds(34);
-        assertEquals("toString", "34 ms", milliseconds.toString());
+        assertEquals("34 ms", milliseconds.toString());
     }
 
     @Test
@@ -43,11 +43,11 @@ public class MillisecondsTest {
         Milliseconds millisecondsEqual = new Milliseconds(34);
         Milliseconds millisecondsNotEqual = new Milliseconds(666);
 
-        assertEquals("equal", milliseconds, millisecondsEqual);
-        assertFalse("not-equal", milliseconds.equals(millisecondsNotEqual));
+        assertEquals(milliseconds, millisecondsEqual);
+        assertFalse(milliseconds.equals(millisecondsNotEqual));
 
-        assertEquals("equal.hashcode", milliseconds.hashCode(), milliseconds.hashCode());
-        assertFalse("not-equal.hashcode", milliseconds.hashCode() == millisecondsNotEqual.hashCode());
+        assertEquals(milliseconds.hashCode(), milliseconds.hashCode());
+        assertFalse(milliseconds.hashCode() == millisecondsNotEqual.hashCode());
     }
 
 

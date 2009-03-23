@@ -3,7 +3,7 @@ package org.ixcode.cumulus.feedcloud.spike.time;
 import org.apache.commons.lang.builder.*;
 import org.ixcode.cumulus.feedcloud.spike.time.convert.*;
 
-public class Seconds implements TimeUnit {
+public class Seconds implements UnitOfTime {
 
     private long seconds;
 

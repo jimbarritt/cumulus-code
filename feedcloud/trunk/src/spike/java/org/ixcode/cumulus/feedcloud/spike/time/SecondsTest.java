@@ -24,7 +24,7 @@ public class SecondsTest {
     @Test
     public void canConvertToString() {
         Seconds seconds = new Seconds(34);
-        assertEquals("toString", "34 s", seconds.toString());
+        assertEquals("34 s", seconds.toString());
     }
 
     @Test
@@ -33,11 +33,11 @@ public class SecondsTest {
         Seconds secondsEqual = new Seconds(34);
         Seconds secondsNotEqual = new Seconds(666);
 
-        assertEquals("equal", seconds, secondsEqual);
-        assertFalse("not-equal", seconds.equals(secondsNotEqual));
+        assertEquals(seconds, secondsEqual);
+        assertFalse(seconds.equals(secondsNotEqual));
 
-        assertEquals("equal.hashcode", seconds.hashCode(), secondsEqual.hashCode());
-        assertFalse("not-equal.hashcode", seconds.hashCode() == secondsNotEqual.hashCode());
+        assertEquals(seconds.hashCode(), secondsEqual.hashCode());
+        assertFalse(seconds.hashCode() == secondsNotEqual.hashCode());
     }
 
 

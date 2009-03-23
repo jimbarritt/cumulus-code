@@ -3,7 +3,7 @@ package org.ixcode.cumulus.feedcloud.spike.time;
 import org.apache.commons.lang.builder.*;
 import org.ixcode.cumulus.feedcloud.spike.time.convert.*;
 
-public class Milliseconds implements TimeUnit {
+public class Milliseconds implements UnitOfTime {
 
     private long milliseconds;
 
