@@ -5,9 +5,9 @@ import java.util.Collection;
 class CompleteSolution extends Solution {
 
     private Collection<CoinSet> coinSets;
-    private int total;
+    private Money total = new Money();
 
-    public @Override int getTotal() {
+    public @Override Money getTotal() {
         return total;
     }
 
@@ -33,18 +33,18 @@ class CompleteSolution extends Solution {
     }
     
     private CoinSet isItLess(CoinSet leastSolution, CoinSet coinSet) {
-        if( null == leastSolution || coinSet.getNumCoins() < leastSolution.getNumCoins() ) {
+        if( null == leastSolution || coinSet.getNumCoins().compareTo( leastSolution.getNumCoins() ) == -1) {
             leastSolution = coinSet;
         }
         return leastSolution;
     }
 
     private void accumulateTotal(CoinSet coinSet) {
-        if( 0 == total ) {
+        if( 0 == total.intValue() ) {
             total = coinSet.sum();
             return;
         }
-        if( coinSet.sum() != total ) {
+        if( ! coinSet.sum().equals( total ) ) {
             throw new IllegalStateException( "All coinSets must have the same sum" );
         }
     }

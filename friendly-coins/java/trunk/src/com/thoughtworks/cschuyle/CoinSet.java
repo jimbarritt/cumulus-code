@@ -2,115 +2,100 @@ package com.thoughtworks.cschuyle;
 
 import java.util.*;
 import com.thoughtworks.cschuyle.util.Helpers;
+import com.thoughtworks.cschuyle.util.Joiner;
 
 class CoinSet {
 
-    private static Map<CoinSet, CoinSet> hash = Collections.synchronizedMap(new HashMap<CoinSet, CoinSet>());
-
-    // Private constructors, you must use factory methods
-    
-    private static CoinSet intern( final CoinSet instance ) {
-        final CoinSet existingInstance = getInstance( instance );
-        if( null != existingInstance ) {
-            return existingInstance;
-        }
-        hash.put( instance, instance );
-        return instance;
-    }
-
-    private static CoinSet getInstance( CoinSet instance ) {
-        return hash.get( instance );
-    }
-
-    private CoinSet( Integer... denominations ) {
-        for(int d : denominations ) {
+    private CoinSet( Denomination... denominations ) {
+        for(Denomination d : denominations ) {
             incrementDenomination( d );
         }
     }
 
     // Factory methods
 
-    public static CoinSet createCoinSet(Integer... denominations) {
-        return intern( new CoinSet( denominations ) );
+    public static CoinSet createCoinSet(Denomination... denominations) {
+        return new CoinSet( denominations ) ;
     }
 
-    public static CoinSet createAugmentedCoinSet(CoinSet coinSet, int denomination) {
-        return intern( new CoinSet( coinSet, denomination ) );
+    public static CoinSet createAugmentedCoinSet(CoinSet coinSet, Denomination denomination) {
+        return new CoinSet( coinSet, denomination);
     }
 
     //
 
-    public int sum() {
+    public Money sum() {
         return sum;
     }
 
-    public int getCardinality( int denomination ) {
-        if(containsDenomination( denomination )) {
+    public Cardinality getCardinality( Denomination denomination ) {
+        if( containsDenomination( denomination ) ) {
             return denominations.get( denomination );
         }
-        return 0;
+        Cardinality newCard = Cardinality.getInstance( 0 );
+        denominations.put( denomination, newCard );
+        return newCard;
     }
 
-    public int getNumCoins() {
-        // TODO There must be an algorithm for this
-        int ret = 0;
-        for( int count : denominations.values() ) {
-            ret += count;
-        }
-        return ret;
+    private void setCardinality( Denomination denomination, Cardinality card ) {
+        denominations.put( denomination, card );
     }
 
-    @Override public boolean equals(Object rhs) {
+    public Cardinality getNumCoins() {
+        return Cardinality.total( denominations.values() );
+    }
+
+    public @Override boolean equals(Object rhs) {
         if( null == rhs || ! (rhs instanceof CoinSet) ) {
             return false;
         }
         return this.denominations.equals( ((CoinSet)rhs).denominations);
     }
 
-    @Override public int hashCode() {
+    public @Override int hashCode() {
         return toString().hashCode();
     }
 
 
-    @Override public String toString() {
+    public @Override String toString() {
         final Collection<String> items = new ArrayList<String>();
-        for( int item : denominations.keySet() ) {
+        for( Denomination item : denominations.keySet() ) {
             items.add( denominationToString( item ) );
         }
-        return this.getClass().getSimpleName() + "<" + Helpers.stringJoin( items, "," ) + ">";
+        return this.getClass().getSimpleName() + "<" + Helpers.stringJoin( items, Joiner.COMMA ) + ">";
     }
 
-    private String denominationToString( int den ) {
-        String item = new Integer( den ).toString();
+    private String denominationToString( Denomination den ) {
+        String item = den.stringValue();
         item += "'s:";
-        item += denominations.get( den );
+        item += denominations.get( den ).stringValue();
         return item;
     }
 
     private CoinSet( CoinSet rhs ) {
-        for( int k: rhs.denominations.keySet() ) {
+        for( Denomination k: rhs.denominations.keySet() ) {
             denominations.put( k, rhs.denominations.get( k ));
         }
-        sum = rhs.sum;
+        sum = new Money( rhs.sum.intValue() );
     }
 
-    private CoinSet( CoinSet coinSet, int denomination ) {
+    private CoinSet( CoinSet coinSet, Denomination denomination ) {
         this( coinSet );
         incrementDenomination( denomination );
     }
 
-    Map<Integer, Integer> denominations = new HashMap<Integer, Integer>();
+    Map<Denomination, Cardinality> denominations = new HashMap<Denomination, Cardinality>();
 
-    boolean containsDenomination( int i ) {
-        return denominations.containsKey( i );
+    boolean containsDenomination( Denomination d ) {
+        return denominations.containsKey( d );
     }
 
-    int sum = 0;
+    private Money sum = new Money();
 
-    private void incrementDenomination( int denomination ) {
-        int card = getCardinality( denomination );
-        denominations.put( denomination, 1 + card );
-        sum += denomination;
+    private void incrementDenomination( Denomination denomination ) {
+        Cardinality card = getCardinality( denomination );
+        setCardinality( denomination, Cardinality.getInstance( card.intValue() + 1 ));
+        sum.addCoin( denomination );
     }
 
 }

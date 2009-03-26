@@ -5,49 +5,49 @@ import junit.framework.TestCase;
 import java.util.Collection;
 import java.util.ArrayList;
 
+import static com.thoughtworks.cschuyle.TestConstants.*;
+
 public class FriendlyRecognizerTest extends TestCase {
 
-    private static final int TEN_THOUSAND = 10000;
     private static final int ONE_HUNDRED = 100;
 
     public void testFriendly() {
-        DenominationSet denominations = new DenominationSet( 1, 2, 5 );
-        assertTrue ( new FriendlyRecognizer().isFriendly( denominations, 10));
+        DenominationSet denominations = new DenominationSet( ONE, TWO, FIVE );
+        assertTrue ( new FriendlyRecognizer().isFriendly( denominations, TOTAL_ONE_THOUSAND));
     }
 
     public void testUnfriendly() {
-        DenominationSet denominations = new DenominationSet( 1, 4, 5 );
+        DenominationSet denominations = new DenominationSet( ONE, FOUR, FIVE );
         try {
-            new FriendlyRecognizer().isFriendly( denominations, 10);
+            new FriendlyRecognizer().isFriendly( denominations, TOTAL_TEN );
             fail();
         } catch( NotFriendlyException e) {
-            assertEquals( "NOT FRIENDLY.  For 8 cents, highest-first gives CoinSet<1's:3,5's:1> (4 coins), but change can be given in 2 coins: CoinSet<4's:2>"
+            assertEquals( "NOT FRIENDLY.  For Money<8> cents, highest-first gives CoinSet<1's:3,5's:1> (Cardinality<4> coins), but change can be given in Cardinality<2> coins: CoinSet<4's:2>"
                     , e.getMessage() );
         }
     }
     
     public void testIncomplete() {
-        DenominationSet denominations = new DenominationSet( 2 );
+        DenominationSet denominations = new DenominationSet( TWO );
         try {
-            new FriendlyRecognizer().isFriendly( denominations, 2 );
+            new FriendlyRecognizer().isFriendly( denominations, TOTAL_TWO );
         } catch( NoSolutionException e) {
-            assertEquals( "There is no solution given the denominations DenominationSet<2> to give 1 cents change.", e.getMessage() );
+            assertEquals( "There is no solution given the denominations DenominationSet<Denomination<2>> to give Money<1> cents change.", e.getMessage() );
         }
     }
 
-    // TODO Takes a minute or more.  Optimize sufficiantly to enable.
-    public void DISABLED_testScalability() {
+    public void testScalability() {
         final FriendlyRecognizer recognizer = new FriendlyRecognizer();
-        Collection<Integer> ints = new ArrayList<Integer>();
+        Collection<Denomination> ints = new ArrayList<Denomination>();
         for(int i = 1; i <= ONE_HUNDRED; ++i ) {
-            ints.add( i );
+            ints.add(Denomination.getInstance( i ));
         }
-        Integer[] intsArr = ints.toArray( new Integer[ONE_HUNDRED] );
+        Denomination[] intsArr = ints.toArray( new Denomination[ONE_HUNDRED] );
         try {
             DenominationSet denominations = new DenominationSet( intsArr );
-            assertTrue ( recognizer.isFriendly( denominations, TEN_THOUSAND ));
+            assertTrue ( recognizer.isFriendly( denominations, new Money( TOTAL_TEN_THOUSAND.intValue() ) ));
         } catch ( Error e ) {
-            return;
+            /* Just return */
         }
     }
 

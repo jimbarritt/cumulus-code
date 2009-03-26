@@ -2,6 +2,8 @@ package com.thoughtworks.cschuyle.main;
 
 import com.thoughtworks.cschuyle.*;
 
+import static com.thoughtworks.cschuyle.TestConstants.*;
+
 import java.io.*;
 
 public class TestApp {
@@ -10,7 +12,6 @@ public class TestApp {
         BufferedReader reader = new BufferedReader( new InputStreamReader( System.in ) );
         try {
             mainBody( reader );
-        } catch (IOException e) {
         } finally {
             closeReader( reader );
         }
@@ -25,17 +26,17 @@ public class TestApp {
     private static void closeNonNullReader(BufferedReader reader) {
         try {
             reader.close();
-        } catch( IOException e ) {}
+        } catch( IOException e ) { /* GULP */ }
     }
 
-    private static void mainBody(BufferedReader reader) throws IOException {
+    private static void mainBody(BufferedReader reader) {
         FriendlyRecognizer recognizer = new FriendlyRecognizer();
         for(;;) {
             readAndProcessLine(reader, recognizer);
         }
     }
 
-    private static void readAndProcessLine(BufferedReader reader, FriendlyRecognizer recognizer) throws IOException {
+    private static void readAndProcessLine( BufferedReader reader, FriendlyRecognizer recognizer ) {
         try {
             String line = reader.readLine();
             DenominationSet den = DenominationSetReader.read( line );
@@ -45,7 +46,7 @@ public class TestApp {
         }
     }
 
-    private final static int UP_TO = 1000;
+    private final static Money UP_TO = TOTAL_ONE_THOUSAND;
 
     private static void processLine(FriendlyRecognizer recognizer, DenominationSet den) {
         if( den.isEmpty() ) {

@@ -1,20 +1,21 @@
 package com.thoughtworks.cschuyle;
 
 import com.thoughtworks.cschuyle.util.Helpers;
+import com.thoughtworks.cschuyle.util.Joiner;
 
 import java.util.*;
 
 public class DenominationSet {
 
-    Collection<Integer> list;
+    Collection<Denomination> list;
 
     public DenominationSet() {
-        list = new ArrayList<Integer>();
+        list = new ArrayList<Denomination>();
     }
 
-    public DenominationSet( Integer ... list ) {
+    public DenominationSet( Denomination ... list ) {
         this();
-        for( int i : list ) {
+        for( Denomination i : list ) {
             add( i );
         }
     }
@@ -23,22 +24,22 @@ public class DenominationSet {
         return list.size();
     }
 
-    public Iterator<Integer> iterator() {
+    public Iterator<Denomination> iterator() {
         return list.iterator();
     }
 
-    public boolean contains(int i) {
-        return list.contains( i );
+    public boolean contains(Denomination d) {
+        return list.contains( d );
     }
 
-    public List<Integer> getSortedList() {
-        ArrayList<Integer> ret = new ArrayList<Integer>( this.list );
+    public List<Denomination> getSortedList() {
+        List<Denomination> ret = new ArrayList<Denomination>( this.list );
         Collections.sort( ret );
         return ret;
     }
 
-    public int highest() {
-        final List<Integer> list = getSortedList();
+    public Denomination highest() {
+        final List<Denomination> list = getSortedList();
         if(list.size() > 0) {
             return list.get( list.size() - 1 );
         }
@@ -46,13 +47,12 @@ public class DenominationSet {
     }
 
     public @Override String toString() {
-        List<Integer> orderedList = new ArrayList<Integer>( list );
-        Collections.sort(orderedList);
-        return this.getClass().getSimpleName() + "<" + Helpers.stringJoin( orderedList, "," ) + ">";
+        List<Denomination> orderedList = getSortedList();
+        return this.getClass().getSimpleName() + "<" + Helpers.stringJoin( orderedList, Joiner.COMMA ) + ">";
     }
 
-    private void add(int i) {
-        list.add(i);
+    private void add( Denomination d ) {
+        list.add( d );
     }
 
     public boolean isEmpty() {

@@ -47,9 +47,9 @@ BEFORE:
 private CoinSet findMinimalCoinCountSolution(Collection<CoinSet> coinSets) {
      CoinSet theLeast = null;
      for( CoinSet coinSet : coinSets ) {
-	     if( null == theLeast || coinSet.getNumCoins() < theLeast.getNumCoins() ) {
-	         theLeast = coinSet;
-	     }
+         if( null == theLeast || coinSet.getNumCoins() < theLeast.getNumCoins() ) {
+             theLeast = coinSet;
+         }
      }
      return theLeast;
  }
@@ -75,20 +75,20 @@ Tricky were the try/catches - in this case, there are 0 levels if indent inside 
 
 Also tricky: one instance of a "collect" pattern - before:
 
- @Override public String toString() {	
-      String ret = this.getClass().getSimpleName() + "<";	
+ @Override public String toString() {    
+      String ret = this.getClass().getSimpleName() + "<";    
       boolean first = true;
       for( int k : denominations.keySet() ) {
-          if( ! first ) {	
-              ret += ",";	
-          } else {	
-              first = false;	
-          }	
-          ret += k;	
-          ret += "'s:";	
-          ret += denominations.get( k );	
-      }	
-      return ret + ">";	
+          if( ! first ) {    
+              ret += ",";    
+          } else {    
+              first = false;    
+          }    
+          ret += k;    
+          ret += "'s:";    
+          ret += denominations.get( k );    
+      }    
+      return ret + ">";    
       items.add( item );
   }
 
@@ -118,11 +118,11 @@ But on further reflection on the pursuit of first-class functions, maybe what I 
 
 @Override public String toString() {
      final Collection<Object> items = 
-	     new Collect( denominations.keySet() ) {
-	         public @Override void each( Object o ) {
-	             denominationToString(o, items);
-	         }
-	     }.apply();
+         new Collect( denominations.keySet() ) {
+             public @Override void each( Object o ) {
+                 denominationToString(o, items);
+             }
+         }.apply();
      return this.getClass().getSimpleName() + "<" + Helpers.stringJoin( items, "," ) + ">";
  }
 
@@ -154,7 +154,7 @@ BEFORE:
 public static String stringJoin( Collection<?> objects, String joiner ) {
     StringBuilder builder = new StringBuilder();
     String useJoiner = "";
-	boolean first = true;
+    boolean first = true;
     for( Object o : objects ) {
         first = stringJoinAppend( o, useJoiner, builder, first );
     }
@@ -165,8 +165,8 @@ private static boolean stringJoinAppend( Object o, String joiner, StringBuilder 
     if( ! first ) {
         builder.append( joiner );
     } else {
-		first = false;
-	}
+        first = false;
+    }
     builder.append( (null == o) ? "null" : o.toString() );        
     return first;
 }
@@ -190,6 +190,44 @@ private static void stringJoinAppend( Object o, String joiner, StringBuilder bui
 
 Great - 5 fewer lines and one fewer variable.  Now it smells about as good as my findMin refactor (whereas before, it was rather more rank).
 
+
+----------------------------------------
+Stage 3: Wrap all primitives and strings
+----------------------------------------
+
+private void incrementDenomination( int denomination ) {
+     int card = getCardinality( denomination );
+     denominations.put( denomination, ++card );
+     sum += denomination;
+ }
+
+AFTER
+
+private void incrementDenomination( Denomination denomination ) {
+     Cardinality card = getCardinality( denomination );
+     card.increment();
+     sum += denomination.intValue();
+ }
+
+OOPS What about zero cardinality? -- I auto-manufacture when I get it.  If we manufacture a bunch of zeros, then there is chaff to clean up.
+
+BEFORE:
+
+private String denominationToString( Denomination den ) {
+    String item = den.stringValue();
+    item += "'s:";
+    item += denominations.get( den ).stringValue();
+    return item;
+}
+
+AFTER:
+
+private String denominationToString( Denomination den ) {
+    String item = new Integer( den ).toString();
+    item += "'s:";
+    item += denominations.get( den );
+    return item;
+}
 
 
 

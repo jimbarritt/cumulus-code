@@ -6,7 +6,7 @@ public class NoSolutionException extends RuntimeException {
         super( msg );
     }
 
-    public NoSolutionException(DenominationSet denominations, int total) {
+    public NoSolutionException(DenominationSet denominations, Money total) {
         super( "There is no solution given the denominations " + denominations +
                 " to give " + total + " cents change." );
     }

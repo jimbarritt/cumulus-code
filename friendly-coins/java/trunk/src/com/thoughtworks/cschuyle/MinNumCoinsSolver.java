@@ -8,7 +8,7 @@ class MinNumCoinsSolver {
         this.denominations = denominations;
     }
 
-    public Solution solve( int total ) {
+    public Solution solve( Money total ) {
         /*
         solve(x):
             if x is a solution
@@ -26,7 +26,7 @@ class MinNumCoinsSolver {
             return getMemoizedSolution( total );
         }
         Collection<CoinSet> coinSets = new ArrayList<CoinSet>();
-        for( int denomination: denominations.getSortedList() ) {
+        for( Denomination denomination: denominations.getSortedList() ) {
             processDenomination(total, coinSets, denomination);
         }
         if( coinSets.size() > 0 ) {
@@ -37,45 +37,50 @@ class MinNumCoinsSolver {
         throw new NoSolutionException( denominations, total );
     }
 
-    public Solution getMemoizedSolution( int total ) {
-        Solution ret = chart.get( total );
+    public Solution getMemoizedSolution( Money total ) {
+        Solution ret = chart.get( total.intValue() );
         if( null == ret ) {
             throw new IllegalArgumentException( "Request for non-memoized solution for total = " + total );
         }
         return ret;
     }
 
-    public CoinSet getFewestCoinsSolution( int total ) {
+    public CoinSet getFewestCoinsSolution( Money total ) {
         Solution solution = getMemoizedSolution( total );
         return solution.getFewestCoinsSolution();
     }
         
-    private void processDenomination(int total, Collection<CoinSet> coinSets, int denomination) {
-        if( denomination == total ) {
+    private void processDenomination(Money total, Collection<CoinSet> coinSets, Denomination denomination) {
+        if( denomination.intValue() == total.intValue() ) {
             CoinSet coinSet = CoinSet.createCoinSet( denomination );
             coinSets.add( coinSet );
             return;
         }
-        if( denomination < total ) {
+        if( denomination.intValue() < total.intValue() ) {
             recurse(total, coinSets, denomination);
         }
     }
 
-    private void recurse(int total, Collection<CoinSet> coinSets, int denomination) {
-        solve( total - denomination );
-        if( isMemoized( total - denomination )) {
-            Solution partialSolution = getMemoizedSolution( total - denomination );
-            mergePartialSolution(coinSets, denomination, partialSolution);
+    private void recurse(Money total, Collection<CoinSet> coinSets, Denomination denomination) {
+        Money smallerTotal = new Money( total.intValue() - denomination.intValue() );
+        Solution partialSolution = solve( smallerTotal  );
+        if( null != partialSolution ) {
+            mergePartialSolution( coinSets, denomination, partialSolution );
         }
     }
 
-    private void mergePartialSolution(Collection<CoinSet> coinSets, int denomination, Solution partialSolution) {
+    private void mergePartialSolution(
+            Collection<CoinSet> coinSets, Denomination denomination, Solution partialSolution) {
         for( CoinSet coinSet: partialSolution.getCoinSets() ) {
             coinSets.add( CoinSet.createAugmentedCoinSet( coinSet, denomination ) );
         }
     }
 
     SolutionFactory solutionFactory;
+
+    public void setSolutionFactory( SolutionFactory solutionFactory) {
+        this.solutionFactory = solutionFactory;
+    }
 
     private SolutionFactory getSolutionFactory() {
         if( null == solutionFactory ) {
@@ -86,12 +91,12 @@ class MinNumCoinsSolver {
 
     private DenominationSet denominations;
 
-    private boolean isMemoized( int total ) {
-        return chart.containsKey( total );
+    private boolean isMemoized( Money total ) {
+        return chart.containsKey( total.intValue() );
     }
 
     private void memoizeSolution( Solution solution ) {
-        chart.put( solution.getTotal(), solution );
+        chart.put( solution.getTotal().intValue(), solution );
     }
 
     private Map<Integer, Solution> chart = new HashMap<Integer, Solution>();

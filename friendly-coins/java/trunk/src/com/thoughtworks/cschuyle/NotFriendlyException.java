@@ -10,8 +10,8 @@ public class NotFriendlyException extends RuntimeException {
     }
 
     private static String createMessage(CoinSet leastCoinsSolution, CoinSet greedySolution) {
-        final int leastCoins = leastCoinsSolution.getNumCoins();
-        final int greedyCoins = greedySolution.getNumCoins();
+        final Cardinality leastCoins = leastCoinsSolution.getNumCoins();
+        final Cardinality greedyCoins = greedySolution.getNumCoins();
         return "NOT FRIENDLY.  For " + leastCoinsSolution.sum() + " cents, highest-first gives " +
                 greedySolution + " (" + greedyCoins + " coins), but change can be given in " +
                 leastCoins + " coins: " + leastCoinsSolution;

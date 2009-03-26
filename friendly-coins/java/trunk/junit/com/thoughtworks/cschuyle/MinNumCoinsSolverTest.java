@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import static com.thoughtworks.cschuyle.SolutionFactoryInventory.*;
 
+import static com.thoughtworks.cschuyle.TestConstants.*;
+
 public class MinNumCoinsSolverTest extends TestCase {
 
 
@@ -60,14 +62,11 @@ public class MinNumCoinsSolverTest extends TestCase {
 
     private void testTrivialCase( SolutionFactory solutionFactory) {
         DenominationSet denominations = DenominationSetReader.readLine("1");
-        final int solveFor = 1;
         MinNumCoinsSolver solver = new MinNumCoinsSolver( denominations );
         solver.solutionFactory = solutionFactory;
-        solver.solve( solveFor );
+        Solution solution = solver.solve( TOTAL_ONE );
 
-        Solution solution = solver.getMemoizedSolution( solveFor );
-
-        CoinSet expected = CoinSet.createCoinSet( solveFor );
+        CoinSet expected = CoinSet.createCoinSet( ONE );
 
         final CoinSet firstCoinSet = solution.getCoinSets().iterator().next();
         assertEquals( expected, firstCoinSet );
@@ -83,12 +82,10 @@ public class MinNumCoinsSolverTest extends TestCase {
 
     private void testTrivialCaseNegative( SolutionFactory solutionFactory ) {
         DenominationSet denominations = DenominationSetReader.readLine("1");
-        final int solveFor = 1;
         MinNumCoinsSolver solver = new MinNumCoinsSolver( denominations );
         solver.solutionFactory = solutionFactory;
-        solver.solve( solveFor );
-        Solution solution = solver.getMemoizedSolution( solveFor );
-        CoinSet expected = CoinSet.createCoinSet( solveFor + 1 );
+        Solution solution = solver.solve( TOTAL_ONE );
+        CoinSet expected = CoinSet.createCoinSet( TWO );
 
         final CoinSet firstCoinSet = solution.getCoinSets().iterator().next();
         assertFalse( expected.equals(firstCoinSet) );
@@ -98,20 +95,17 @@ public class MinNumCoinsSolverTest extends TestCase {
     // Can only use complete; optimized throws some away ...
     public void testMultipleSolutionCase() {
         DenominationSet denominations = DenominationSetReader.readLine("1 2");
-        final int solveFor = 2;
         MinNumCoinsSolver solver = new MinNumCoinsSolver( denominations );
         solver.solutionFactory = COMPLETE_SOLUTION_FACTORY;
-        solver.solve( solveFor );
-
-        Solution solution = solver.getMemoizedSolution( solveFor );
+        Solution solution = solver.solve( TOTAL_TWO );
 
         CoinSetList expectedList = new CoinSetList();
         {
-            CoinSet expected = CoinSet.createCoinSet( new Integer[] { 1, 1 } );
+            CoinSet expected = CoinSet.createCoinSet( ONE, ONE );
             expectedList.add( expected );
         }
         {
-            CoinSet expected = CoinSet.createCoinSet( solveFor );
+            CoinSet expected = CoinSet.createCoinSet( TWO );
             expectedList.add( expected );
         }
 

@@ -5,8 +5,9 @@ import java.util.ArrayList;
 
 class OptimizedSolution extends Solution {
 
-    int total;
-    public @Override int getTotal() {
+    Money total = new Money();
+
+    public @Override Money getTotal() {
         return total;
     }
 
@@ -26,7 +27,7 @@ class OptimizedSolution extends Solution {
     }
 
     private CoinSet isItLess(CoinSet theLeast, CoinSet coinSet) {
-        if( null == theLeast || coinSet.getNumCoins() < theLeast.getNumCoins() ) {
+        if( null == theLeast || coinSet.getNumCoins().intValue() < theLeast.getNumCoins().intValue() ) {
             theLeast = coinSet;
         }
         return theLeast;

@@ -2,16 +2,16 @@ package com.thoughtworks.cschuyle;
 
 public class FriendlyRecognizer {
 
-    public boolean isFriendly( DenominationSet den, int checkUpToTotal ) {
-        final MinNumCoinsSolver solver = new MinNumCoinsSolver( den );
-        if( checkUpToTotal < 1) {
+    public boolean isFriendly( DenominationSet den, Money checkUpToTotal ) {
+        if( checkUpToTotal.intValue() < 1) {
             throw new IllegalArgumentException( "Must check up to at least total=1!" );
         }
-        int highestCheckedValue = 0;
+        Money highestFriendlyTotal = null;
+        final MinNumCoinsSolver solver = new MinNumCoinsSolver( den );
         try {
-            highestCheckedValue = checkUpToTotal(den, checkUpToTotal, solver, highestCheckedValue);
+            highestFriendlyTotal = checkUpToTotal( den, checkUpToTotal, solver );
         } catch( Error e ) {
-            System.out.println( "OOPS. Error after checking up to total=" + highestCheckedValue);
+            System.out.println( "OOPS. Error after checking up to total=" + highestFriendlyTotal);
             throw e;
         }
 
@@ -19,22 +19,29 @@ public class FriendlyRecognizer {
     }
 
     public static boolean isNotFriendly( CoinSet leastCoinsSolution, CoinSet greedySolution ) {
-        final int leastCoins = leastCoinsSolution.getNumCoins();
-        final int greedyCoins = greedySolution.getNumCoins();
-        return( greedyCoins > leastCoins );
+        final Cardinality leastCoins = leastCoinsSolution.getNumCoins();
+        final Cardinality greedyCoins = greedySolution.getNumCoins();
+        return( greedyCoins.intValue() > leastCoins.intValue() );
     }
 
-    private int checkUpToTotal(DenominationSet den, int checkUpToTotal, MinNumCoinsSolver solver, int total) {
-        for( total = 1 ; total <= checkUpToTotal ; ++total ) {
-            solver.solve( total );
-            CoinSet leastCoinsSolution = solver.getFewestCoinsSolution( total );
-            final CoinSet greedySolution = HighestFirstSolver.solve( den, total );
-            checkAndThrowIfnotFriendly(leastCoinsSolution, greedySolution);
+    private Money checkUpToTotal( DenominationSet den, Money checkUpToTotal, MinNumCoinsSolver solver ) {
+        // TODO Make an iterator for a range of Moneys.
+        Money highestFriendlyTotal = null;
+        for( int total = 1 ; total <= checkUpToTotal.intValue() ; ++total ) {
+            highestFriendlyTotal = checkIfFriendly(den, solver, new Money( total ) );
         }
+        return highestFriendlyTotal;
+    }
+
+    private Money checkIfFriendly(DenominationSet den, MinNumCoinsSolver solver, Money total) {
+        solver.solve( total );
+        CoinSet leastCoinsSolution = solver.getFewestCoinsSolution( total );
+        final CoinSet greedySolution = HighestFirstSolver.solve( den, total );
+        checkAndThrowIfNotFriendly( leastCoinsSolution, greedySolution );
         return total;
     }
 
-    private void checkAndThrowIfnotFriendly(CoinSet leastCoinsSolution, CoinSet greedySolution) {
+    private void checkAndThrowIfNotFriendly(CoinSet leastCoinsSolution, CoinSet greedySolution) {
         boolean isNotFriendly = isNotFriendly( leastCoinsSolution, greedySolution );
         if( isNotFriendly ) {
             throw new NotFriendlyException( leastCoinsSolution, greedySolution );

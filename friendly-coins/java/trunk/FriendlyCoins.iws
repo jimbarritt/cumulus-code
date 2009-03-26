@@ -34,7 +34,59 @@
   </component>
   <component name="DebuggerManager">
     <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/CoinSetTest.java" line="32" class="com.thoughtworks.cschuyle.CoinSetTest" package="com.thoughtworks.cschuyle">
+      <breakpoint url="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/CoinSetTest.java" line="23" class="com.thoughtworks.cschuyle.CoinSetTest" package="com.thoughtworks.cschuyle">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/HighestFirstSolverTest.java" line="39" class="com.thoughtworks.cschuyle.HighestFirstSolverTest" package="com.thoughtworks.cschuyle">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/CoinSet.java" line="95" class="com.thoughtworks.cschuyle.CoinSet" package="com.thoughtworks.cschuyle">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/MinNumCoinsSolver.java" line="24" class="com.thoughtworks.cschuyle.MinNumCoinsSolver" package="com.thoughtworks.cschuyle">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/CoinSet.java" line="40" class="com.thoughtworks.cschuyle.CoinSet" package="com.thoughtworks.cschuyle">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -92,10 +144,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="HighestFirstSolver.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/HighestFirstSolver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="6" selection-start="66" selection-end="66" vertical-scroll-proportion="0.11510792">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="FriendlyRecognizer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/FriendlyRecognizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="72" selection-start="1033" selection-end="1033" vertical-scroll-proportion="0.8">
+            <state line="2" column="13" selection-start="49" selection-end="49" vertical-scroll-proportion="0.05755396">
               <folding />
             </state>
           </provider>
@@ -104,7 +165,7 @@
       <file leaf-file-name="DenominationSetReader.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/DenominationSetReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="13" selection-start="141" selection-end="141" vertical-scroll-proportion="0.12307692">
+            <state line="6" column="13" selection-start="141" selection-end="141" vertical-scroll-proportion="0.11510792">
               <folding />
             </state>
           </provider>
@@ -113,39 +174,25 @@
       <file leaf-file-name="DenominationSet.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/DenominationSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="22" selection-start="1406" selection-end="1406" vertical-scroll-proportion="1.7846154">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Helpers.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/util/Helpers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="10" selection-start="105" selection-end="105" vertical-scroll-proportion="0.18461539">
+            <state line="7" column="13" selection-start="164" selection-end="164" vertical-scroll-proportion="0.11510792">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file:///Users/admin/HOME/Carl/New Web Site/index.html">
+      <file leaf-file-name="Denomination.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/Denomination.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="6" selection-start="13" selection-end="13" vertical-scroll-proportion="0.038338657">
+            <state line="7" column="6" selection-start="139" selection-end="139" vertical-scroll-proportion="0.11510792">
               <folding />
             </state>
-          </provider>
-          <provider editor-type-id="HtmlPreview">
-            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="CompleteSolution.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/CompleteSolution.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="8" selection-start="1192" selection-end="1192" vertical-scroll-proportion="0.6703297">
+            <state line="4" column="6" selection-start="72" selection-end="72" vertical-scroll-proportion="0.11510792">
               <folding />
             </state>
           </provider>
@@ -154,36 +201,34 @@
       <file leaf-file-name="CoinSet.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/CoinSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="0" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.8681319">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestApp.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/main/TestApp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="21" selection-start="1469" selection-end="1469" vertical-scroll-proportion="0.6923077">
+            <state line="6" column="6" selection-start="156" selection-end="156" vertical-scroll-proportion="0.11510792">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HighestFirstSolver.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/HighestFirstSolver.java">
+      <file leaf-file-name="Cardinality.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/Cardinality.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="12" selection-start="826" selection-end="826" vertical-scroll-proportion="0.73846155">
+            <state line="8" column="6" selection-start="168" selection-end="168" vertical-scroll-proportion="0.11510792">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MinNumCoinsSolver.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/MinNumCoinsSolver.java">
+      <file leaf-file-name="Joiner.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/util/Joiner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="26" selection-start="916" selection-end="916" vertical-scroll-proportion="1.021978">
+            <state line="2" column="13" selection-start="54" selection-end="54" vertical-scroll-proportion="0.05755396">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Helpers.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/util/Helpers.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="13" selection-start="84" selection-end="84" vertical-scroll-proportion="0.11510792">
               <folding />
             </state>
           </provider>
@@ -309,6 +354,32 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/src/com/thoughtworks/cschuyle" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/src/com/thoughtworks/cschuyle/main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="FriendlyCoins" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="FriendlyCoins" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
           <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/junit" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
@@ -358,68 +429,25 @@
     <RUBY_DOC NAME="DEFAULTS" VALUE="true" />
     <RUBY_DOC NAME="NUMBER" VALUE="0" />
   </component>
-  <component name="RunManager" selected="JUnit.All">
+  <component name="RunManager" selected="Application.TestApp">
     <tempConfiguration default="false" name="TestApp" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="com.thoughtworks.cschuyle.main.TestApp" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="FriendlyCoins" />
       <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="62640" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method>
         <option name="Make" value="true" />
       </method>
     </tempConfiguration>
-    <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="MODULE_NAME" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="[none]" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="-fs" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUN_SPECS_SEPARATELY" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_COLOURED_OUTPUT_ENABLED" VALUE="true" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -441,6 +469,54 @@
       <method>
         <option name="Make" value="true" />
       </method>
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="ADDITIONAL_CLASS_PATH" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
     </configuration>
     <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby test">
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
@@ -474,34 +550,23 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="ADDITIONAL_CLASS_PATH" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <option name="PROPERTIES_FILE" />
+    <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="MODULE_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
       <envs />
-      <properties />
-      <listeners />
-      <method>
-        <option name="Make" value="true" />
-      </method>
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="[none]" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="-fs" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUN_SPECS_SEPARATELY" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_COLOURED_OUTPUT_ENABLED" VALUE="true" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
     </configuration>
     <configuration default="false" name="All" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="FriendlyCoins" />
@@ -528,8 +593,8 @@
       </method>
     </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Application.TestApp" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.All" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.All" />
+      <item index="1" class="java.lang.String" itemvalue="Application.TestApp" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -587,7 +652,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="3" y="22" width="1440" height="791" extended-state="0" />
+    <frame x="3" y="22" width="1440" height="788" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
@@ -595,9 +660,9 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24946082" order="0" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32833582" order="1" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756132" order="1" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32833582" order="8" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756132" order="8" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
@@ -605,10 +670,10 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298351" order="2" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31601733" order="2" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24946082" order="2" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39940387" order="4" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3809524" order="4" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
@@ -677,125 +742,116 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/MinNumCoinsSolverTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="14" selection-start="141" selection-end="141" vertical-scroll-proportion="-0.6">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/SolutionFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="17" selection-start="83" selection-end="83" vertical-scroll-proportion="0.12307692">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="22" selection-start="136" selection-end="136" vertical-scroll-proportion="0.18461539">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="7" column="22" selection-start="182" selection-end="182" vertical-scroll-proportion="0.11510792">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/OptimizedSolution.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="6" selection-start="100" selection-end="100" vertical-scroll-proportion="0.12307692">
+        <state line="5" column="6" selection-start="100" selection-end="100" vertical-scroll-proportion="0.11510792">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/NotFriendlyException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="16" selection-start="770" selection-end="770" vertical-scroll-proportion="0.4923077">
+        <state line="2" column="13" selection-start="49" selection-end="49" vertical-scroll-proportion="0.05755396">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/NoSolutionException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="16" selection-start="345" selection-end="345" vertical-scroll-proportion="0.30769232">
+        <state line="2" column="13" selection-start="49" selection-end="49" vertical-scroll-proportion="0.05755396">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/HighestFirstSolver.java">
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/Money.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="12" selection-start="826" selection-end="826" vertical-scroll-proportion="0.73846155">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/FriendlyRecognizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="72" selection-start="1033" selection-end="1033" vertical-scroll-proportion="0.8">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/DenominationSetReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="141" selection-end="141" vertical-scroll-proportion="0.12307692">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/main/TestApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="21" selection-start="1469" selection-end="1469" vertical-scroll-proportion="0.6923077">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/DenominationSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="22" selection-start="1406" selection-end="1406" vertical-scroll-proportion="1.7846154">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/CoinSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="0" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.8681319">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/CompleteSolution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="8" selection-start="1192" selection-end="1192" vertical-scroll-proportion="0.6703297">
+        <state line="2" column="13" selection-start="49" selection-end="49" vertical-scroll-proportion="0.05755396">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/MinNumCoinsSolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="26" selection-start="916" selection-end="916" vertical-scroll-proportion="1.021978">
+        <state line="4" column="6" selection-start="63" selection-end="63" vertical-scroll-proportion="0.11510792">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/HighestFirstSolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="6" selection-start="66" selection-end="66" vertical-scroll-proportion="0.11510792">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/FriendlyRecognizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="13" selection-start="49" selection-end="49" vertical-scroll-proportion="0.05755396">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/DenominationSetReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="141" selection-end="141" vertical-scroll-proportion="0.11510792">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/DenominationSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="13" selection-start="164" selection-end="164" vertical-scroll-proportion="0.11510792">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/Denomination.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="6" selection-start="139" selection-end="139" vertical-scroll-proportion="0.11510792">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/CompleteSolution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="6" selection-start="72" selection-end="72" vertical-scroll-proportion="0.11510792">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/CoinSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="6" selection-start="156" selection-end="156" vertical-scroll-proportion="0.11510792">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/Cardinality.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="6" selection-start="168" selection-end="168" vertical-scroll-proportion="0.11510792">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/util/Joiner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="13" selection-start="54" selection-end="54" vertical-scroll-proportion="0.05755396">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/util/Helpers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="10" selection-start="105" selection-end="105" vertical-scroll-proportion="0.18461539">
+        <state line="4" column="13" selection-start="84" selection-end="84" vertical-scroll-proportion="0.11510792">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file:///Users/admin/HOME/Carl/New Web Site/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="6" selection-start="13" selection-end="13" vertical-scroll-proportion="0.038338657">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="HtmlPreview">
-        <state />
       </provider>
     </entry>
   </component>

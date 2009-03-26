@@ -4,15 +4,13 @@ import junit.framework.TestCase;
 
 import java.util.Iterator;
 
+import static com.thoughtworks.cschuyle.TestConstants.*;
+
 public class DenominationSetReaderTest extends TestCase {
 
-    private static DenominationSetReader getReader() {
-        return new DenominationSetReader();
-    }
-
     private static DenominationSet readInputLine(String inputLine) {
-        DenominationSetReader reader = getReader();
-        DenominationSet input = reader.read(inputLine);
+        DenominationSet input = DenominationSetReader.read(inputLine);
+        assertNotNull( input );
         return input;
     }
 
@@ -34,17 +32,16 @@ public class DenominationSetReaderTest extends TestCase {
         final String inputLine = "1 2";
         DenominationSet input = readInputLine(inputLine);
         assertEquals( 2, input.size());
-        Iterator<Integer> iter = input.iterator();
+        Iterator<Denomination> iter = input.iterator();
         boolean one = false, two = false;
         while( iter.hasNext()) {
-            int i = iter.next();
-            switch( i ) {
-                case 1:
-                    one = true; break;
-                case 2:
-                    two = true; break;
-                default:
-                    fail( "Unexpected value " + i );
+            Denomination d = iter.next();
+            if( d.equals( ONE ) ) {
+                one = true;
+            } else if( d.equals( TWO ) ) {
+                two = true;
+            } else {
+                fail( "Unexpected value " + d );
             }
         }
         assertTrue( one );
@@ -54,12 +51,11 @@ public class DenominationSetReaderTest extends TestCase {
 
     public void testListCannotContainDuplicates() {
         final String inputLine = "1 1";
-        DenominationSetReader reader = getReader();
         try {
-            reader.read(inputLine);
+            DenominationSetReader.read(inputLine);
             fail();
         } catch( IllegalArgumentException e) {
-            assertEquals( "Attempt to add a duplicate denomination, 1 cents", e.getMessage() );
+            assertEquals( "Attempt to add a duplicate value, 1 cents", e.getMessage() );
         }
     }
 }
