@@ -9,10 +9,11 @@ public class NotFriendlyException extends RuntimeException {
         super( createMessage( leastCoinsSolution, greedySolution ) );
     }
 
-    private static String createMessage(CoinSet leastCoinsSolution, CoinSet greedySolution) {
+    private static String createMessage( CoinSet leastCoinsSolution, CoinSet greedySolution ) {
         final Cardinality leastCoins = leastCoinsSolution.getNumCoins();
         final Cardinality greedyCoins = greedySolution.getNumCoins();
-        return "NOT FRIENDLY.  For " + leastCoinsSolution.sum() + " cents, highest-first gives " +
+        final Money leastCoinsSolutionTotal = leastCoinsSolution.sum();
+        return "NOT FRIENDLY.  For " + leastCoinsSolutionTotal + " cents, highest-first gives " +
                 greedySolution + " (" + greedyCoins + " coins), but change can be given in " +
                 leastCoins + " coins: " + leastCoinsSolution;
     }

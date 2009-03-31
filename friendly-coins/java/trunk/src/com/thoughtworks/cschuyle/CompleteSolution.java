@@ -44,7 +44,8 @@ class CompleteSolution extends Solution {
             total = coinSet.sum();
             return;
         }
-        if( ! coinSet.sum().equals( total ) ) {
+        final Money coinSetSum = coinSet.sum();
+        if( ! coinSetSum.equals( total ) ) {
             throw new IllegalStateException( "All coinSets must have the same sum" );
         }
     }

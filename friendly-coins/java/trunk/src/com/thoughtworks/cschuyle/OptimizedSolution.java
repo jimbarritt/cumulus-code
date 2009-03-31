@@ -13,12 +13,13 @@ class OptimizedSolution extends Solution {
 
     public OptimizedSolution(Collection<CoinSet> coinSets) {
         super();
-        CoinSet theLeast = findMinimalCoinCountSolution(coinSets);
+        CoinSet theLeast = findMinimalCoinCountSolution( coinSets );
         this.solution = theLeast;
-        this.total = theLeast.sum();
+        final Money theLeastSum = theLeast.sum();
+        this.total = theLeastSum;
     }
 
-    private CoinSet findMinimalCoinCountSolution(Collection<CoinSet> coinSets) {
+    private CoinSet findMinimalCoinCountSolution( Collection<CoinSet> coinSets ) {
         CoinSet theLeast = null;
         for( CoinSet coinSet : coinSets ) {
             theLeast = isItLess( theLeast, coinSet );
@@ -26,9 +27,18 @@ class OptimizedSolution extends Solution {
         return theLeast;
     }
 
-    private CoinSet isItLess(CoinSet theLeast, CoinSet coinSet) {
-        if( null == theLeast || coinSet.getNumCoins().intValue() < theLeast.getNumCoins().intValue() ) {
-            theLeast = coinSet;
+    private CoinSet isItLess( CoinSet theLeast, CoinSet coinSet ) {
+        if( null == theLeast ) {
+            return coinSet;
+        }
+        final Cardinality coinSetNumCoins = coinSet.getNumCoins();
+        final int coinSetNumCoinsInt = coinSetNumCoins.intValue();
+
+        final Cardinality theLeastNumCoins = theLeast.getNumCoins();
+        final int theLeastNumCoinsInt = theLeastNumCoins.intValue();
+
+        if( coinSetNumCoinsInt < theLeastNumCoinsInt ) {
+            return coinSet;
         }
         return theLeast;
     }

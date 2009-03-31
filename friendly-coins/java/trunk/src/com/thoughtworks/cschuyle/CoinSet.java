@@ -19,7 +19,7 @@ class CoinSet {
     }
 
     public static CoinSet createAugmentedCoinSet(CoinSet coinSet, Denomination denomination) {
-        return new CoinSet( coinSet, denomination);
+        return new CoinSet( coinSet, denomination );
     }
 
     //
@@ -72,11 +72,15 @@ class CoinSet {
         return item;
     }
 
+    Collection<Denomination> getDenominations() {
+        return denominations.keySet();
+    }
+
     private CoinSet( CoinSet rhs ) {
-        for( Denomination k: rhs.denominations.keySet() ) {
-            denominations.put( k, rhs.denominations.get( k ));
+        for( Denomination d: rhs.getDenominations() ) {
+            denominations.put( d, rhs.getCardinality( d ));
         }
-        sum = new Money( rhs.sum.intValue() );
+        sum = new Money( rhs.sum );
     }
 
     private CoinSet( CoinSet coinSet, Denomination denomination ) {

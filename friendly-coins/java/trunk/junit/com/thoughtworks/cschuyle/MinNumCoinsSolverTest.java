@@ -4,6 +4,8 @@ import junit.framework.TestCase;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
+
 import static com.thoughtworks.cschuyle.SolutionFactoryInventory.*;
 
 import static com.thoughtworks.cschuyle.TestConstants.*;
@@ -22,17 +24,17 @@ public class MinNumCoinsSolverTest extends TestCase {
             Iterable<CoinSet> rhs = null;
             try {
                 rhs = (Iterable<CoinSet>)rhsObj;
-            } catch(ClassCastException e) {
+            } catch( ClassCastException e ) {
                 return false;
             }
             int size = 0;
-            for(CoinSet coinSet: rhs) {
+            for( CoinSet coinSet: rhs ) {
                 size++;
-                if( ! this.contains( coinSet )) {
+                if( ! this.contains( coinSet ) ) {
                     return false;
                 }
             }
-            return(this.size() == size);
+            return( this.size() == size );
         }
 
         // ArrayList contains() appears to NOT use iterator().  So I have to override it here.
@@ -43,7 +45,6 @@ public class MinNumCoinsSolverTest extends TestCase {
             if( this == rhsObj ) {
                 return true;
             }
-            CoinSet rhs = (CoinSet)rhsObj;
             for(CoinSet coinSet: this) {
                 if( coinSet.equals( rhsObj )) {
                     return true;
@@ -60,15 +61,17 @@ public class MinNumCoinsSolverTest extends TestCase {
         testTrivialCase( COMPLETE_SOLUTION_FACTORY );
     }
 
-    private void testTrivialCase( SolutionFactory solutionFactory) {
-        DenominationSet denominations = DenominationSetReader.readLine("1");
+    private void testTrivialCase( SolutionFactory solutionFactory ) {
+        DenominationSet denominations = DenominationSetReader.readLine( "1" );
         MinNumCoinsSolver solver = new MinNumCoinsSolver( denominations );
         solver.solutionFactory = solutionFactory;
         Solution solution = solver.solve( TOTAL_ONE );
 
         CoinSet expected = CoinSet.createCoinSet( ONE );
 
-        final CoinSet firstCoinSet = solution.getCoinSets().iterator().next();
+        final Collection<CoinSet> solutionCoinSets = solution.getCoinSets();
+        final Iterator<CoinSet> iterator = solutionCoinSets.iterator();
+        final CoinSet firstCoinSet = iterator.next();
         assertEquals( expected, firstCoinSet );
         assertEquals( firstCoinSet, expected );
     }
@@ -81,20 +84,22 @@ public class MinNumCoinsSolverTest extends TestCase {
     }
 
     private void testTrivialCaseNegative( SolutionFactory solutionFactory ) {
-        DenominationSet denominations = DenominationSetReader.readLine("1");
+        DenominationSet denominations = DenominationSetReader.readLine( "1" );
         MinNumCoinsSolver solver = new MinNumCoinsSolver( denominations );
         solver.solutionFactory = solutionFactory;
         Solution solution = solver.solve( TOTAL_ONE );
         CoinSet expected = CoinSet.createCoinSet( TWO );
 
-        final CoinSet firstCoinSet = solution.getCoinSets().iterator().next();
-        assertFalse( expected.equals(firstCoinSet) );
-        assertFalse( firstCoinSet.equals(expected) );
+        final Collection<CoinSet> solutionCoinSets = solution.getCoinSets();
+        final Iterator<CoinSet> iterator = solutionCoinSets.iterator();
+        final CoinSet firstCoinSet = iterator.next();
+        assertFalse( expected.equals( firstCoinSet ) );
+        assertFalse( firstCoinSet.equals( expected ) );
     }
 
     // Can only use complete; optimized throws some away ...
     public void testMultipleSolutionCase() {
-        DenominationSet denominations = DenominationSetReader.readLine("1 2");
+        DenominationSet denominations = DenominationSetReader.readLine( "1 2" );
         MinNumCoinsSolver solver = new MinNumCoinsSolver( denominations );
         solver.solutionFactory = COMPLETE_SOLUTION_FACTORY;
         Solution solution = solver.solve( TOTAL_TWO );

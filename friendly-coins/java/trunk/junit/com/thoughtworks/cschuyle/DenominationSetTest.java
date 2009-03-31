@@ -13,7 +13,7 @@ public class DenominationSetTest extends TestCase {
         DenominationSet den = new DenominationSet( ONE );
         List<Denomination> list = den.getSortedList();
         List<Denomination> expected = new ArrayList<Denomination>();
-        expected.add(Denomination.getInstance( 1 ));
+        expected.add( Denomination.getInstance( 1 ) );
         assertEquals( expected, list );
     }
 

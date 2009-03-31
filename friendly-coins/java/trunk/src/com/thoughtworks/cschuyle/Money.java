@@ -6,21 +6,28 @@ public class Money extends WrappedInteger {
         super( 0 );
     }
 
+    public Money( Money rhs ) {
+        super( rhs.intValue() );
+    }
+
     public Money( int i ) {
         super( i );
     }
 
     public void addCoin( Denomination denomination ) {
-        this.value += denomination.intValue();
-        rehash();
+        final int denominationInt = denomination.intValue();
+        this.value += denominationInt;
     }
 
     public void removeCoin( Denomination denomination ) {
-        this.value -= denomination.intValue();
-        rehash();
+        final int denominationInt = denomination.intValue();
+        this.value -= denominationInt;
     }
 
     public @Override boolean equals( Object rhsObj) {
-        return (rhsObj instanceof Money && ((Money)rhsObj).intValue() == this.intValue() );
-    }
+        final Money rhsMoney = (Money) rhsObj;
+        final int rhsInt = rhsMoney.intValue();
+        final int thisInt = this.intValue();
+        return ( rhsObj instanceof Money && rhsInt == thisInt );
+    }    
 }

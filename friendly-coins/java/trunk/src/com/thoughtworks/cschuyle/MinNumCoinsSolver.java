@@ -26,11 +26,13 @@ class MinNumCoinsSolver {
             return getMemoizedSolution( total );
         }
         Collection<CoinSet> coinSets = new ArrayList<CoinSet>();
-        for( Denomination denomination: denominations.getSortedList() ) {
-            processDenomination(total, coinSets, denomination);
+        final List<Denomination> sortedDenominations = denominations.getSortedList();
+        for( Denomination denomination: sortedDenominations) {
+            processDenomination( total, coinSets, denomination );
         }
         if( coinSets.size() > 0 ) {
-            final Solution solution = getSolutionFactory().createSolution(coinSets);
+            final SolutionFactory solutionFactory = getSolutionFactory();
+            final Solution solution = solutionFactory.createSolution( coinSets );
             memoizeSolution( solution );
             return solution;
         }
@@ -38,11 +40,16 @@ class MinNumCoinsSolver {
     }
 
     public Solution getMemoizedSolution( Money total ) {
-        Solution ret = chart.get( total.intValue() );
+        Solution ret = getPossiblyNullSolution( total );
         if( null == ret ) {
             throw new IllegalArgumentException( "Request for non-memoized solution for total = " + total );
         }
         return ret;
+    }
+
+    private Solution getPossiblyNullSolution( Money total ) {
+        final int totalInt = total.intValue();
+        return chart.get( totalInt );
     }
 
     public CoinSet getFewestCoinsSolution( Money total ) {
@@ -50,19 +57,23 @@ class MinNumCoinsSolver {
         return solution.getFewestCoinsSolution();
     }
         
-    private void processDenomination(Money total, Collection<CoinSet> coinSets, Denomination denomination) {
-        if( denomination.intValue() == total.intValue() ) {
+    private void processDenomination( Money total, Collection<CoinSet> coinSets, Denomination denomination ) {
+        final int denominationInt = denomination.intValue();
+        final int totalInt = total.intValue();
+        if( denominationInt == totalInt ) {
             CoinSet coinSet = CoinSet.createCoinSet( denomination );
             coinSets.add( coinSet );
             return;
         }
-        if( denomination.intValue() < total.intValue() ) {
-            recurse(total, coinSets, denomination);
+        if( denominationInt < totalInt ) {
+            recurse( total, coinSets, denomination );
         }
     }
 
-    private void recurse(Money total, Collection<CoinSet> coinSets, Denomination denomination) {
-        Money smallerTotal = new Money( total.intValue() - denomination.intValue() );
+    private void recurse( Money total, Collection<CoinSet> coinSets, Denomination denomination ) {
+        final int totalInt = total.intValue();
+        final int denominationInt = denomination.intValue();
+        Money smallerTotal = new Money( totalInt - denominationInt );
         Solution partialSolution = solve( smallerTotal  );
         if( null != partialSolution ) {
             mergePartialSolution( coinSets, denomination, partialSolution );
@@ -70,23 +81,25 @@ class MinNumCoinsSolver {
     }
 
     private void mergePartialSolution(
-            Collection<CoinSet> coinSets, Denomination denomination, Solution partialSolution) {
-        for( CoinSet coinSet: partialSolution.getCoinSets() ) {
-            coinSets.add( CoinSet.createAugmentedCoinSet( coinSet, denomination ) );
+            Collection<CoinSet> coinSets, Denomination denomination, Solution partialSolution ) {
+        final Collection<CoinSet> partialSolutionCoinSets = partialSolution.getCoinSets();
+        for( CoinSet coinSet: partialSolutionCoinSets) {
+            final CoinSet augmentedCoinSet = CoinSet.createAugmentedCoinSet( coinSet, denomination );
+            coinSets.add( augmentedCoinSet );
         }
     }
 
     SolutionFactory solutionFactory;
 
-    public void setSolutionFactory( SolutionFactory solutionFactory) {
+    public void setSolutionFactory( SolutionFactory solutionFactory ) {
         this.solutionFactory = solutionFactory;
     }
 
     private SolutionFactory getSolutionFactory() {
-        if( null == solutionFactory ) {
-            solutionFactory = SolutionFactoryInventory.OPTIMIZED_SOLUTION_FACTORY;
+        if( null != solutionFactory ) {
+            return solutionFactory;
         }
-        return solutionFactory;
+        return SolutionFactoryInventory.OPTIMIZED_SOLUTION_FACTORY;
     }
 
     private DenominationSet denominations;
@@ -96,7 +109,9 @@ class MinNumCoinsSolver {
     }
 
     private void memoizeSolution( Solution solution ) {
-        chart.put( solution.getTotal().intValue(), solution );
+        final Money solutionTotal = solution.getTotal();
+        final int solutionTotalInt = solutionTotal.intValue();
+        chart.put( solutionTotalInt, solution );
     }
 
     private Map<Integer, Solution> chart = new HashMap<Integer, Solution>();

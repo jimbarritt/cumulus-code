@@ -7,45 +7,45 @@ import static com.thoughtworks.cschuyle.TestConstants.*;
 public class HighestFirstSolverTest extends TestCase {
 
     public void testTrivialCase() {
-        DenominationSet denominations = DenominationSetReader.readLine("1");
+        DenominationSet denominations = DenominationSetReader.readLine( "1" );
         CoinSet solution = HighestFirstSolver.solve( denominations, TOTAL_ONE );
         CoinSet expected = CoinSet.createCoinSet( ONE );
-        assertEquals(expected, solution);
+        assertEquals( expected, solution );
     }
 
     public void testSimpleCase() {
-        DenominationSet denominations = DenominationSetReader.readLine("1 2");
+        DenominationSet denominations = DenominationSetReader.readLine( "1 2" );
         CoinSet solution = HighestFirstSolver.solve( denominations, TOTAL_TWO );
         CoinSet expected = CoinSet.createCoinSet( TWO );
-        assertEquals(expected, solution);
+        assertEquals( expected, solution );
     }
 
     public void testNonSimpleCase() {
         {
-            DenominationSet denominations = DenominationSetReader.readLine("1 2 5");
+            DenominationSet denominations = DenominationSetReader.readLine( "1 2 5" );
             CoinSet solution = HighestFirstSolver.solve( denominations, TOTAL_FOUR );
             CoinSet expected = CoinSet.createCoinSet( TWO, TWO );
-            assertEquals(expected, solution);
+            assertEquals( expected, solution );
         }
         {
-            DenominationSet denominations = DenominationSetReader.readLine("1 4 5");
+            DenominationSet denominations = DenominationSetReader.readLine( "1 4 5" );
             CoinSet solution = HighestFirstSolver.solve( denominations, TOTAL_EIGHT );
             CoinSet expected = CoinSet.createCoinSet( ONE, ONE, ONE, FIVE );
-            assertEquals(expected, solution);
+            assertEquals( expected, solution );
             assertEquals( "CoinSet<1's:3,5's:1>", solution.toString() );
         }
     }
 
     public void testAnotherNonSimpleCase() {
-        DenominationSet denominations = DenominationSetReader.readLine("1 4 5");
+        DenominationSet denominations = DenominationSetReader.readLine( "1 4 5" );
         CoinSet solution = HighestFirstSolver.solve( denominations, TOTAL_EIGHT );
         CoinSet expected = CoinSet.createCoinSet( ONE, ONE, ONE, FIVE );
-        assertEquals(expected, solution);
+        assertEquals( expected, solution );
         assertEquals( "CoinSet<1's:3,5's:1>", solution.toString() );
     }
 
     public void testImpossibleCase() {
-        DenominationSet denominations = DenominationSetReader.readLine("2 5");
+        DenominationSet denominations = DenominationSetReader.readLine( "2 5" );
         try {
             HighestFirstSolver.solve( denominations, TOTAL_THREE );
             fail();

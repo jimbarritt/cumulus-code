@@ -1,9 +1,10 @@
 package com.thoughtworks.cschuyle;
 
 import com.thoughtworks.cschuyle.util.Helpers;
-import com.thoughtworks.cschuyle.util.Joiner;
 
 import java.util.*;
+
+import static com.thoughtworks.cschuyle.util.Joiner.COMMA;
 
 public class DenominationSet {
 
@@ -40,15 +41,18 @@ public class DenominationSet {
 
     public Denomination highest() {
         final List<Denomination> list = getSortedList();
-        if(list.size() > 0) {
-            return list.get( list.size() - 1 );
+        final int listSize = list.size();
+        if( listSize > 0 ) {
+            return list.get( listSize - 1 );
         }
         throw new IllegalStateException( "Cannot get highest element from empty list");
     }
 
     public @Override String toString() {
         List<Denomination> orderedList = getSortedList();
-        return this.getClass().getSimpleName() + "<" + Helpers.stringJoin( orderedList, Joiner.COMMA ) + ">";
+        String ret =  this.getClass().getSimpleName() + "<";
+        ret += Helpers.stringJoin( orderedList, COMMA ) + ">";
+        return ret;
     }
 
     private void add( Denomination d ) {

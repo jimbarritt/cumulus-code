@@ -7,12 +7,18 @@ import java.util.Map;
 
 class Denomination extends WrappedInteger implements Comparable<Denomination> {
 
+    public static boolean isEmpty( DenominationSet denominations ) {
+        return null == denominations || 0 == denominations.size();
+    }
+    
     private Denomination( int i ) {
         super(i);
     }
 
     public int compareTo( Denomination rhs ) {
-        return Helpers.intCompareTo( this.value, rhs.value );
+        final int thisValue = this.value;
+        final int rhsValue = rhs.value;
+        return Helpers.intCompareTo( thisValue, rhsValue);
     }
 
     public static Denomination getInstance(int i) {
@@ -24,7 +30,7 @@ class Denomination extends WrappedInteger implements Comparable<Denomination> {
             return cache.get( i );
         }
         final Denomination newDenomination = new Denomination(i);
-        cache.put( i, newDenomination);
+        cache.put( i, newDenomination );
         return newDenomination;
     }
 
