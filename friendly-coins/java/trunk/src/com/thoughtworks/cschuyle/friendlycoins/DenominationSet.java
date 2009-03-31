@@ -1,4 +1,4 @@
-package com.thoughtworks.cschuyle;
+package com.thoughtworks.cschuyle.friendlycoins;
 
 import com.thoughtworks.cschuyle.util.StringHelpers;
 import com.thoughtworks.cschuyle.util.ClassHelpers;
@@ -6,6 +6,7 @@ import com.thoughtworks.cschuyle.util.ClassHelpers;
 import java.util.*;
 
 import static com.thoughtworks.cschuyle.util.StringHelpers.Joiner.COMMA;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
 
 public class DenominationSet {
 

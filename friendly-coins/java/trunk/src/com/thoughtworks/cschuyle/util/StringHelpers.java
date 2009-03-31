@@ -20,10 +20,6 @@ public class StringHelpers {
 
     private static final String NULL_STRING = "null";
 
-    public static String toString( int value ) {
-        return String.format( "%d", value );
-    }
-
     private static class Joinee {
         private Object joinee;
 

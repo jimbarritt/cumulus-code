@@ -1,4 +1,7 @@
-package com.thoughtworks.cschuyle;
+package com.thoughtworks.cschuyle.friendlycoins.primitives;
+
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
+import com.thoughtworks.cschuyle.WrappedInteger;
 
 public class Money extends WrappedInteger {
 

@@ -1,4 +1,8 @@
-package com.thoughtworks.cschuyle;
+package com.thoughtworks.cschuyle.friendlycoins.exception;
+
+import com.thoughtworks.cschuyle.friendlycoins.CoinSet;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
 
 public class NotFriendlyException extends RuntimeException {
     public NotFriendlyException( String msg ) {

@@ -1,8 +1,13 @@
 package com.thoughtworks.cschuyle.main;
 
-import com.thoughtworks.cschuyle.*;
+import com.thoughtworks.cschuyle.friendlycoins.exception.NotFriendlyException;
+import com.thoughtworks.cschuyle.friendlycoins.exception.NoSolutionException;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
+import com.thoughtworks.cschuyle.friendlycoins.DenominationSet;
+import com.thoughtworks.cschuyle.friendlycoins.DenominationSetReader;
+import com.thoughtworks.cschuyle.friendlycoins.solvers.FriendlyRecognizer;
 
-import static com.thoughtworks.cschuyle.TestConstants.*;
+import static com.thoughtworks.cschuyle.friendlycoins.TestConstants.*;
 
 import java.io.*;
 

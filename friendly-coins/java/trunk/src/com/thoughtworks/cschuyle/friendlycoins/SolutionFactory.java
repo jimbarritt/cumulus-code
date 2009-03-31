@@ -1,4 +1,4 @@
-package com.thoughtworks.cschuyle;
+package com.thoughtworks.cschuyle.friendlycoins;
 
 import java.util.Collection;
 

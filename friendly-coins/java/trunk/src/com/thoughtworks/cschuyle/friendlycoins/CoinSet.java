@@ -1,11 +1,14 @@
-package com.thoughtworks.cschuyle;
+package com.thoughtworks.cschuyle.friendlycoins;
 
 import java.util.*;
 import com.thoughtworks.cschuyle.util.StringHelpers;
 import com.thoughtworks.cschuyle.util.ClassHelpers;
 import static com.thoughtworks.cschuyle.util.StringHelpers.Joiner.*;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
 
-class CoinSet {
+public class CoinSet {
 
     private CoinSet( Denomination... denominations ) {
         for( Denomination denomination : denominations ) {

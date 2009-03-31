@@ -1,7 +1,7 @@
 package com.thoughtworks.cschuyle;
 
 import com.thoughtworks.cschuyle.util.ClassHelpers;
-import com.thoughtworks.cschuyle.util.StringHelpers;
+import com.thoughtworks.cschuyle.util.IntegerHelpers;
 
 public abstract class WrappedInteger {
 
@@ -9,7 +9,7 @@ public abstract class WrappedInteger {
 
     private WrappedInteger() {}
 
-    WrappedInteger( int value ) {
+    public WrappedInteger( int value ) {
         this();
         this.value = value;
     }
@@ -19,7 +19,7 @@ public abstract class WrappedInteger {
     }
 
     public String stringValue() {
-        return StringHelpers.toString( value );
+        return IntegerHelpers.toString( value );
     }
 
     public @Override String toString() {

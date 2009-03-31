@@ -1,4 +1,7 @@
-package com.thoughtworks.cschuyle;
+package com.thoughtworks.cschuyle.friendlycoins.exception;
+
+import com.thoughtworks.cschuyle.friendlycoins.DenominationSet;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
 
 public class NoSolutionException extends RuntimeException {
 

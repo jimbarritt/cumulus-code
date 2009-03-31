@@ -1,4 +1,12 @@
-package com.thoughtworks.cschuyle;
+package com.thoughtworks.cschuyle.friendlycoins.solvers;
+
+import com.thoughtworks.cschuyle.friendlycoins.exception.NotFriendlyException;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
+import com.thoughtworks.cschuyle.friendlycoins.solvers.MinimumCoinCountSolver;
+import com.thoughtworks.cschuyle.friendlycoins.solvers.HighestFirstSolver;
+import com.thoughtworks.cschuyle.friendlycoins.DenominationSet;
+import com.thoughtworks.cschuyle.friendlycoins.CoinSet;
 
 import java.io.PrintStream;
 

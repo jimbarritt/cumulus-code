@@ -1,8 +1,9 @@
-package com.thoughtworks.cschuyle;
+package com.thoughtworks.cschuyle.friendlycoins.primitives;
 
 import junit.framework.TestCase;
 
-import static com.thoughtworks.cschuyle.TestConstants.*;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
+import com.thoughtworks.cschuyle.friendlycoins.TestConstants;
 
 public class MoneyTest extends TestCase {
 
@@ -19,13 +20,13 @@ public class MoneyTest extends TestCase {
     public void testAddCoin() {
         Money money = new Money();
         assertEquals( 0, money.intValue() );
-        money.addCoin( ONE );
+        money.addCoin(TestConstants.ONE);
         assertEquals( 1, money.intValue() );
     }
 
     public void testRemoveCoin() {
         Money money = new Money();
-        money.removeCoin( ONE );
+        money.removeCoin(TestConstants.ONE);
         assertEquals( -1, money.intValue() );
     }
 }

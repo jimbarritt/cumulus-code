@@ -1,11 +1,13 @@
-package com.thoughtworks.cschuyle;
+package com.thoughtworks.cschuyle.friendlycoins.primitives;
 
 import com.thoughtworks.cschuyle.util.IntegerHelpers;
+import com.thoughtworks.cschuyle.WrappedInteger;
+import com.thoughtworks.cschuyle.friendlycoins.DenominationSet;
 
 import java.util.HashMap;
 import java.util.Map;
 
-class Denomination extends WrappedInteger implements Comparable<Denomination> {
+public class Denomination extends WrappedInteger implements Comparable<Denomination> {
 
     public static boolean isEmpty( DenominationSet denominations ) {
         return null == denominations || 0 == denominations.size();

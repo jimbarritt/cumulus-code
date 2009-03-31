@@ -1,8 +1,14 @@
-package com.thoughtworks.cschuyle;
+package com.thoughtworks.cschuyle.friendlycoins.solvers;
 
 import java.util.List;
 
 import static com.thoughtworks.cschuyle.WrappedInteger.*;
+import com.thoughtworks.cschuyle.friendlycoins.exception.NoSolutionException;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
+import com.thoughtworks.cschuyle.friendlycoins.CoinSet;
+import com.thoughtworks.cschuyle.friendlycoins.DenominationSet;
+import com.thoughtworks.cschuyle.WrappedInteger;
 
 class HighestFirstSolver {
 

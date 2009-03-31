@@ -1,4 +1,7 @@
-package com.thoughtworks.cschuyle;
+package com.thoughtworks.cschuyle.friendlycoins;
+
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
 
 import java.util.Collection;
 
@@ -28,7 +31,7 @@ class CompleteSolution extends Solution {
         }
     }    
 
-    protected Collection<CoinSet> getCoinSets() {
+    public @Override Collection<CoinSet> getCoinSets() {
         return coinSets;
     }
     

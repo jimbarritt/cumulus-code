@@ -1,12 +1,13 @@
-package com.thoughtworks.cschuyle;
+package com.thoughtworks.cschuyle.friendlycoins.primitives;
 
 import com.thoughtworks.cschuyle.util.IntegerHelpers;
+import com.thoughtworks.cschuyle.WrappedInteger;
 
 import java.util.Collection;
 import java.util.Map;
 import java.util.HashMap;
 
-class Cardinality extends WrappedInteger implements Comparable<Cardinality> {
+public class Cardinality extends WrappedInteger implements Comparable<Cardinality> {
 
     private Cardinality( int value ) {
         super( value );

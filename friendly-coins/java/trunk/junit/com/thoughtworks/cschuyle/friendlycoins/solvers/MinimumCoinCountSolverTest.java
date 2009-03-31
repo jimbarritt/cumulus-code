@@ -1,4 +1,4 @@
-package com.thoughtworks.cschuyle;
+package com.thoughtworks.cschuyle.friendlycoins.solvers;
 
 import junit.framework.TestCase;
 
@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
-import static com.thoughtworks.cschuyle.SolutionFactories.*;
-
-import static com.thoughtworks.cschuyle.TestConstants.*;
+import static com.thoughtworks.cschuyle.friendlycoins.SolutionFactories.*;
+import com.thoughtworks.cschuyle.friendlycoins.solvers.MinimumCoinCountSolver;
+import com.thoughtworks.cschuyle.friendlycoins.*;
 
 public class MinimumCoinCountSolverTest extends TestCase {
 
@@ -65,9 +65,9 @@ public class MinimumCoinCountSolverTest extends TestCase {
         DenominationSet denominations = DenominationSetReader.readLine( "1" );
         MinimumCoinCountSolver solver = new MinimumCoinCountSolver( denominations );
         solver.solutionFactory = solutionFactory;
-        Solution solution = solver.solve( TOTAL_ONE );
+        Solution solution = solver.solve(TestConstants.TOTAL_ONE);
 
-        CoinSet expected = CoinSet.createCoinSet( ONE );
+        CoinSet expected = CoinSet.createCoinSet(TestConstants.ONE);
 
         final Collection<CoinSet> solutionCoinSets = solution.getCoinSets();
         final Iterator<CoinSet> iterator = solutionCoinSets.iterator();
@@ -87,8 +87,8 @@ public class MinimumCoinCountSolverTest extends TestCase {
         DenominationSet denominations = DenominationSetReader.readLine( "1" );
         MinimumCoinCountSolver solver = new MinimumCoinCountSolver( denominations );
         solver.solutionFactory = solutionFactory;
-        Solution solution = solver.solve( TOTAL_ONE );
-        CoinSet expected = CoinSet.createCoinSet( TWO );
+        Solution solution = solver.solve(TestConstants.TOTAL_ONE);
+        CoinSet expected = CoinSet.createCoinSet(TestConstants.TWO);
 
         final Collection<CoinSet> solutionCoinSets = solution.getCoinSets();
         final Iterator<CoinSet> iterator = solutionCoinSets.iterator();
@@ -102,15 +102,15 @@ public class MinimumCoinCountSolverTest extends TestCase {
         DenominationSet denominations = DenominationSetReader.readLine( "1 2" );
         MinimumCoinCountSolver solver = new MinimumCoinCountSolver( denominations );
         solver.solutionFactory = COMPLETE_SOLUTION_FACTORY;
-        Solution solution = solver.solve( TOTAL_TWO );
+        Solution solution = solver.solve(TestConstants.TOTAL_TWO);
 
         CoinSetList expectedList = new CoinSetList();
         {
-            CoinSet expected = CoinSet.createCoinSet( ONE, ONE );
+            CoinSet expected = CoinSet.createCoinSet(TestConstants.ONE, TestConstants.ONE);
             expectedList.add( expected );
         }
         {
-            CoinSet expected = CoinSet.createCoinSet( TWO );
+            CoinSet expected = CoinSet.createCoinSet(TestConstants.TWO);
             expectedList.add( expected );
         }
 

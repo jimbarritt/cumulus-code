@@ -1,16 +1,18 @@
-package com.thoughtworks.cschuyle;
+package com.thoughtworks.cschuyle.friendlycoins;
 
 import junit.framework.TestCase;
+import junit.framework.Assert;
 
 import java.util.List;
 import java.util.ArrayList;
 
-import static com.thoughtworks.cschuyle.TestConstants.*;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
+import com.thoughtworks.cschuyle.friendlycoins.DenominationSet;
 
 public class DenominationSetTest extends TestCase {
 
     public void testGetOrderedList() {
-        DenominationSet denominationSet1 = new DenominationSet( TWO, ONE );
+        DenominationSet denominationSet1 = new DenominationSet(TestConstants.TWO, TestConstants.ONE);
         List<Denomination> list = denominationSet1.getOrderedList();
         List<Denomination> expected = new ArrayList<Denomination>();
         expected.add( Denomination.getInstance( 1 ) );
@@ -19,21 +21,21 @@ public class DenominationSetTest extends TestCase {
     }
 
     public void testHighest() {
-        DenominationSet denominationSet1 = new DenominationSet( ONE );
+        DenominationSet denominationSet1 = new DenominationSet(TestConstants.ONE);
         final Denomination highest = denominationSet1.highest();
-        assertEquals( ONE, highest );
+        Assert.assertEquals(TestConstants.ONE, highest );
     }
 
     public void testHighestSimple() {
-        DenominationSet DenominationSet12 = new DenominationSet( ONE, TWO );
+        DenominationSet DenominationSet12 = new DenominationSet(TestConstants.ONE, TestConstants.TWO);
         final Denomination highest = DenominationSet12.highest();
-        assertEquals( TWO, highest );
+        Assert.assertEquals(TestConstants.TWO, highest );
     }
 
     public void testHighestSimpleBackwards() {
-        DenominationSet denominationSet21 = new DenominationSet( TWO, ONE );
+        DenominationSet denominationSet21 = new DenominationSet(TestConstants.TWO, TestConstants.ONE);
         final Denomination highest = denominationSet21.highest();
-        assertEquals( TWO, highest );
+        Assert.assertEquals(TestConstants.TWO, highest );
     }
 
     public void testHighestEmpty() {
@@ -46,7 +48,7 @@ public class DenominationSetTest extends TestCase {
     }
 
     public void testToString() {
-        DenominationSet denominationSet21 = new DenominationSet( TWO, ONE );
+        DenominationSet denominationSet21 = new DenominationSet(TestConstants.TWO, TestConstants.ONE);
         assertEquals( "DenominationSet<Denomination<1>,Denomination<2>>", denominationSet21.toString() );
     }
 

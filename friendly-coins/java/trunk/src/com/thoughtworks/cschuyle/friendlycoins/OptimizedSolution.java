@@ -1,4 +1,7 @@
-package com.thoughtworks.cschuyle;
+package com.thoughtworks.cschuyle.friendlycoins;
+
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
 
 import java.util.Collection;
 import java.util.ArrayList;
@@ -11,7 +14,7 @@ class OptimizedSolution extends Solution {
         return total;
     }
 
-    public OptimizedSolution(Collection<CoinSet> coinSets) {
+    public OptimizedSolution( Collection<CoinSet> coinSets ) {
         super();
         CoinSet theLeast = findMinimalCoinCountSolution( coinSets );
         this.solution = theLeast;
@@ -49,7 +52,7 @@ class OptimizedSolution extends Solution {
         return solution;
     }
 
-    protected Collection<CoinSet> getCoinSets() {
+    public @Override Collection<CoinSet> getCoinSets() {
         final ArrayList<CoinSet> ret = new ArrayList<CoinSet>();
         ret.add( solution );
         return ret;

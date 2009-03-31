@@ -1,10 +1,12 @@
-package com.thoughtworks.cschuyle;
+package com.thoughtworks.cschuyle.friendlycoins;
 
 import junit.framework.TestCase;
 
 import java.util.Iterator;
 
-import static com.thoughtworks.cschuyle.TestConstants.*;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
+import com.thoughtworks.cschuyle.friendlycoins.DenominationSet;
+import com.thoughtworks.cschuyle.friendlycoins.DenominationSetReader;
 
 public class DenominationSetReaderTest extends TestCase {
 
@@ -36,9 +38,9 @@ public class DenominationSetReaderTest extends TestCase {
         boolean one = false, two = false;
         while( iter.hasNext() ) {
             Denomination d = iter.next();
-            if( d.equals( ONE ) ) {
+            if( d.equals(TestConstants.ONE) ) {
                 one = true;
-            } else if( d.equals( TWO ) ) {
+            } else if( d.equals(TestConstants.TWO) ) {
                 two = true;
             } else {
                 fail( "Unexpected value " + d );

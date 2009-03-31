@@ -1,4 +1,6 @@
-package com.thoughtworks.cschuyle;
+package com.thoughtworks.cschuyle.friendlycoins;
+
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
 
 import java.util.StringTokenizer;
 import java.util.Collection;
@@ -12,7 +14,7 @@ public class DenominationSetReader {
         return readLine( inputLine );
     }
 
-    static DenominationSet readLine( String inputLine ) {
+    public static DenominationSet readLine( String inputLine ) {
         StringTokenizer stok = new StringTokenizer( inputLine );
         Collection<Denomination> destinationSet = new ArrayList<Denomination>();
         while( stok.hasMoreTokens() ) {
@@ -31,7 +33,7 @@ public class DenominationSetReader {
         destinationSet.add( denomination );
     }
 
-    static int readInt( StringTokenizer stok ) {
+    private static int readInt( StringTokenizer stok ) {
         final String nextToken = stok.nextToken();
         return Integer.parseInt( nextToken );
     }
