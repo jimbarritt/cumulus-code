@@ -1,5 +1,7 @@
 package com.thoughtworks.cschuyle;
 
+import java.io.PrintStream;
+
 public class FriendlyRecognizer {
 
     public boolean isFriendly( DenominationSet den, Money checkUpToTotal ) {
@@ -11,11 +13,17 @@ public class FriendlyRecognizer {
         try {
             highestFriendlyTotal = checkUpToTotal( den, checkUpToTotal, solver );
         } catch( Error e ) {
-            System.out.println( "OOPS. Error after checking up to total=" + highestFriendlyTotal );
+            message( "OOPS. Error after checking up to total=" + highestFriendlyTotal );
             throw e;
         }
 
         return true;
+    }
+
+    private final static PrintStream cout = System.out;
+
+    private void message( String message ) {
+        cout.println(  );
     }
 
     public static boolean isNotFriendly( CoinSet leastCoinsSolution, CoinSet greedySolution ) {

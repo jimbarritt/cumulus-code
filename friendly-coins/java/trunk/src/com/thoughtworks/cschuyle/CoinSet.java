@@ -2,7 +2,7 @@ package com.thoughtworks.cschuyle;
 
 import java.util.*;
 import com.thoughtworks.cschuyle.util.Helpers;
-import com.thoughtworks.cschuyle.util.Joiner;
+import static com.thoughtworks.cschuyle.util.Joiner.*;
 
 class CoinSet {
 
@@ -42,17 +42,22 @@ class CoinSet {
     }
 
     public Cardinality getNumCoins() {
-        return Cardinality.total( denominations.values() );
+        final Collection<Cardinality> denominationsValues = denominations.values();
+        return Cardinality.total( denominationsValues );
     }
 
     public @Override boolean equals(Object rhs) {
-        if( null == rhs || ! (rhs instanceof CoinSet) ) {
+        if( ! (rhs instanceof CoinSet) ) {
             return false;
         }
-        return this.denominations.equals( ((CoinSet)rhs).denominations);
+        final CoinSet rhsCoinSet = (CoinSet) rhs;
+        final Map<Denomination, Cardinality> rhsDenominations = rhsCoinSet.denominations;
+        final Map<Denomination, Cardinality> thisDenominations = this.denominations;
+        return thisDenominations.equals( rhsDenominations );
     }
 
     public @Override int hashCode() {
+        // TODO This is inefficient!
         return toString().hashCode();
     }
 
@@ -62,13 +67,15 @@ class CoinSet {
         for( Denomination item : denominations.keySet() ) {
             items.add( denominationToString( item ) );
         }
-        return this.getClass().getSimpleName() + "<" + Helpers.stringJoin( items, Joiner.COMMA ) + ">";
+        final String className = Helpers.getSimpleClassName(this);
+        return className + "<" + Helpers.stringJoin( items, COMMA ) + ">";
     }
 
     private String denominationToString( Denomination den ) {
         String item = den.stringValue();
         item += "'s:";
-        item += denominations.get( den ).stringValue();
+        final Cardinality card = denominations.get(den);
+        item += card.stringValue();
         return item;
     }
 
@@ -77,10 +84,11 @@ class CoinSet {
     }
 
     private CoinSet( CoinSet rhs ) {
-        for( Denomination d: rhs.getDenominations() ) {
-            denominations.put( d, rhs.getCardinality( d ));
+        for( Denomination denomination: rhs.getDenominations() ) {
+            final Cardinality rhsDenominationCount = rhs.getCardinality( denomination );
+            denominations.put( denomination, rhsDenominationCount );
         }
-        sum = new Money( rhs.sum );
+        sum = new Money( rhs.sum() );
     }
 
     private CoinSet( CoinSet coinSet, Denomination denomination ) {
@@ -98,7 +106,8 @@ class CoinSet {
 
     private void incrementDenomination( Denomination denomination ) {
         Cardinality card = getCardinality( denomination );
-        setCardinality( denomination, Cardinality.getInstance( card.intValue() + 1 ));
+        final int cardPlus1 = card.intValue() + 1;
+        setCardinality( denomination, Cardinality.getInstance( cardPlus1 ));
         sum.addCoin( denomination );
     }
 

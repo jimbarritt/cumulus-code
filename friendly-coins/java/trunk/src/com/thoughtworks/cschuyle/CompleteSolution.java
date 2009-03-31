@@ -24,7 +24,7 @@ class CompleteSolution extends Solution {
         super();
         this.coinSets = coinSets;
         for( CoinSet coinSet: coinSets ) {
-            accumulateTotal(coinSet);
+            accumulateTotal( coinSet );
         }
     }    
 
@@ -33,7 +33,9 @@ class CompleteSolution extends Solution {
     }
     
     private CoinSet isItLess(CoinSet leastSolution, CoinSet coinSet) {
-        if( null == leastSolution || coinSet.getNumCoins().compareTo( leastSolution.getNumCoins() ) == -1) {
+        final Cardinality coinSetNumCoins = coinSet.getNumCoins();
+        final Cardinality leastSolutionNumCoins = leastSolution.getNumCoins();
+        if( null == leastSolution || coinSetNumCoins.compareTo( leastSolutionNumCoins ) == -1) {
             leastSolution = coinSet;
         }
         return leastSolution;

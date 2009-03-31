@@ -8,33 +8,34 @@ import java.util.HashMap;
 
 class Cardinality extends WrappedInteger implements Comparable<Cardinality> {
 
-    private Cardinality( int i ) {
-        super( i );
+    private Cardinality( int value ) {
+        super( value );
     }
 
-    public static Cardinality total(Collection<Cardinality> cardinalities) {
-        int i = 0;
+    public static Cardinality total( Collection<Cardinality> cardinalities ) {
+        int value = 0;
         for( Cardinality card : cardinalities ) {
-            i += card.intValue();
+            value += card.intValue();
         }
-        return getInstance( i );
-
+        return getInstance( value );
     }
 
     public int compareTo( Cardinality rhs ) {
-        return Helpers.intCompareTo( this.value, rhs.value );
+        final int thisInt = this.value;
+        final int rhsInt = rhs.value;
+        return Helpers.intCompareTo( thisInt, rhsInt );
     }
 
-    public static Cardinality getInstance(int i) {
-        return intern( i );
-
+    public static Cardinality getInstance( int value ) {
+        return intern( value );
     }
-    private static Cardinality intern( int i ) {
-        if(cache.containsKey( i )) {
-            return cache.get( i );
+
+    private static Cardinality intern( int value ) {
+        if( cache.containsKey( value ) ) {
+            return cache.get( value );
         }
-        final Cardinality cardinality = new Cardinality(i);
-        cache.put( i, cardinality);
+        final Cardinality cardinality = new Cardinality( value );
+        cache.put( value, cardinality);
         return cardinality;
     }
 

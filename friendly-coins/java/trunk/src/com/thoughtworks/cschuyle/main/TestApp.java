@@ -19,7 +19,7 @@ public class TestApp {
 
     private static void closeReader(BufferedReader reader) {
         if( null != reader) {
-            closeNonNullReader(reader);
+            closeNonNullReader( reader );
         }
     }
 
@@ -41,7 +41,7 @@ public class TestApp {
             String line = reader.readLine();
             DenominationSet den = DenominationSetReader.read( line );
             processLine( recognizer, den );
-        } catch (Exception e) {
+        } catch( Exception e ) {
             e.printStackTrace();
         }
     }

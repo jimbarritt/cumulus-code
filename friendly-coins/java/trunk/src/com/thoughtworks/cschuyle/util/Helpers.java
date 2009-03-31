@@ -4,7 +4,8 @@ import java.util.Collection;
 
 public class Helpers {
 
-    public static final Joiner EMPTY_STRING = new Joiner("");
+    public static final Joiner EMPTY_STRING = new Joiner( "" );
+    private static final String NULL_STRING = "null";
 
     public static int intCompareTo( int v1, int v2) {
         return (
@@ -16,29 +17,38 @@ public class Helpers {
     static class Joinee {
         private Object joinee;
 
-        public Joinee( Object o) {
-            this.joinee = o;
+        public Joinee( Object joinee ) {
+            this.joinee = joinee;
         }
 
         public @Override String toString() {
-            return (null == joinee) ? "null" : joinee.toString();
+            return possiblyNullString( joinee );
         }
 
     }
 
-    public static String stringJoin( Collection<?> objects, Joiner joiner ) {
+    public static String stringJoin( Collection<?> joinees, Joiner joiner ) {
         StringBuilder builder = new StringBuilder();
         Joiner useJoiner = EMPTY_STRING;
-        for( Object o : objects ) {
-            stringJoinAppend( new Joinee(o), useJoiner, builder );
+        for( Object joinee : joinees ) {
+            stringJoinAppend( new Joinee( joinee ), useJoiner, builder );
             useJoiner = joiner;
         }
         return builder.toString();
     }
 
-    private static void stringJoinAppend( Joinee o, Joiner joiner, StringBuilder builder ) {
+    public static String getSimpleClassName( Object object ) {
+        final Class<? extends Object> objectClass = object.getClass();
+        return objectClass.getSimpleName();
+    }
+
+    private static void stringJoinAppend( Joinee joinee, Joiner joiner, StringBuilder builder ) {
         builder.append( joiner );
-        builder.append( o.toString() );
+        builder.append( possiblyNullString( joinee ) );
+    }
+
+    private static String possiblyNullString( Object joinee) {
+        return (null == joinee ? NULL_STRING : joinee.toString() );
     }
 
 }

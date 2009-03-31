@@ -1,11 +1,12 @@
 package com.thoughtworks.cschuyle;
 
+import com.thoughtworks.cschuyle.util.Helpers;
+
 public abstract class WrappedInteger {
 
     protected int value;
-    private int hashCode;
 
-    private WrappedInteger() {};
+    private WrappedInteger() {}
 
     WrappedInteger( int i ) {
         value = i;
@@ -20,8 +21,7 @@ public abstract class WrappedInteger {
     }
 
     public @Override String toString() {
-        final Class<? extends WrappedInteger> klass = this.getClass();
-        final String className = klass.getSimpleName();
+        final String className = Helpers.getSimpleClassName( this );
         return className + "<" + value + ">";
     }
 

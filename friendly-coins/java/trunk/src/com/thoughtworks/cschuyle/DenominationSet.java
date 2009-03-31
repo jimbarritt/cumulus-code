@@ -29,7 +29,7 @@ public class DenominationSet {
         return list.iterator();
     }
 
-    public boolean contains(Denomination d) {
+    public boolean contains( Denomination d ) {
         return list.contains( d );
     }
 
@@ -45,18 +45,20 @@ public class DenominationSet {
         if( listSize > 0 ) {
             return list.get( listSize - 1 );
         }
-        throw new IllegalStateException( "Cannot get highest element from empty list");
+        throw new IllegalStateException( "Cannot get highest element from empty list" );
     }
 
     public @Override String toString() {
         List<Denomination> orderedList = getSortedList();
-        String ret =  this.getClass().getSimpleName() + "<";
-        ret += Helpers.stringJoin( orderedList, COMMA ) + ">";
+        final String className = Helpers.getSimpleClassName( this );
+        String ret = className + "<"
+                + Helpers.stringJoin( orderedList, COMMA )
+                + ">";
         return ret;
     }
 
-    private void add( Denomination d ) {
-        list.add( d );
+    private void add( Denomination denomination ) {
+        list.add( denomination );
     }
 
     public boolean isEmpty() {
