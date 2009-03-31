@@ -15,7 +15,7 @@ class OptimizedSolution extends Solution {
         super();
         CoinSet theLeast = findMinimalCoinCountSolution( coinSets );
         this.solution = theLeast;
-        final Money theLeastSum = theLeast.sum();
+        final Money theLeastSum = theLeast.total();
         this.total = theLeastSum;
     }
 
@@ -31,10 +31,10 @@ class OptimizedSolution extends Solution {
         if( null == theLeast ) {
             return coinSet;
         }
-        final Cardinality coinSetNumCoins = coinSet.getNumCoins();
+        final Cardinality coinSetNumCoins = coinSet.getCoinCount();
         final int coinSetNumCoinsInt = coinSetNumCoins.intValue();
 
-        final Cardinality theLeastNumCoins = theLeast.getNumCoins();
+        final Cardinality theLeastNumCoins = theLeast.getCoinCount();
         final int theLeastNumCoinsInt = theLeastNumCoins.intValue();
 
         if( coinSetNumCoinsInt < theLeastNumCoinsInt ) {

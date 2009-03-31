@@ -2,9 +2,9 @@ package com.thoughtworks.cschuyle;
 
 import java.util.*;
 
-class MinNumCoinsSolver {
+class MinimumCoinCountSolver {
 
-    public MinNumCoinsSolver( DenominationSet denominations ) {
+    public MinimumCoinCountSolver( DenominationSet denominations ) {
         this.denominations = denominations;
     }
 
@@ -26,8 +26,8 @@ class MinNumCoinsSolver {
             return getMemoizedSolution( total );
         }
         Collection<CoinSet> coinSets = new ArrayList<CoinSet>();
-        final List<Denomination> sortedDenominations = denominations.getSortedList();
-        for( Denomination denomination: sortedDenominations) {
+        final List<Denomination> orderedDenominations = denominations.getOrderedList();
+        for( Denomination denomination: orderedDenominations) {
             processDenomination( total, coinSets, denomination );
         }
         if( coinSets.size() > 0 ) {
@@ -99,7 +99,7 @@ class MinNumCoinsSolver {
         if( null != solutionFactory ) {
             return solutionFactory;
         }
-        return SolutionFactoryInventory.OPTIMIZED_SOLUTION_FACTORY;
+        return SolutionFactories.OPTIMIZED_SOLUTION_FACTORY;
     }
 
     private DenominationSet denominations;

@@ -32,21 +32,21 @@ class CompleteSolution extends Solution {
         return coinSets;
     }
     
-    private CoinSet isItLess(CoinSet leastSolution, CoinSet coinSet) {
-        final Cardinality coinSetNumCoins = coinSet.getNumCoins();
-        final Cardinality leastSolutionNumCoins = leastSolution.getNumCoins();
+    private CoinSet isItLess( CoinSet leastSolution, CoinSet coinSet ) {
+        final Cardinality coinSetNumCoins = coinSet.getCoinCount();
+        final Cardinality leastSolutionNumCoins = leastSolution.getCoinCount();
         if( null == leastSolution || coinSetNumCoins.compareTo( leastSolutionNumCoins ) == -1) {
             leastSolution = coinSet;
         }
         return leastSolution;
     }
 
-    private void accumulateTotal(CoinSet coinSet) {
+    private void accumulateTotal( CoinSet coinSet ) {
         if( 0 == total.intValue() ) {
-            total = coinSet.sum();
+            total = coinSet.total();
             return;
         }
-        final Money coinSetSum = coinSet.sum();
+        final Money coinSetSum = coinSet.total();
         if( ! coinSetSum.equals( total ) ) {
             throw new IllegalStateException( "All coinSets must have the same sum" );
         }

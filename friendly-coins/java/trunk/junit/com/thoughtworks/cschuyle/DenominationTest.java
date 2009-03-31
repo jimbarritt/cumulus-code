@@ -10,16 +10,19 @@ import java.util.HashSet;
 public class DenominationTest extends TestCase {
 
     public void testIntValue() {
-        Denomination d = Denomination.getInstance( 1 );
-        assertEquals( 1, d.intValue() );
-
-        Denomination d2 = Denomination.getInstance( 2 );
-        assertEquals( 2, d2.intValue() );
+        {
+            Denomination denomination1 = Denomination.getInstance( 1 );
+            assertEquals( 1, denomination1.intValue() );
+        }
+        {
+            Denomination denomination2 = Denomination.getInstance( 2 );
+            assertEquals( 2, denomination2.intValue() );
+        }
     }
 
     public void testEquality() {
-        Denomination d = Denomination.getInstance( 1 );
-        assertEquals( ONE, d );
+        Denomination denomination1 = Denomination.getInstance( 1 );
+        assertEquals( ONE, denomination1 );
     }
 
     public void testStringValue() {
@@ -39,21 +42,22 @@ public class DenominationTest extends TestCase {
         assertFalse( c.contains( ONE ) );
         c.add( ONE );
         assertTrue( c.contains( ONE ) );
+        assertFalse( c.contains( TWO ) );
         c.add( TWO );
         assertTrue( c.contains( TWO ) );
         assertEquals( 2, c.size() );
     }
 
     public void testSingleton() {
-        Denomination d1 = Denomination.getInstance( 1 );
-        Denomination d2 = Denomination.getInstance( 1 );
-        assertSame( d1, d2 );
+        Denomination denomination1 = Denomination.getInstance( 1 );
+        Denomination denomination1again = Denomination.getInstance( 1 );
+        assertSame( denomination1, denomination1again );
     }
 
     public void testSingletonNotSame() {
-        Denomination d1 = Denomination.getInstance( 1 );
-        Denomination d2 = Denomination.getInstance( 2 );
-        assertNotSame( d1, d2 );
+        Denomination denomination1 = Denomination.getInstance( 1 );
+        Denomination denomination2 = Denomination.getInstance( 2 );
+        assertNotSame( denomination1, denomination2 );
     }
 
 }

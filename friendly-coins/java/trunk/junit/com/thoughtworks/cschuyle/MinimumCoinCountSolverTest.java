@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
-import static com.thoughtworks.cschuyle.SolutionFactoryInventory.*;
+import static com.thoughtworks.cschuyle.SolutionFactories.*;
 
 import static com.thoughtworks.cschuyle.TestConstants.*;
 
-public class MinNumCoinsSolverTest extends TestCase {
+public class MinimumCoinCountSolverTest extends TestCase {
 
 
     static class CoinSetList extends ArrayList<CoinSet> {
@@ -63,7 +63,7 @@ public class MinNumCoinsSolverTest extends TestCase {
 
     private void testTrivialCase( SolutionFactory solutionFactory ) {
         DenominationSet denominations = DenominationSetReader.readLine( "1" );
-        MinNumCoinsSolver solver = new MinNumCoinsSolver( denominations );
+        MinimumCoinCountSolver solver = new MinimumCoinCountSolver( denominations );
         solver.solutionFactory = solutionFactory;
         Solution solution = solver.solve( TOTAL_ONE );
 
@@ -85,7 +85,7 @@ public class MinNumCoinsSolverTest extends TestCase {
 
     private void testTrivialCaseNegative( SolutionFactory solutionFactory ) {
         DenominationSet denominations = DenominationSetReader.readLine( "1" );
-        MinNumCoinsSolver solver = new MinNumCoinsSolver( denominations );
+        MinimumCoinCountSolver solver = new MinimumCoinCountSolver( denominations );
         solver.solutionFactory = solutionFactory;
         Solution solution = solver.solve( TOTAL_ONE );
         CoinSet expected = CoinSet.createCoinSet( TWO );
@@ -100,7 +100,7 @@ public class MinNumCoinsSolverTest extends TestCase {
     // Can only use complete; optimized throws some away ...
     public void testMultipleSolutionCase() {
         DenominationSet denominations = DenominationSetReader.readLine( "1 2" );
-        MinNumCoinsSolver solver = new MinNumCoinsSolver( denominations );
+        MinimumCoinCountSolver solver = new MinimumCoinCountSolver( denominations );
         solver.solutionFactory = COMPLETE_SOLUTION_FACTORY;
         Solution solution = solver.solve( TOTAL_TWO );
 

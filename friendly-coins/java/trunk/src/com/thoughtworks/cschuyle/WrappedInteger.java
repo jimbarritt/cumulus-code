@@ -1,6 +1,7 @@
 package com.thoughtworks.cschuyle;
 
-import com.thoughtworks.cschuyle.util.Helpers;
+import com.thoughtworks.cschuyle.util.ClassHelpers;
+import com.thoughtworks.cschuyle.util.StringHelpers;
 
 public abstract class WrappedInteger {
 
@@ -8,8 +9,9 @@ public abstract class WrappedInteger {
 
     private WrappedInteger() {}
 
-    WrappedInteger( int i ) {
-        value = i;
+    WrappedInteger( int value ) {
+        this();
+        this.value = value;
     }
 
     public int intValue() {
@@ -17,11 +19,11 @@ public abstract class WrappedInteger {
     }
 
     public String stringValue() {
-        return "" + value;
+        return StringHelpers.toString( value );
     }
 
     public @Override String toString() {
-        final String className = Helpers.getSimpleClassName( this );
+        final String className = ClassHelpers.simpleName( this );
         return className + "<" + value + ">";
     }
 
@@ -29,24 +31,22 @@ public abstract class WrappedInteger {
         return value;
     }
 
-    public static boolean lessThan( WrappedInteger v1, WrappedInteger v2 ) {
-        final int iv1 = v1.intValue();
-        final int iv2 = v2.intValue();
-        return iv1 < iv2;
+    public static boolean lessThan( WrappedInteger value1, WrappedInteger value2 ) {
+        final int int1 = value1.intValue();
+        final int int2 = value2.intValue();
+        return int1 < int2;
     }
 
-    public static boolean greaterThan( WrappedInteger v1, WrappedInteger v2 ) {
-        final int iv1 = v1.intValue();
-        final int iv2 = v2.intValue();
-        return iv1 > iv2;
+    public static boolean greaterThan( WrappedInteger value1, WrappedInteger value2 ) {
+        final int int1 = value1.intValue();
+        final int int2 = value2.intValue();
+        return int1 > int2;
     }
 
     public static WrappedInteger minus( WrappedInteger v1, WrappedInteger v2 ) {
-        WrappedInteger ret = new WrappedInteger( 0 ) {};
         final int i1 = v1.intValue();
         final int i2 = v2.intValue();
-        ret.value = i1 - i2;
-        return ret;
+        return new WrappedInteger( i1 - i2 ) {};
     }
     
 }

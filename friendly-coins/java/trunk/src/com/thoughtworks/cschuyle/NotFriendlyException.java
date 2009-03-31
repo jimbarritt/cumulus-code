@@ -10,9 +10,9 @@ public class NotFriendlyException extends RuntimeException {
     }
 
     private static String createMessage( CoinSet leastCoinsSolution, CoinSet greedySolution ) {
-        final Cardinality leastCoins = leastCoinsSolution.getNumCoins();
-        final Cardinality greedyCoins = greedySolution.getNumCoins();
-        final Money leastCoinsSolutionTotal = leastCoinsSolution.sum();
+        final Cardinality leastCoins = leastCoinsSolution.getCoinCount();
+        final Cardinality greedyCoins = greedySolution.getCoinCount();
+        final Money leastCoinsSolutionTotal = leastCoinsSolution.total();
         return "NOT FRIENDLY.  For " + leastCoinsSolutionTotal + " cents, highest-first gives " +
                 greedySolution + " (" + greedyCoins + " coins), but change can be given in " +
                 leastCoins + " coins: " + leastCoinsSolution;

@@ -1,6 +1,6 @@
 package com.thoughtworks.cschuyle;
 
-import com.thoughtworks.cschuyle.util.Helpers;
+import com.thoughtworks.cschuyle.util.IntegerHelpers;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,26 +11,26 @@ class Denomination extends WrappedInteger implements Comparable<Denomination> {
         return null == denominations || 0 == denominations.size();
     }
     
-    private Denomination( int i ) {
-        super(i);
+    private Denomination( int value ) {
+        super( value );
     }
 
     public int compareTo( Denomination rhs ) {
         final int thisValue = this.value;
         final int rhsValue = rhs.value;
-        return Helpers.intCompareTo( thisValue, rhsValue);
+        return IntegerHelpers.intCompareTo( thisValue, rhsValue);
     }
 
-    public static Denomination getInstance(int i) {
-        return intern( i );
+    public static Denomination getInstance( int value ) {
+        return intern( value );
 
     }
-    private static Denomination intern( int i ) {
-        if(cache.containsKey( i )) {
-            return cache.get( i );
+    private static Denomination intern( int value ) {
+        if( cache.containsKey( value ) ) {
+            return cache.get( value );
         }
-        final Denomination newDenomination = new Denomination(i);
-        cache.put( i, newDenomination );
+        final Denomination newDenomination = new Denomination( value );
+        cache.put( value, newDenomination );
         return newDenomination;
     }
 

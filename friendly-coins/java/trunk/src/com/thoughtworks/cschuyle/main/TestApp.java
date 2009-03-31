@@ -32,7 +32,7 @@ public class TestApp {
     private static void mainBody(BufferedReader reader) {
         FriendlyRecognizer recognizer = new FriendlyRecognizer();
         for(;;) {
-            readAndProcessLine(reader, recognizer);
+            readAndProcessLine( reader, recognizer );
         }
     }
 
@@ -48,17 +48,23 @@ public class TestApp {
 
     private final static Money UP_TO = TOTAL_ONE_THOUSAND;
 
-    private static void processLine(FriendlyRecognizer recognizer, DenominationSet den) {
-        if( den.isEmpty() ) {
+    private static void processLine( FriendlyRecognizer recognizer, DenominationSet denominationSet ) {
+        if( denominationSet.isEmpty() ) {
             return;
         }
         try {
-            boolean friendly = recognizer.isFriendly( den,  UP_TO );
-            System.out.println( friendly ? "Friendly" : "Not Friendly" );
+            boolean friendly = recognizer.isFriendly( denominationSet,  UP_TO );
+            message( friendly ? "Friendly" : "Not Friendly" );
         } catch( NoSolutionException e) {
-            System.out.println( "Not Complete: " + e.getMessage() );
+            message( "Not Complete: " + e.getMessage());
         } catch( NotFriendlyException e) {
-            System.out.println( "Not Friendly: " + e.getMessage() );
+            message( "Not Friendly: " + e.getMessage() );
         }
+    }
+
+    private final static PrintStream cout = System.out;
+
+    private static void message( String message ) {
+        cout.println( message );
     }
 }

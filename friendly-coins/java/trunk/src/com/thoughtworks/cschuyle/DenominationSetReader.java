@@ -14,21 +14,21 @@ public class DenominationSetReader {
 
     static DenominationSet readLine( String inputLine ) {
         StringTokenizer stok = new StringTokenizer( inputLine );
-        Collection<Denomination> vals = new ArrayList<Denomination>();
-        while(stok.hasMoreTokens()) {
-            readSingleValue( stok, vals );
+        Collection<Denomination> destinationSet = new ArrayList<Denomination>();
+        while( stok.hasMoreTokens() ) {
+            readSingleValue( stok, destinationSet );
         }
-        final Denomination[] target = new Denomination[ vals.size() ];
-        return new DenominationSet( vals.toArray( target ));
+        final Denomination[] target = new Denomination[ destinationSet.size() ];
+        return new DenominationSet( destinationSet.toArray( target ));
     }
 
-    private static void readSingleValue( StringTokenizer stok, Collection<Denomination> vals ) {
-        final int i = readInt( stok );
-        final Denomination d = Denomination.getInstance( i );
-        if( vals.contains( d ) ) {
-            throw new IllegalArgumentException( "Attempt to add a duplicate value, " + i + " cents" );
+    private static void readSingleValue( StringTokenizer stok, Collection<Denomination> destinationSet ) {
+        final int value = readInt( stok );
+        final Denomination denomination = Denomination.getInstance( value );
+        if( destinationSet.contains( denomination ) ) {
+            throw new IllegalArgumentException( "Attempt to add a duplicate value, " + value + " cents" );
         }
-        vals.add( d );
+        destinationSet.add( denomination );
     }
 
     static int readInt( StringTokenizer stok ) {

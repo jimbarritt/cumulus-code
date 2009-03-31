@@ -10,8 +10,8 @@ public class Money extends WrappedInteger {
         super( rhs.intValue() );
     }
 
-    public Money( int i ) {
-        super( i );
+    public Money( int value ) {
+        super( value );
     }
 
     public void addCoin( Denomination denomination ) {

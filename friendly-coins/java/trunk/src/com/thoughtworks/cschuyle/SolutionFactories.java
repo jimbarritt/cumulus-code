@@ -2,9 +2,9 @@ package com.thoughtworks.cschuyle;
 
 import java.util.Collection;
 
-public class SolutionFactoryInventory {
+public class SolutionFactories {
 
-    private SolutionFactoryInventory() {}
+    private SolutionFactories() {}
 
     public static final SolutionFactory OPTIMIZED_SOLUTION_FACTORY = new SolutionFactory() {
 

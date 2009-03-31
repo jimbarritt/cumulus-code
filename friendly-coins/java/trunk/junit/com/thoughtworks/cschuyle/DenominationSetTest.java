@@ -9,44 +9,45 @@ import static com.thoughtworks.cschuyle.TestConstants.*;
 
 public class DenominationSetTest extends TestCase {
 
-    public void testGetSortedList() {
-        DenominationSet den = new DenominationSet( ONE );
-        List<Denomination> list = den.getSortedList();
+    public void testGetOrderedList() {
+        DenominationSet denominationSet1 = new DenominationSet( TWO, ONE );
+        List<Denomination> list = denominationSet1.getOrderedList();
         List<Denomination> expected = new ArrayList<Denomination>();
         expected.add( Denomination.getInstance( 1 ) );
+        expected.add( Denomination.getInstance( 2 ) );
         assertEquals( expected, list );
     }
 
     public void testHighest() {
-        DenominationSet den = new DenominationSet( ONE );
-        final Denomination highest = den.highest();
+        DenominationSet denominationSet1 = new DenominationSet( ONE );
+        final Denomination highest = denominationSet1.highest();
         assertEquals( ONE, highest );
     }
 
     public void testHighestSimple() {
-        DenominationSet den = new DenominationSet( ONE, TWO );
-        final Denomination highest = den.highest();
+        DenominationSet DenominationSet12 = new DenominationSet( ONE, TWO );
+        final Denomination highest = DenominationSet12.highest();
         assertEquals( TWO, highest );
     }
 
     public void testHighestSimpleBackwards() {
-        DenominationSet den = new DenominationSet( TWO, ONE );
-        final Denomination highest = den.highest();
+        DenominationSet denominationSet21 = new DenominationSet( TWO, ONE );
+        final Denomination highest = denominationSet21.highest();
         assertEquals( TWO, highest );
     }
 
     public void testHighestEmpty() {
-        DenominationSet den = new DenominationSet();
+        DenominationSet denominationSet = new DenominationSet();
         try {
-            den.highest();
+            denominationSet.highest();
             fail();
         } catch( IllegalStateException e) {
         }
     }
 
     public void testToString() {
-        DenominationSet den = new DenominationSet( TWO, ONE );
-        assertEquals( "DenominationSet<Denomination<1>,Denomination<2>>", den.toString() );        
+        DenominationSet denominationSet21 = new DenominationSet( TWO, ONE );
+        assertEquals( "DenominationSet<Denomination<1>,Denomination<2>>", denominationSet21.toString() );
     }
 
 }

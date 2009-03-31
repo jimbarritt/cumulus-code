@@ -1,6 +1,6 @@
 package com.thoughtworks.cschuyle;
 
-import com.thoughtworks.cschuyle.util.Helpers;
+import com.thoughtworks.cschuyle.util.IntegerHelpers;
 
 import java.util.Collection;
 import java.util.Map;
@@ -14,8 +14,8 @@ class Cardinality extends WrappedInteger implements Comparable<Cardinality> {
 
     public static Cardinality total( Collection<Cardinality> cardinalities ) {
         int value = 0;
-        for( Cardinality card : cardinalities ) {
-            value += card.intValue();
+        for( Cardinality cardinality : cardinalities ) {
+            value += cardinality.intValue();
         }
         return getInstance( value );
     }
@@ -23,7 +23,7 @@ class Cardinality extends WrappedInteger implements Comparable<Cardinality> {
     public int compareTo( Cardinality rhs ) {
         final int thisInt = this.value;
         final int rhsInt = rhs.value;
-        return Helpers.intCompareTo( thisInt, rhsInt );
+        return IntegerHelpers.intCompareTo( thisInt, rhsInt );
     }
 
     public static Cardinality getInstance( int value ) {
