@@ -6,6 +6,8 @@ import java.util.*;
 
 public class CoinSetCollection extends AbstractSet<CoinSet> {
 
+    private Map<CoinSet,CoinSet> set = new HashMap<CoinSet,CoinSet>();
+
     public static CoinSetCollection createAugmented( CoinSetCollection coinSets, Denomination denomination ) {
         CoinSetCollection augmented = new CoinSetCollection();
         for( CoinSet coinSet: coinSets ) {
@@ -30,6 +32,4 @@ public class CoinSetCollection extends AbstractSet<CoinSet> {
         }
         return false;
     }
-
-    private Map<CoinSet,CoinSet> set = new HashMap<CoinSet,CoinSet>();
 }

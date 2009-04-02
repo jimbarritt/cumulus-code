@@ -6,6 +6,8 @@ import java.util.Collection;
 
 class OptimizedSolution extends Solution {
 
+    private CoinSet solution;
+    
     public OptimizedSolution( Collection<CoinSet> coinSets ) {
         CoinSet theLeast = findMinimalCoinCountSolution( coinSets );
         this.solution = theLeast;
@@ -44,6 +46,4 @@ class OptimizedSolution extends Solution {
         }
         return theLeast;
     }
-
-    private CoinSet solution;
 }

@@ -32,5 +32,4 @@ public abstract class WrappedInteger {
     public @Override int hashCode() {
         return value;
     }
-
 }

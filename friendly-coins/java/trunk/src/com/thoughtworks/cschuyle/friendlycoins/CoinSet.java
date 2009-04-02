@@ -1,15 +1,15 @@
 package com.thoughtworks.cschuyle.friendlycoins;
 
 import java.util.*;
-import com.thoughtworks.cschuyle.util.StringHelpers;
-import com.thoughtworks.cschuyle.util.ClassHelpers;
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
+import com.thoughtworks.cschuyle.util.*;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
 import static com.thoughtworks.cschuyle.util.Joiner.*;
 
 public class CoinSet {
 
+    private Money total = new Money();
+    private Map<Denomination, Cardinality> denominations = new HashMap<Denomination, Cardinality>();
+                              
     private CoinSet( Denomination... denominations ) {
         for( Denomination denomination : denominations ) {
             incrementDenomination( denomination );
@@ -85,7 +85,7 @@ public class CoinSet {
         return item;
     }
 
-    Collection<Denomination> getDenominations() {
+    private Collection<Denomination> getDenominations() {
         return denominations.keySet();
     }
 
@@ -102,13 +102,9 @@ public class CoinSet {
         incrementDenomination( denomination );
     }
 
-    Map<Denomination, Cardinality> denominations = new HashMap<Denomination, Cardinality>();
-
     boolean containsDenomination( Denomination d ) {
         return denominations.containsKey( d );
     }
-
-    private Money total = new Money();
 
     private void incrementDenomination( Denomination denomination ) {
         Cardinality cardinality = getCoinCount( denomination );
@@ -116,5 +112,4 @@ public class CoinSet {
         setCardinality( denomination, Cardinality.getInstance( cardinalityPlus1 ));
         total.addCoin( denomination );
     }
-
 }

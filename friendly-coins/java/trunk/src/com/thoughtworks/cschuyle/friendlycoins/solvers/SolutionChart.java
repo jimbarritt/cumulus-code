@@ -8,6 +8,8 @@ import java.util.HashMap;
 
 class SolutionChart {
 
+    private Map<Integer, Solution> chart = new HashMap<Integer, Solution>();
+
     public boolean containsTotal( Money total ) {
         return chart.containsKey( total.intValue() );
     }
@@ -24,6 +26,4 @@ class SolutionChart {
     public Solution get( Money total ) {
         return chart.get( total.intValue() );
     }
-
-    private Map<Integer, Solution> chart = new HashMap<Integer, Solution>();
 }

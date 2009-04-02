@@ -27,6 +27,7 @@ public class Denomination extends WrappedInteger implements Comparable<Denominat
         return intern( value );
 
     }
+
     private static Denomination intern( int value ) {
         if( cache.containsKey( value ) ) {
             return cache.get( value );
@@ -37,5 +38,4 @@ public class Denomination extends WrappedInteger implements Comparable<Denominat
     }
 
     private static Map<Integer, Denomination> cache = new HashMap<Integer, Denomination>();
-
 }

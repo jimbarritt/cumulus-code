@@ -6,7 +6,8 @@ import com.thoughtworks.cschuyle.friendlycoins.solvers.FriendlyChecker;
 
 public class FriendlyRecognizer {
 
-    Money highestFriendlyTotal = null;
+    private Money highestFriendlyTotal = null;
+    private Exception failureException;
 
     public void checkFriendliness( DenominationSet denominationSet, Money checkUpToTotal ) {
         if( checkUpToTotal.intValue() < 1 ) {
@@ -14,8 +15,8 @@ public class FriendlyRecognizer {
         }
         final MinimumCoinCountSolver solver = new MinimumCoinCountSolver( denominationSet );
         for( int total = 1 ; total <= checkUpToTotal.intValue() && null == failureException ; ++total ) {
-            FriendlyChecker checker = new FriendlyChecker( denominationSet, solver, new Money( total ) );
-            failureException = checker.checkIfFriendly();
+            FriendlyChecker checker = new FriendlyChecker( denominationSet, solver );
+            failureException = checker.checkIfFriendly( new Money( total ) );
         }
     }
 
@@ -26,6 +27,4 @@ public class FriendlyRecognizer {
     public Exception getFailureException() {
         return failureException;
     }
-
-    private Exception failureException;
 }
