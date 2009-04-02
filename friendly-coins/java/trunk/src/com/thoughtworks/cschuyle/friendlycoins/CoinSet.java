@@ -1,6 +1,5 @@
 package com.thoughtworks.cschuyle.friendlycoins;
 
-import java.util.*;
 import com.thoughtworks.cschuyle.util.*;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
 import static com.thoughtworks.cschuyle.util.Joiner.*;
@@ -8,8 +7,9 @@ import static com.thoughtworks.cschuyle.util.Joiner.*;
 public class CoinSet {
 
     private Money total = new Money();
-    private Map<Denomination, Cardinality> denominations = new HashMap<Denomination, Cardinality>();
-                              
+
+    private CoinRollCollection coinRolls = new CoinRollCollection();
+
     private CoinSet( Denomination... denominations ) {
         for( Denomination denomination : denominations ) {
             incrementDenomination( denomination );
@@ -35,65 +35,41 @@ public class CoinSet {
 
     public Cardinality getCoinCount( Denomination denomination ) {
         if( containsDenomination( denomination ) ) {
-            return denominations.get( denomination );
+            return coinRolls.get( denomination.intValue() ).getCount();
         }
-        Cardinality newCard = Cardinality.getInstance( 0 );
-        denominations.put( denomination, newCard );
-        return newCard;
+        Cardinality zero = Cardinality.getInstance( 0 );
+        return zero;
     }
 
-    private void setCardinality( Denomination denomination, Cardinality card ) {
-        denominations.put( denomination, card );
+    private void setCount( Denomination denomination, Cardinality count ) {
+        coinRolls.put( denomination.intValue(), new CoinRoll( denomination,  count ) );
     }
 
     public Cardinality getTotalCoinCount() {
-        final Collection<Cardinality> denominationsValues = denominations.values();
-        return Cardinality.total( denominationsValues );
+        return coinRolls.getTotalCoinCount();
     }
 
     public @Override boolean equals( Object rhs ) {
-        if( ! ( rhs instanceof CoinSet ) ) {
+        if( ! (rhs instanceof CoinSet ) ) {
             return false;
         }
         final CoinSet rhsCoinSet = (CoinSet) rhs;
-        final Map<Denomination, Cardinality> rhsDenominations = rhsCoinSet.denominations;
-        final Map<Denomination, Cardinality> thisDenominations = this.denominations;
-        return thisDenominations.equals( rhsDenominations );
+        final CoinRollCollection rhsCoinRolls = rhsCoinSet.coinRolls;
+        return( this.coinRolls.equals( rhsCoinRolls ) );
     }
 
     public @Override int hashCode() {
-        // TODO This is inefficient!
-        return toString().hashCode();
+        return coinRolls.hashCode();
     }
 
     public @Override String toString() {
-        final Collection<String> coinQuantities = new ArrayList<String>();
-        for( Denomination denomination : this.denominations.keySet() ) {
-            coinQuantities.add( denominationAndCardinalityToString( denomination ) );
-        }
         final String className = ClassHelpers.simpleName( this );
-        final String body = StringHelpers.join( coinQuantities, COMMA );
+        final String body = StringHelpers.join( coinRolls.values(), COMMA );
         return className + "<" + body + ">";
     }
 
-    // TODO Could use a refactor: Denomination + quantity smells primitive.
-    private String denominationAndCardinalityToString( Denomination den ) {
-        String item = den.stringValue();
-        item += "'s:";
-        final Cardinality card = denominations.get(den);
-        item += card.stringValue();
-        return item;
-    }
-
-    private Collection<Denomination> getDenominations() {
-        return denominations.keySet();
-    }
-
     private CoinSet( CoinSet rhs ) {
-        for( Denomination denomination: rhs.getDenominations() ) {
-            final Cardinality rhsDenominationCount = rhs.getCoinCount( denomination );
-            denominations.put( denomination, rhsDenominationCount );
-        }
+        this.coinRolls = rhs.coinRolls.deepCopy();
         total = new Money( rhs.total() );
     }
 
@@ -102,14 +78,14 @@ public class CoinSet {
         incrementDenomination( denomination );
     }
 
-    boolean containsDenomination( Denomination d ) {
-        return denominations.containsKey( d );
+    private boolean containsDenomination( Denomination d ) {
+        return coinRolls.containsKey( d.intValue() );
     }
 
     private void incrementDenomination( Denomination denomination ) {
         Cardinality cardinality = getCoinCount( denomination );
         final int cardinalityPlus1 = cardinality.intValue() + 1;
-        setCardinality( denomination, Cardinality.getInstance( cardinalityPlus1 ));
+        setCount( denomination, Cardinality.getInstance( cardinalityPlus1 ));
         total.addCoin( denomination );
     }
 }

@@ -25,11 +25,19 @@ public class CoinSetCollection extends AbstractSet<CoinSet> {
         return set.values().iterator();
     }
 
-    public boolean add( CoinSet coinSet ) {
+    public @Override boolean add( CoinSet coinSet ) {
         if( ! set.containsKey( coinSet ) ) {
             set.put( coinSet, coinSet );
             return true;
         }
         return false;
+    }
+
+    public @Override boolean addAll( Collection<? extends CoinSet> coinSets ) {
+        boolean ret = true;
+        for( CoinSet coinSet: coinSets ) {
+            ret &= add( coinSet );
+        }
+        return ret;
     }
 }

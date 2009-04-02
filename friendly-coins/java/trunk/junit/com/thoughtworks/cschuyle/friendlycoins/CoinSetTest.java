@@ -1,9 +1,8 @@
 package com.thoughtworks.cschuyle.friendlycoins;
 
 import junit.framework.TestCase;
-import junit.framework.Assert;
 
-import com.thoughtworks.cschuyle.friendlycoins.CoinSet;
+import static com.thoughtworks.cschuyle.friendlycoins.TestConstants.*;
 
 public class CoinSetTest extends TestCase {
 
@@ -15,39 +14,39 @@ public class CoinSetTest extends TestCase {
 
     public void testEqualsTrivial() {
         CoinSet a = CoinSet.createCoinSet(TestConstants.ONE);
-        CoinSet b = CoinSet.createCoinSet(TestConstants.ONE);
+        CoinSet b = CoinSet.createCoinSet(ONE);
 
         assertEquals( a, b );
         assertEquals( b, a );
     }
 
     public void testNotEqualsTrivial() {
-        CoinSet a = CoinSet.createCoinSet(TestConstants.ONE);
-        CoinSet b = CoinSet.createCoinSet(TestConstants.TWO);
+        CoinSet a = CoinSet.createCoinSet(ONE);
+        CoinSet b = CoinSet.createCoinSet(TWO);
 
         assertFalse( a.equals(b) );
         assertFalse( b.equals(a) );
     }
 
     public void testEqualsSimple() {
-        CoinSet a = CoinSet.createCoinSet(TestConstants.TWO, TestConstants.ONE);
-        CoinSet b = CoinSet.createCoinSet(TestConstants.ONE, TestConstants.TWO);
+        CoinSet a = CoinSet.createCoinSet(TWO, ONE);
+        CoinSet b = CoinSet.createCoinSet(ONE, TWO);
 
         assertEquals( a, b );
         assertEquals( b, a );
     }
 
     public void testEqualsCardinality() {
-        CoinSet a = CoinSet.createCoinSet(TestConstants.ONE, TestConstants.ONE, TestConstants.TWO);
-        CoinSet b = CoinSet.createCoinSet(TestConstants.TWO, TestConstants.ONE, TestConstants.ONE);
+        CoinSet a = CoinSet.createCoinSet(ONE, ONE, TWO);
+        CoinSet b = CoinSet.createCoinSet(TWO, ONE, ONE);
 
         assertEquals( a, b );
         assertEquals( b, a );
     }
 
     public void testNotEqualsCardinality() {
-        CoinSet a = CoinSet.createCoinSet(TestConstants.ONE, TestConstants.TWO);
-        CoinSet b = CoinSet.createCoinSet(TestConstants.TWO, TestConstants.ONE, TestConstants.ONE);
+        CoinSet a = CoinSet.createCoinSet(ONE, TWO);
+        CoinSet b = CoinSet.createCoinSet(TWO, ONE, ONE);
 
         assertFalse( a.equals(b) );
         assertFalse( b.equals(a) );
@@ -55,19 +54,24 @@ public class CoinSetTest extends TestCase {
 
     public void testSum() {
         CoinSet a = CoinSet.createCoinSet();
-        Assert.assertEquals(TestConstants.TOTAL_ZERO, a.total() );
-        a = CoinSet.createCoinSet(TestConstants.ONE);
-        Assert.assertEquals(TestConstants.TOTAL_ONE, a.total() );
-        a = CoinSet.createCoinSet(TestConstants.ONE, TestConstants.ONE);
-        Assert.assertEquals(TestConstants.TOTAL_TWO, a.total() );
-        a = CoinSet.createCoinSet(TestConstants.ONE, TestConstants.ONE, TestConstants.FIVE);
-        Assert.assertEquals(TestConstants.TOTAL_SEVEN, a.total() );
+        assertEquals(TOTAL_ZERO, a.total() );
+        a = CoinSet.createCoinSet(ONE);
+        assertEquals(TOTAL_ONE, a.total() );
+        a = CoinSet.createCoinSet(ONE, ONE);
+        assertEquals(TOTAL_TWO, a.total() );
+        a = CoinSet.createCoinSet(ONE, ONE, FIVE);
+        assertEquals(TOTAL_SEVEN, a.total() );
     }
 
     public void testClonePlusDenominationConstructor() {
-        CoinSet a = CoinSet.createCoinSet(TestConstants.ONE);
-        CoinSet b = CoinSet.createAugmentedCoinSet( a, TestConstants.TWO);
-        Assert.assertEquals(TestConstants.TOTAL_THREE, b.total() );
+        CoinSet a = CoinSet.createCoinSet(ONE);
+        CoinSet b = CoinSet.createAugmentedCoinSet( a, TWO);
+        assertEquals(TOTAL_THREE, b.total() );
     }
 
+    public void testAugmentCoinSet() {
+        CoinSet a = CoinSet.createCoinSet( ONE, ONE );
+        CoinSet b = CoinSet.createAugmentedCoinSet( a, TWO );
+        assertEquals( CoinSet.createCoinSet( ONE, ONE, TWO ), b );
+    }
 }
