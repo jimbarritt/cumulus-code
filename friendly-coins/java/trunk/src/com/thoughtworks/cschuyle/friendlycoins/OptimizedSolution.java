@@ -1,27 +1,26 @@
 package com.thoughtworks.cschuyle.friendlycoins;
 
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
 
 import java.util.Collection;
-import java.util.ArrayList;
 
 class OptimizedSolution extends Solution {
 
-    Money total = new Money();
-
-    public @Override Money getTotal() {
-        return total;
-    }
-
     public OptimizedSolution( Collection<CoinSet> coinSets ) {
-        super();
         CoinSet theLeast = findMinimalCoinCountSolution( coinSets );
         this.solution = theLeast;
-        final Money theLeastSum = theLeast.total();
-        this.total = theLeastSum;
     }
 
+    public @Override CoinSet getFewestCoinsSolution() {
+        return solution;
+    }
+
+    public @Override CoinSetCollection getCoinSets() {
+        final CoinSetCollection coinSets = new CoinSetCollection();
+        coinSets.add( solution );
+        return coinSets;
+    }
+    
     private CoinSet findMinimalCoinCountSolution( Collection<CoinSet> coinSets ) {
         CoinSet theLeast = null;
         for( CoinSet coinSet : coinSets ) {
@@ -34,10 +33,10 @@ class OptimizedSolution extends Solution {
         if( null == theLeast ) {
             return coinSet;
         }
-        final Cardinality coinSetNumCoins = coinSet.getCoinCount();
+        final Cardinality coinSetNumCoins = coinSet.getTotalCoinCount();
         final int coinSetNumCoinsInt = coinSetNumCoins.intValue();
 
-        final Cardinality theLeastNumCoins = theLeast.getCoinCount();
+        final Cardinality theLeastNumCoins = theLeast.getTotalCoinCount();
         final int theLeastNumCoinsInt = theLeastNumCoins.intValue();
 
         if( coinSetNumCoinsInt < theLeastNumCoinsInt ) {
@@ -46,15 +45,5 @@ class OptimizedSolution extends Solution {
         return theLeast;
     }
 
-    CoinSet solution;
-
-    public @Override CoinSet getFewestCoinsSolution() {
-        return solution;
-    }
-
-    public @Override Collection<CoinSet> getCoinSets() {
-        final ArrayList<CoinSet> ret = new ArrayList<CoinSet>();
-        ret.add( solution );
-        return ret;
-    }
+    private CoinSet solution;
 }

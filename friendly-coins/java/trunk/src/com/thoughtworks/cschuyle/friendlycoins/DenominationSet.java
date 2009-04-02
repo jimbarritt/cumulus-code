@@ -5,22 +5,17 @@ import com.thoughtworks.cschuyle.util.ClassHelpers;
 
 import java.util.*;
 
-import static com.thoughtworks.cschuyle.util.StringHelpers.Joiner.COMMA;
+import static com.thoughtworks.cschuyle.util.Joiner.COMMA;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
+import com.thoughtworks.cschuyle.SortedList;
 
-public class DenominationSet {
+public class DenominationSet extends AbstractSet<Denomination> {
 
-    Collection<Denomination> denominations;
-
-    public DenominationSet() {
-        denominations = new ArrayList<Denomination>();
-    }
+    private SortedList<Denomination> denominations;
 
     public DenominationSet( Denomination ... denominations ) {
-        this();
-        for( Denomination denomination : denominations ) {
-            add( denomination );
-        }
+        this.denominations = new SortedList<Denomination>();
+        this.denominations.addAll( Arrays.asList( denominations ) );
     }
     
     public int size() {
@@ -31,35 +26,21 @@ public class DenominationSet {
         return denominations.iterator();
     }
 
-    public boolean contains( Denomination denomination ) {
-        return denominations.contains( denomination );
-    }
-
-    public List<Denomination> getOrderedList() {
-        List<Denomination> sortedList = new ArrayList<Denomination>( this.denominations);
-        Collections.sort( sortedList );
-        return sortedList;
-    }
-
     public Denomination highest() {
-        final List<Denomination> list = getOrderedList();
-        final int listLength = list.size();
-        if( listLength > 0 ) {
-            return list.get( listLength - 1 );
+        if( denominations.size() > 0 ) {
+            return denominations.first();
         }
         throw new IllegalStateException( "Cannot get highest element from empty list" );
     }
 
     public @Override String toString() {
-        List<Denomination> orderedList = getOrderedList();
         final String className = ClassHelpers.simpleName( this );
-        return className + "<"
-            + StringHelpers.join( orderedList, COMMA )
-            + ">";
+        final String body = StringHelpers.join( denominations, COMMA );
+        return className + "<" + body + ">";
     }
 
-    private void add( Denomination denomination ) {
-        denominations.add( denomination );
+    public boolean add( Denomination denomination ) {
+        return denominations.add( denomination );
     }
 
     public boolean isEmpty() {

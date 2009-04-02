@@ -9,13 +9,13 @@ public class NotFriendlyException extends RuntimeException {
         super( msg );
     }
 
-    public NotFriendlyException( CoinSet leastCoinsSolution, CoinSet greedySolution ) {
-        super( createMessage( leastCoinsSolution, greedySolution ) );
+    public NotFriendlyException( CoinSet fewestCoinsSolution, CoinSet highestFirstSolution ) {
+        super( createMessage( fewestCoinsSolution, highestFirstSolution ) );
     }
 
     private static String createMessage( CoinSet leastCoinsSolution, CoinSet greedySolution ) {
-        final Cardinality leastCoins = leastCoinsSolution.getCoinCount();
-        final Cardinality greedyCoins = greedySolution.getCoinCount();
+        final Cardinality leastCoins = leastCoinsSolution.getTotalCoinCount();
+        final Cardinality greedyCoins = greedySolution.getTotalCoinCount();
         final Money leastCoinsSolutionTotal = leastCoinsSolution.total();
         return "NOT FRIENDLY.  For " + leastCoinsSolutionTotal + " cents, highest-first gives " +
                 greedySolution + " (" + greedyCoins + " coins), but change can be given in " +

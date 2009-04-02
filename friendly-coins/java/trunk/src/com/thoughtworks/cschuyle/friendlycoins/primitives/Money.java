@@ -9,7 +9,7 @@ public class Money extends WrappedInteger {
         super( 0 );
     }
 
-    public Money( Money rhs ) {
+    public Money( WrappedInteger rhs ) {
         super( rhs.intValue() );
     }
 

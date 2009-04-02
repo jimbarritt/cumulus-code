@@ -21,6 +21,7 @@ public class TestConstants {
     public final static Money TOTAL_SEVEN = new Money( 7 );
     public final static Money TOTAL_EIGHT = new Money( 8 );
     public final static Money TOTAL_TEN =   new Money( 10 );
+    public final static Money TOTAL_ONE_HUNDRED = new Money( 100 );
     public final static Money TOTAL_ONE_THOUSAND = new Money( 1000 );
     public final static Money TOTAL_TEN_THOUSAND = new Money( 10000 );
 

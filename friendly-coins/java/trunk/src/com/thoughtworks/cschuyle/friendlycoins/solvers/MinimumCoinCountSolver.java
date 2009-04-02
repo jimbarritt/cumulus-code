@@ -1,124 +1,61 @@
 package com.thoughtworks.cschuyle.friendlycoins.solvers;
 
-import com.thoughtworks.cschuyle.friendlycoins.exception.NoSolutionException;
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
 import com.thoughtworks.cschuyle.friendlycoins.*;
+import com.thoughtworks.cschuyle.util.WrappedIntegerHelpers;
 
-import java.util.*;
+public class MinimumCoinCountSolver extends SolutionFactoryContainer {
 
-class MinimumCoinCountSolver {
+    private SolutionChart chart = new SolutionChart();
+    private DenominationSet denominations;
 
     public MinimumCoinCountSolver( DenominationSet denominations ) {
         this.denominations = denominations;
     }
 
-    public Solution solve( Money total ) {
-        /*
-        solve(x):
-            if x is a solution
+        /* solve(x):
+             if x is a solution
                 return
-            for all den
+             for all den
                 if x == den
                     den is a solution
                 else if solve x-den
                     partial solution + den is a solution
-
-
-        more than one solution for a given x arises out of the for loop
         */
-        if( isMemoized( total ) ) {
-            return getMemoizedSolution( total );
+
+    public Solution solve( Money total ) {
+        if( null == chart.get( total ) ) {
+            solveInternal(total);
         }
-        Collection<CoinSet> coinSets = new ArrayList<CoinSet>();
-        final List<Denomination> orderedDenominations = denominations.getOrderedList();
-        for( Denomination denomination: orderedDenominations) {
-            processDenomination( total, coinSets, denomination );
+        return chart.get( total );
+    }
+
+    private void solveInternal( Money total ) {
+        CoinSetCollection coinSets = new CoinSetCollection();
+        for( Denomination denomination: denominations ) {
+            solveForDenomination( total, coinSets, denomination );
         }
         if( coinSets.size() > 0 ) {
-            final SolutionFactory solutionFactory = getSolutionFactory();
-            final Solution solution = solutionFactory.createSolution( coinSets );
-            memoizeSolution( solution );
-            return solution;
+            Solution solution = createSolution( coinSets );
+            chart.put( total, solution );
         }
-        throw new NoSolutionException( denominations, total );
     }
 
-    public Solution getMemoizedSolution( Money total ) {
-        Solution ret = getPossiblyNullSolution( total );
-        if( null == ret ) {
-            throw new IllegalArgumentException( "Request for non-memoized solution for total = " + total );
-        }
-        return ret;
-    }
-
-    private Solution getPossiblyNullSolution( Money total ) {
-        final int totalInt = total.intValue();
-        return chart.get( totalInt );
-    }
-
-    public CoinSet getFewestCoinsSolution( Money total ) {
-        Solution solution = getMemoizedSolution( total );
-        return solution.getFewestCoinsSolution();
-    }
-        
-    private void processDenomination( Money total, Collection<CoinSet> coinSets, Denomination denomination ) {
-        final int denominationInt = denomination.intValue();
-        final int totalInt = total.intValue();
-        if( denominationInt == totalInt ) {
+    private void solveForDenomination( Money total, CoinSetCollection coinSets, Denomination denomination ) {
+        if( WrappedIntegerHelpers.areEqual( total, denomination ) ) {
             CoinSet coinSet = CoinSet.createCoinSet( denomination );
             coinSets.add( coinSet );
-            return;
         }
-        if( denominationInt < totalInt ) {
-            recurse( total, coinSets, denomination );
+        if( WrappedIntegerHelpers.lessThan( denomination, total ) ) {
+            Solution partialSolution = solve( new Money( WrappedIntegerHelpers.minus( total, denomination ) ) );
+            mergePartialSolution( coinSets, partialSolution.getCoinSets(), denomination );
         }
     }
 
-    private void recurse( Money total, Collection<CoinSet> coinSets, Denomination denomination ) {
-        final int totalInt = total.intValue();
-        final int denominationInt = denomination.intValue();
-        Money smallerTotal = new Money( totalInt - denominationInt );
-        Solution partialSolution = solve( smallerTotal  );
+    private void mergePartialSolution( CoinSetCollection destinationCoinSets, CoinSetCollection partialSolution, Denomination denomination ) {
         if( null != partialSolution ) {
-            mergePartialSolution( coinSets, denomination, partialSolution );
+            CoinSetCollection coinSets = CoinSetCollection.createAugmented( partialSolution, denomination );
+            destinationCoinSets.addAll( coinSets );
         }
     }
-
-    private void mergePartialSolution(
-            Collection<CoinSet> coinSets, Denomination denomination, Solution partialSolution ) {
-        final Collection<CoinSet> partialSolutionCoinSets = partialSolution.getCoinSets();
-        for( CoinSet coinSet: partialSolutionCoinSets) {
-            final CoinSet augmentedCoinSet = CoinSet.createAugmentedCoinSet( coinSet, denomination );
-            coinSets.add( augmentedCoinSet );
-        }
-    }
-
-    SolutionFactory solutionFactory;
-
-    public void setSolutionFactory( SolutionFactory solutionFactory ) {
-        this.solutionFactory = solutionFactory;
-    }
-
-    private SolutionFactory getSolutionFactory() {
-        if( null != solutionFactory ) {
-            return solutionFactory;
-        }
-        return SolutionFactories.OPTIMIZED_SOLUTION_FACTORY;
-    }
-
-    private DenominationSet denominations;
-
-    private boolean isMemoized( Money total ) {
-        return chart.containsKey( total.intValue() );
-    }
-
-    private void memoizeSolution( Solution solution ) {
-        final Money solutionTotal = solution.getTotal();
-        final int solutionTotalInt = solutionTotal.intValue();
-        chart.put( solutionTotalInt, solution );
-    }
-
-    private Map<Integer, Solution> chart = new HashMap<Integer, Solution>();
-
 }

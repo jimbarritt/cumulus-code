@@ -4,10 +4,10 @@ public class IntegerHelpers {
 
     private IntegerHelpers() {}
 
-    public static int intCompareTo( int v1, int v2) {
+    public static int intCompareTo( int value1, int value2) {
         return (
-                v1 < v2
-                    ? -1 : v1 > v2
+                value1 < value2
+                    ? -1 : value1 > value2
                         ? 1 : 0 );
     }
 

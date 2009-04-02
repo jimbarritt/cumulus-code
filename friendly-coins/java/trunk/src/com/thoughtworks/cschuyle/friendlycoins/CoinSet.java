@@ -3,10 +3,10 @@ package com.thoughtworks.cschuyle.friendlycoins;
 import java.util.*;
 import com.thoughtworks.cschuyle.util.StringHelpers;
 import com.thoughtworks.cschuyle.util.ClassHelpers;
-import static com.thoughtworks.cschuyle.util.StringHelpers.Joiner.*;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
+import static com.thoughtworks.cschuyle.util.Joiner.*;
 
 public class CoinSet {
 
@@ -33,7 +33,7 @@ public class CoinSet {
         return this.total;
     }
 
-    public Cardinality getCardinality( Denomination denomination ) {
+    public Cardinality getCoinCount( Denomination denomination ) {
         if( containsDenomination( denomination ) ) {
             return denominations.get( denomination );
         }
@@ -46,7 +46,7 @@ public class CoinSet {
         denominations.put( denomination, card );
     }
 
-    public Cardinality getCoinCount() {
+    public Cardinality getTotalCoinCount() {
         final Collection<Cardinality> denominationsValues = denominations.values();
         return Cardinality.total( denominationsValues );
     }
@@ -72,7 +72,8 @@ public class CoinSet {
             coinQuantities.add( denominationAndCardinalityToString( denomination ) );
         }
         final String className = ClassHelpers.simpleName( this );
-        return className + "<" + StringHelpers.join( coinQuantities, COMMA ) + ">";
+        final String body = StringHelpers.join( coinQuantities, COMMA );
+        return className + "<" + body + ">";
     }
 
     // TODO Could use a refactor: Denomination + quantity smells primitive.
@@ -90,7 +91,7 @@ public class CoinSet {
 
     private CoinSet( CoinSet rhs ) {
         for( Denomination denomination: rhs.getDenominations() ) {
-            final Cardinality rhsDenominationCount = rhs.getCardinality( denomination );
+            final Cardinality rhsDenominationCount = rhs.getCoinCount( denomination );
             denominations.put( denomination, rhsDenominationCount );
         }
         total = new Money( rhs.total() );
@@ -110,7 +111,7 @@ public class CoinSet {
     private Money total = new Money();
 
     private void incrementDenomination( Denomination denomination ) {
-        Cardinality cardinality = getCardinality( denomination );
+        Cardinality cardinality = getCoinCount( denomination );
         final int cardinalityPlus1 = cardinality.intValue() + 1;
         setCardinality( denomination, Cardinality.getInstance( cardinalityPlus1 ));
         total.addCoin( denomination );

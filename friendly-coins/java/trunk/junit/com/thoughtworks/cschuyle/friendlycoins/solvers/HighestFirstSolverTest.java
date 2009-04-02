@@ -55,7 +55,7 @@ public class HighestFirstSolverTest extends TestCase {
             HighestFirstSolver.solve( denominations, TestConstants.TOTAL_THREE);
             fail();
         } catch( NoSolutionException e) {
-            assertEquals( "There is no solution given the denominations DenominationSet<Denomination<2>,Denomination<5>> to give Money<3> cents change.",
+            assertEquals( "There is no solution given the denominations DenominationSet<Denomination<5>,Denomination<2>> to give Money<3> cents change.",
                     e.getMessage() );            
         }
     }

@@ -42,19 +42,4 @@ public class StringHelpers {
         return (null == joinee ? NULL_STRING : joinee.toString() );
     }
 
-    public static class Joiner {
-
-        public static final Joiner COMMA = new Joiner( "," );
-
-        private String joiner;
-
-        public Joiner( String joiner ) {
-            this.joiner = joiner;
-        }
-
-        public @Override String toString() {
-            return joiner;
-        }
-
-    }
 }

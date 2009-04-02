@@ -40,7 +40,7 @@ public class StringHelpersTest extends TestCase {
     public void testJoinTwoElementsWithNonNullJoiner() {
         Object[] collection = new Object[] { "1", "2" };
         Collection<Object> collection2 = Arrays.asList( collection );
-        String joined = StringHelpers.join( collection2, StringHelpers.Joiner.COMMA );
+        String joined = StringHelpers.join( collection2, Joiner.COMMA );
         assertEquals( "1,2", joined);
     }
 
@@ -57,7 +57,7 @@ public class StringHelpersTest extends TestCase {
     }
 
     public void testJoinTwoObjectsWithNonNullJoiner() {
-        final StringHelpers.Joiner comma = StringHelpers.Joiner.COMMA;
+        final Joiner comma = Joiner.COMMA;
         Object[] collection = new Object[] { new MyObject( this ), new MyObject( comma ) };
         Collection<Object> collection2 = Arrays.asList( collection );
         String joined = StringHelpers.join( collection2, comma );

@@ -1,8 +1,6 @@
 package com.thoughtworks.cschuyle.friendlycoins.solvers;
 
-import java.util.List;
-
-import static com.thoughtworks.cschuyle.WrappedInteger.*;
+import static com.thoughtworks.cschuyle.util.WrappedIntegerHelpers.*;
 import com.thoughtworks.cschuyle.friendlycoins.exception.NoSolutionException;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
@@ -10,7 +8,7 @@ import com.thoughtworks.cschuyle.friendlycoins.CoinSet;
 import com.thoughtworks.cschuyle.friendlycoins.DenominationSet;
 import com.thoughtworks.cschuyle.WrappedInteger;
 
-class HighestFirstSolver {
+public class HighestFirstSolver {
 
     private HighestFirstSolver() {}
     
@@ -18,11 +16,10 @@ class HighestFirstSolver {
         if( Denomination.isEmpty( denominations ) ) {
             throw new NoSolutionException( "No solution - empty denominations set" );
         }
-        final List<Denomination> orderedDenominations = denominations.getOrderedList();
         CoinSet solution = CoinSet.createCoinSet();
 
         while( lessThan( solution.total(), requiredTotal ) ) {
-            solution = accumulateHighestPossibleValue( denominations, requiredTotal, orderedDenominations, solution );
+            solution = accumulateHighestPossibleValue( denominations, requiredTotal, solution );
         }
         final Money solutionTotal = solution.total();
         if( ! requiredTotal.equals( solutionTotal ) ) {
@@ -31,21 +28,17 @@ class HighestFirstSolver {
         return solution;
     }
 
-    // TODO Wow, what a load of code to do one simple thing.  Could use major refactoring - most of this in orderedDenominations
     private static CoinSet accumulateHighestPossibleValue(
-            DenominationSet denominations, Money total, List<Denomination> orderedDenominations, CoinSet destinationCoinSet ) {
+            DenominationSet denominations, Money total, CoinSet destinationCoinSet ) {
         final Money targetTotal = destinationCoinSet.total();
         final WrappedInteger addable = minus( total, targetTotal );
-        int index = orderedDenominations.size() - 1;
-        while( index >= 0 && greaterThan( orderedDenominations.get( index ), addable) ) {
-            --index;
-        }
-        if( index < 0 ) {
-            throw new NoSolutionException( denominations, total );
-        }
-        final Denomination toAdd = orderedDenominations.get( index );
-        destinationCoinSet = CoinSet.createAugmentedCoinSet( destinationCoinSet, toAdd );
-        return destinationCoinSet;
-    }
 
+        for( Denomination denomination : denominations ) {
+            if( ! greaterThan( denomination, addable ) ) {
+                destinationCoinSet = CoinSet.createAugmentedCoinSet( destinationCoinSet, denomination );
+                return destinationCoinSet;
+            }
+        }
+        throw new NoSolutionException( denominations, total );
+    }
 }

@@ -10,6 +10,8 @@ import static com.thoughtworks.cschuyle.friendlycoins.SolutionFactories.*;
 import com.thoughtworks.cschuyle.friendlycoins.solvers.MinimumCoinCountSolver;
 import com.thoughtworks.cschuyle.friendlycoins.*;
 
+import static com.thoughtworks.cschuyle.friendlycoins.TestConstants.*;
+
 public class MinimumCoinCountSolverTest extends TestCase {
 
 
@@ -64,12 +66,12 @@ public class MinimumCoinCountSolverTest extends TestCase {
     private void testTrivialCase( SolutionFactory solutionFactory ) {
         DenominationSet denominations = DenominationSetReader.readLine( "1" );
         MinimumCoinCountSolver solver = new MinimumCoinCountSolver( denominations );
-        solver.solutionFactory = solutionFactory;
-        Solution solution = solver.solve(TestConstants.TOTAL_ONE);
+        solver.setSolutionFactory( solutionFactory );
+        Solution solution = solver.solve(TOTAL_ONE);
 
-        CoinSet expected = CoinSet.createCoinSet(TestConstants.ONE);
+        CoinSet expected = CoinSet.createCoinSet(ONE);
 
-        final Collection<CoinSet> solutionCoinSets = solution.getCoinSets();
+        final CoinSetCollection solutionCoinSets = solution.getCoinSets();
         final Iterator<CoinSet> iterator = solutionCoinSets.iterator();
         final CoinSet firstCoinSet = iterator.next();
         assertEquals( expected, firstCoinSet );
@@ -86,35 +88,56 @@ public class MinimumCoinCountSolverTest extends TestCase {
     private void testTrivialCaseNegative( SolutionFactory solutionFactory ) {
         DenominationSet denominations = DenominationSetReader.readLine( "1" );
         MinimumCoinCountSolver solver = new MinimumCoinCountSolver( denominations );
-        solver.solutionFactory = solutionFactory;
-        Solution solution = solver.solve(TestConstants.TOTAL_ONE);
-        CoinSet expected = CoinSet.createCoinSet(TestConstants.TWO);
+        solver.setSolutionFactory( solutionFactory );
+        Solution solution = solver.solve(TOTAL_ONE);
+        CoinSet expected = CoinSet.createCoinSet(TWO);
 
-        final Collection<CoinSet> solutionCoinSets = solution.getCoinSets();
+        final CoinSetCollection solutionCoinSets = solution.getCoinSets();
         final Iterator<CoinSet> iterator = solutionCoinSets.iterator();
         final CoinSet firstCoinSet = iterator.next();
         assertFalse( expected.equals( firstCoinSet ) );
         assertFalse( firstCoinSet.equals( expected ) );
     }
 
+    public void testDuplicateCase() {
+        DenominationSet denominations = DenominationSetReader.readLine( "1 2" );
+        MinimumCoinCountSolver solver = new MinimumCoinCountSolver( denominations );
+        solver.setSolutionFactory( COMPLETE_SOLUTION_FACTORY );
+        Solution solution = solver.solve(TOTAL_THREE);
+
+        CoinSetCollection expectedList = new CoinSetCollection();
+        {
+            CoinSet expected = CoinSet.createCoinSet( ONE, ONE, ONE );
+            expectedList.add( expected );
+        }
+        {
+            CoinSet expected = CoinSet.createCoinSet( ONE, TWO );
+            expectedList.add( expected );
+        }
+
+        final CoinSetCollection solutionCoinSets = solution.getCoinSets();
+        assertEquals( expectedList, solutionCoinSets );
+        assertEquals( solutionCoinSets, expectedList );
+    }
+
     // Can only use complete; optimized throws some away ...
     public void testMultipleSolutionCase() {
         DenominationSet denominations = DenominationSetReader.readLine( "1 2" );
         MinimumCoinCountSolver solver = new MinimumCoinCountSolver( denominations );
-        solver.solutionFactory = COMPLETE_SOLUTION_FACTORY;
-        Solution solution = solver.solve(TestConstants.TOTAL_TWO);
+        solver.setSolutionFactory( COMPLETE_SOLUTION_FACTORY );
+        Solution solution = solver.solve( TOTAL_TWO );
 
-        CoinSetList expectedList = new CoinSetList();
+        CoinSetCollection expectedList = new CoinSetCollection();
         {
-            CoinSet expected = CoinSet.createCoinSet(TestConstants.ONE, TestConstants.ONE);
+            CoinSet expected = CoinSet.createCoinSet( TWO );
             expectedList.add( expected );
         }
         {
-            CoinSet expected = CoinSet.createCoinSet(TestConstants.TWO);
+            CoinSet expected = CoinSet.createCoinSet( ONE, ONE );
             expectedList.add( expected );
         }
 
-        final Collection<CoinSet> solutionCoinSets = solution.getCoinSets();
+        final CoinSetCollection solutionCoinSets = solution.getCoinSets();
         assertEquals( expectedList, solutionCoinSets );
         assertEquals( solutionCoinSets, expectedList );
     }
