@@ -3,11 +3,9 @@ package com.thoughtworks.cschuyle.friendlycoins.solvers;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
 
 import static com.thoughtworks.cschuyle.friendlycoins.SolutionFactories.*;
-import com.thoughtworks.cschuyle.friendlycoins.solvers.MinimumCoinCountSolver;
 import com.thoughtworks.cschuyle.friendlycoins.*;
 
 import static com.thoughtworks.cschuyle.friendlycoins.TestConstants.*;
@@ -69,7 +67,7 @@ public class MinimumCoinCountSolverTest extends TestCase {
         solver.setSolutionFactory( solutionFactory );
         Solution solution = solver.solve(TOTAL_ONE);
 
-        CoinSet expected = CoinSet.createCoinSet(ONE);
+        CoinSet expected = new CoinSet(ONE);
 
         final CoinSetCollection solutionCoinSets = solution.getCoinSets();
         final Iterator<CoinSet> iterator = solutionCoinSets.iterator();
@@ -90,7 +88,7 @@ public class MinimumCoinCountSolverTest extends TestCase {
         MinimumCoinCountSolver solver = new MinimumCoinCountSolver( denominations );
         solver.setSolutionFactory( solutionFactory );
         Solution solution = solver.solve(TOTAL_ONE);
-        CoinSet expected = CoinSet.createCoinSet(TWO);
+        CoinSet expected = new CoinSet(TWO);
 
         final CoinSetCollection solutionCoinSets = solution.getCoinSets();
         final Iterator<CoinSet> iterator = solutionCoinSets.iterator();
@@ -107,11 +105,11 @@ public class MinimumCoinCountSolverTest extends TestCase {
 
         CoinSetCollection expectedList = new CoinSetCollection();
         {
-            CoinSet expected = CoinSet.createCoinSet( ONE, ONE, ONE );
+            CoinSet expected = new CoinSet( ONE, ONE, ONE );
             expectedList.add( expected );
         }
         {
-            CoinSet expected = CoinSet.createCoinSet( ONE, TWO );
+            CoinSet expected = new CoinSet( ONE, TWO );
             expectedList.add( expected );
         }
 
@@ -129,11 +127,11 @@ public class MinimumCoinCountSolverTest extends TestCase {
 
         CoinSetCollection expectedList = new CoinSetCollection();
         {
-            CoinSet expected = CoinSet.createCoinSet( TWO );
+            CoinSet expected = new CoinSet( TWO );
             expectedList.add( expected );
         }
         {
-            CoinSet expected = CoinSet.createCoinSet( ONE, ONE );
+            CoinSet expected = new CoinSet( ONE, ONE );
             expectedList.add( expected );
         }
 

@@ -1,7 +1,6 @@
 package com.thoughtworks.cschuyle.friendlycoins;
 
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
 
 public class CoinRoll {
 
@@ -27,23 +26,24 @@ public class CoinRoll {
     }
 
     public @Override String toString() {
-        String item = denomination.stringValue();
-        item += "'s:";
-        item += count.stringValue();
-        return item;
+        final String denominationStr = denomination.stringValue();
+        final String countStr = count.stringValue();
+        return denominationStr + "'s:" + countStr;
     }
 
     public @Override boolean equals( Object rhs ) {
-        final CoinRoll rhsCoinRoll = (CoinRoll) rhs;
-        return( rhs instanceof CoinRoll &&
-            this.denomination.equals( rhsCoinRoll.denomination) &&
-            this.count.equals( rhsCoinRoll.count)
-        );
+        if( ! ( rhs instanceof CoinRoll ) ) {
+            return false;
+        }
+        final CoinRoll rhsCoinRoll = (CoinRoll)rhs;
+        final Cardinality rhsCount = rhsCoinRoll.count;
+        final Denomination rhsDenomination = rhsCoinRoll.denomination;
+        return( denomination.equals( rhsDenomination ) && count.equals( rhsCount ) );
     }
 
     public @Override int hashCode() {
         final int denominationInt = denomination.intValue();
         final int countInt = count.intValue();
-        return denominationInt ^ countInt;
+        return (17 * denominationInt) ^ countInt;
     }
 }

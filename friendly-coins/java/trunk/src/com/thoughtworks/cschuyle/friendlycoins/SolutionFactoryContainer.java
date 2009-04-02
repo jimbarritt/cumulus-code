@@ -1,8 +1,5 @@
 package com.thoughtworks.cschuyle.friendlycoins;
 
-import com.thoughtworks.cschuyle.friendlycoins.SolutionFactory;
-import com.thoughtworks.cschuyle.friendlycoins.SolutionFactories;
-
 public class SolutionFactoryContainer {
 
     private SolutionFactory solutionFactory;

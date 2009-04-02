@@ -22,7 +22,8 @@ public class CoinSetCollection extends AbstractSet<CoinSet> {
     }
 
     public Iterator<CoinSet> iterator() {
-        return set.values().iterator();
+        final Collection<CoinSet> seValues = set.values();
+        return seValues.iterator();
     }
 
     public @Override boolean add( CoinSet coinSet ) {

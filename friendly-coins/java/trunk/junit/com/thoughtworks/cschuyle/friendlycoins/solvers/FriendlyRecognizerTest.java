@@ -17,7 +17,7 @@ public class FriendlyRecognizerTest extends TestCase {
     public void testFriendly() {
         DenominationSet denominations = new DenominationSet( ONE, TWO, FIVE );
         final FriendlyRecognizer recognizer = new FriendlyRecognizer();
-        recognizer.checkFriendliness( denominations, TOTAL_TEN );
+        recognizer.checkFriendliness( denominations, TOTAL_ONE_THOUSAND );
         assertTrue( recognizer.isFriendly() );
     }
 

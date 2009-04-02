@@ -8,70 +8,70 @@ public class CoinSetTest extends TestCase {
 
     public void testEqualsNull() {
         Object a = null;
-        CoinSet b = CoinSet.createCoinSet();
+        CoinSet b = new CoinSet();
         assertFalse( b.equals(a) );
     }
 
     public void testEqualsTrivial() {
-        CoinSet a = CoinSet.createCoinSet(TestConstants.ONE);
-        CoinSet b = CoinSet.createCoinSet(ONE);
+        CoinSet a = new CoinSet(TestConstants.ONE);
+        CoinSet b = new CoinSet(ONE);
 
         assertEquals( a, b );
         assertEquals( b, a );
     }
 
     public void testNotEqualsTrivial() {
-        CoinSet a = CoinSet.createCoinSet(ONE);
-        CoinSet b = CoinSet.createCoinSet(TWO);
+        CoinSet a = new CoinSet(ONE);
+        CoinSet b = new CoinSet(TWO);
 
         assertFalse( a.equals(b) );
         assertFalse( b.equals(a) );
     }
 
     public void testEqualsSimple() {
-        CoinSet a = CoinSet.createCoinSet(TWO, ONE);
-        CoinSet b = CoinSet.createCoinSet(ONE, TWO);
+        CoinSet a = new CoinSet(TWO, ONE);
+        CoinSet b = new CoinSet(ONE, TWO);
 
         assertEquals( a, b );
         assertEquals( b, a );
     }
 
     public void testEqualsCardinality() {
-        CoinSet a = CoinSet.createCoinSet(ONE, ONE, TWO);
-        CoinSet b = CoinSet.createCoinSet(TWO, ONE, ONE);
+        CoinSet a = new CoinSet(ONE, ONE, TWO);
+        CoinSet b = new CoinSet(TWO, ONE, ONE);
 
         assertEquals( a, b );
         assertEquals( b, a );
     }
 
     public void testNotEqualsCardinality() {
-        CoinSet a = CoinSet.createCoinSet(ONE, TWO);
-        CoinSet b = CoinSet.createCoinSet(TWO, ONE, ONE);
+        CoinSet a = new CoinSet(ONE, TWO);
+        CoinSet b = new CoinSet(TWO, ONE, ONE);
 
         assertFalse( a.equals(b) );
         assertFalse( b.equals(a) );
     }
 
     public void testSum() {
-        CoinSet a = CoinSet.createCoinSet();
+        CoinSet a = new CoinSet();
         assertEquals(TOTAL_ZERO, a.total() );
-        a = CoinSet.createCoinSet(ONE);
+        a = new CoinSet(ONE);
         assertEquals(TOTAL_ONE, a.total() );
-        a = CoinSet.createCoinSet(ONE, ONE);
+        a = new CoinSet(ONE, ONE);
         assertEquals(TOTAL_TWO, a.total() );
-        a = CoinSet.createCoinSet(ONE, ONE, FIVE);
+        a = new CoinSet(ONE, ONE, FIVE);
         assertEquals(TOTAL_SEVEN, a.total() );
     }
 
     public void testClonePlusDenominationConstructor() {
-        CoinSet a = CoinSet.createCoinSet(ONE);
+        CoinSet a = new CoinSet(ONE);
         CoinSet b = CoinSet.createAugmentedCoinSet( a, TWO);
         assertEquals(TOTAL_THREE, b.total() );
     }
 
     public void testAugmentCoinSet() {
-        CoinSet a = CoinSet.createCoinSet( ONE, ONE );
+        CoinSet a = new CoinSet( ONE, ONE );
         CoinSet b = CoinSet.createAugmentedCoinSet( a, TWO );
-        assertEquals( CoinSet.createCoinSet( ONE, ONE, TWO ), b );
+        assertEquals( new CoinSet( ONE, ONE, TWO ), b );
     }
 }

@@ -1,27 +1,10 @@
 package com.thoughtworks.cschuyle.friendlycoins;
 
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
-import com.thoughtworks.cschuyle.util.ClassHelpers;
-import com.thoughtworks.cschuyle.util.StringHelpers;
-import com.thoughtworks.cschuyle.util.Joiner;
-import com.thoughtworks.cschuyle.util.WrappedIntegerHelpers;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
 
-import java.util.*;
+public class CoinRollCollection extends CoinRollCollectionBase {
 
-public class CoinRollCollection extends AbstractMap<Integer, CoinRoll> {
-
-    private Map<Integer, CoinRoll> coinRolls = new HashMap<Integer, CoinRoll>();
-
-    public Set<Entry<Integer, CoinRoll>> entrySet() {
-        return coinRolls.entrySet();
-    }
-
-    public @Override
-    CoinRoll put( Integer denomination, CoinRoll coinRoll ) {
-        coinRolls.put( denomination, coinRoll );
-        return coinRoll;
-    }
+    public CoinRollCollection() {}
 
     public Cardinality getTotalCoinCount() {
         int sum = 0;
@@ -33,54 +16,21 @@ public class CoinRollCollection extends AbstractMap<Integer, CoinRoll> {
     }
 
     public CoinRollCollection deepCopy() {
-        CoinRollCollection copy = new CoinRollCollection();
+        CoinRollSet copy = new CoinRollSet();
         for( CoinRoll coinRoll: coinRolls.values() ) {
             final Denomination denomination = coinRoll.getDenomination();
             final Cardinality count = coinRoll.getCount();
-            copy.put( denomination.intValue(), new CoinRoll( denomination, count ) );
+            final int denominationInt = denomination.intValue();
+            copy.put( denominationInt, new CoinRoll( denomination, count ) );
         }
-        return copy;
+        return new CoinRollCollection( copy );
     }
 
-    static class SortedCoinRollList extends TreeSet<CoinRoll> {
-        public SortedCoinRollList() {
-            super( new Comparator<CoinRoll>() {
-                public int compare(CoinRoll coinRoll, CoinRoll coinRoll1) {
-                    return WrappedIntegerHelpers.compareTo( coinRoll.getDenomination(), coinRoll1.getDenomination() ).intValue();
-                }
-            });
-        }
-    }
-    private SortedCoinRollList getSortedList() {
-        SortedCoinRollList orderedList = new SortedCoinRollList();
-        orderedList.addAll( coinRolls.values() );
-        return orderedList;
+    public boolean containsDenomination(Denomination denomination) {
+        return coinRolls.containsKey( denomination.intValue() );
     }
 
-    public @Override String toString() {
-        final Collection<CoinRoll> values = this.getSortedList();
-        final String className = ClassHelpers.simpleName(this);
-        return className + "<" + StringHelpers.join( values, Joiner.COMMA ) + ">";
-    }
-
-    public @Override boolean equals( Object rhs ) {
-        if( ! (rhs instanceof CoinRollCollection ) ) {
-            return false;
-        }
-        CoinRollCollection rhsCoinRolls =  (CoinRollCollection)rhs;
-        for( CoinRoll coinRoll: coinRolls.values() ) {
-            if( ! rhsCoinRolls.containsValue( coinRoll ) ) {
-                return false;
-            }
-        }
-        return( coinRolls.size() == rhsCoinRolls.size() );
-    }
-
-    public @Override int hashCode() {
-        int hashCode = 0;
-        for( CoinRoll coinRoll: coinRolls.values() ) {
-            hashCode ^= coinRoll.hashCode();
-        }
-        return hashCode;
+    private CoinRollCollection( CoinRollSet set ) {
+        this.coinRolls = set;
     }
 }

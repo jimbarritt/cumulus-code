@@ -13,9 +13,10 @@ public class DenominationSet extends AbstractSet<Denomination> {
 
     private SortedList<Denomination> denominations;
 
-    public DenominationSet( Denomination ... denominations ) {
-        this.denominations = new SortedList<Denomination>();
-        this.denominations.addAll( Arrays.asList( denominations ) );
+    public DenominationSet( Denomination ... theDenominations ) {
+        denominations = new SortedList<Denomination>();
+        final List<Denomination> denominationsArr = Arrays.asList( theDenominations );
+        denominations.addAll( denominationsArr );
     }
     
     public int size() {

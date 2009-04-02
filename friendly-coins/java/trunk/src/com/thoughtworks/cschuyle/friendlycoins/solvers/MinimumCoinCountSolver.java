@@ -43,7 +43,7 @@ public class MinimumCoinCountSolver extends SolutionFactoryContainer {
 
     private void solveForDenomination( Money total, CoinSetCollection coinSets, Denomination denomination ) {
         if( WrappedIntegerHelpers.areEqual( total, denomination ) ) {
-            CoinSet coinSet = CoinSet.createCoinSet( denomination );
+            CoinSet coinSet = new CoinSet( denomination );
             coinSets.add( coinSet );
         }
         if( WrappedIntegerHelpers.lessThan( denomination, total ) ) {

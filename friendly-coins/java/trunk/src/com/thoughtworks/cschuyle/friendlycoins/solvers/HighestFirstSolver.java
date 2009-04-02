@@ -16,7 +16,7 @@ public class HighestFirstSolver {
         if( Denomination.isEmpty( denominations ) ) {
             throw new NoSolutionException( "No solution - empty denominations set" );
         }
-        CoinSet solution = CoinSet.createCoinSet();
+        CoinSet solution = new CoinSet();
 
         while( lessThan( solution.total(), requiredTotal ) ) {
             solution = accumulateHighestPossibleValue( denominations, requiredTotal, solution );

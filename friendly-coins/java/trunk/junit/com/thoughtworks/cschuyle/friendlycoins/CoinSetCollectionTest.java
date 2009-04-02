@@ -7,7 +7,7 @@ import static com.thoughtworks.cschuyle.friendlycoins.TestConstants.*;
 public class CoinSetCollectionTest extends TestCase {
 
     public void testEquals() {
-        CoinSet coinSet = CoinSet.createCoinSet( ONE );
+        CoinSet coinSet = new CoinSet( ONE );
         CoinSetCollection coinSets = new CoinSetCollection();
         coinSets.add( coinSet );
 
@@ -18,18 +18,18 @@ public class CoinSetCollectionTest extends TestCase {
     }
 
     public void testToString() {
-        CoinSet coinSet = CoinSet.createCoinSet( ONE, ONE );
+        CoinSet coinSet = new CoinSet( ONE, ONE );
         CoinSetCollection coinSets = new CoinSetCollection();
         coinSets.add( coinSet );
         assertEquals( "[CoinSet<1's:2>]", coinSets.toString() );        
     }
 
     public void testContains() {
-        CoinSet coinSet = CoinSet.createCoinSet( ONE, ONE );
+        CoinSet coinSet = new CoinSet( ONE, ONE );
         CoinSetCollection coinSets = new CoinSetCollection();
         coinSets.add( coinSet );
 
-        CoinSet duplicateCoinSet = CoinSet.createCoinSet( ONE, ONE );
+        CoinSet duplicateCoinSet = new CoinSet( ONE, ONE );
         assertTrue( coinSets.contains( duplicateCoinSet ) );
     }
 }
