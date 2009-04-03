@@ -1,7 +1,8 @@
 package com.thoughtworks.cschuyle.friendlycoins.collections;
 
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
 import com.thoughtworks.cschuyle.util.*;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
+
 import java.util.*;
 
 public class CoinRollCollectionBase implements Iterable<CoinRoll> {
@@ -17,7 +18,7 @@ public class CoinRollCollectionBase implements Iterable<CoinRoll> {
     }
 
     public void put( CoinRoll coinRoll ) {
-        coinRolls.put( coinRoll.getDenomination().intValue(), coinRoll );
+        coinRolls.put( coinRoll.denomination.intValue(), coinRoll );
     }
 
     public Iterator<CoinRoll> iterator() {

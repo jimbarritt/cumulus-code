@@ -3,8 +3,6 @@ package com.thoughtworks.cschuyle.friendlycoins.collections;
 import junit.framework.TestCase;
 
 import static com.thoughtworks.cschuyle.friendlycoins.TestConstants.*;
-import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
-import com.thoughtworks.cschuyle.friendlycoins.TestConstants;
 
 public class CoinSetTest extends TestCase {
 
@@ -15,40 +13,40 @@ public class CoinSetTest extends TestCase {
     }
 
     public void testEqualsTrivial() {
-        CoinSet a = new CoinSet(TestConstants.ONE);
-        CoinSet b = new CoinSet(ONE);
+        CoinSet a = new CoinSet(ONER);
+        CoinSet b = new CoinSet(ONER) ;
 
         assertEquals( a, b );
         assertEquals( b, a );
     }
 
     public void testNotEqualsTrivial() {
-        CoinSet a = new CoinSet(ONE);
-        CoinSet b = new CoinSet(TWO);
+        CoinSet a = new CoinSet(ONER);
+        CoinSet b = new CoinSet(TWOER);
 
         assertFalse( a.equals(b) );
         assertFalse( b.equals(a) );
     }
 
     public void testEqualsSimple() {
-        CoinSet a = new CoinSet(TWO, ONE);
-        CoinSet b = new CoinSet(ONE, TWO);
+        CoinSet a = new CoinSet(TWOER, ONER);
+        CoinSet b = new CoinSet(ONER, TWOER);
 
         assertEquals( a, b );
         assertEquals( b, a );
     }
 
     public void testEqualsCardinality() {
-        CoinSet a = new CoinSet(ONE, ONE, TWO);
-        CoinSet b = new CoinSet(TWO, ONE, ONE);
+        CoinSet a = new CoinSet(ONER, ONER, TWOER);
+        CoinSet b = new CoinSet(TWOER, ONER, ONER);
 
         assertEquals( a, b );
         assertEquals( b, a );
     }
 
     public void testNotEqualsCardinality() {
-        CoinSet a = new CoinSet(ONE, TWO);
-        CoinSet b = new CoinSet(TWO, ONE, ONE);
+        CoinSet a = new CoinSet(ONER, TWOER);
+        CoinSet b = new CoinSet(TWOER, ONER, ONER);
 
         assertFalse( a.equals(b) );
         assertFalse( b.equals(a) );
@@ -56,24 +54,24 @@ public class CoinSetTest extends TestCase {
 
     public void testSum() {
         CoinSet a = new CoinSet();
-        assertEquals(TOTAL_ZERO, a.total() );
-        a = new CoinSet(ONE);
-        assertEquals(TOTAL_ONE, a.total() );
-        a = new CoinSet(ONE, ONE);
-        assertEquals(TOTAL_TWO, a.total() );
-        a = new CoinSet(ONE, ONE, FIVE);
-        assertEquals(TOTAL_SEVEN, a.total() );
+        assertEquals(ZERO_CENTS, a.total );
+        a = new CoinSet(ONER);
+        assertEquals(ONE_CENT, a.total );
+        a = new CoinSet(ONER, ONER);
+        assertEquals(TWO_CENTS, a.total );
+        a = new CoinSet(ONER, ONER, FIVER);
+        assertEquals(SEVEN_CENTS, a.total );
     }
 
     public void testClonePlusDenominationConstructor() {
-        CoinSet a = new CoinSet(ONE);
-        CoinSet b = CoinSet.createAugmentedCoinSet( a, TWO);
-        assertEquals(TOTAL_THREE, b.total() );
+        CoinSet a = new CoinSet(ONER);
+        CoinSet b = CoinSet.createAugmentedCoinSet( a, TWOER);
+        assertEquals(THREE_CENTS, b.total );
     }
 
     public void testAugmentCoinSet() {
-        CoinSet a = new CoinSet( ONE, ONE );
-        CoinSet b = CoinSet.createAugmentedCoinSet( a, TWO );
-        assertEquals( new CoinSet( ONE, ONE, TWO ), b );
+        CoinSet a = new CoinSet(ONER, ONER);
+        CoinSet b = CoinSet.createAugmentedCoinSet( a, TWOER);
+        assertEquals( new CoinSet(ONER, ONER, TWOER), b );
     }
 }

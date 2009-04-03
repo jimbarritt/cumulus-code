@@ -1,11 +1,10 @@
 package com.thoughtworks.cschuyle.friendlycoins.solutions;
 
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
-import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSetCollection;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
 import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
+import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSetCollection;
 
-class CompleteSolution extends Solution {
+public class CompleteSolution extends Solution {
 
     private CoinSetCollection coinSets;
     private Money total = new Money();
@@ -31,8 +30,8 @@ class CompleteSolution extends Solution {
     }
     
     private CoinSet isItLess( CoinSet leastSolution, CoinSet coinSet ) {
-        final Cardinality coinSetNumCoins = coinSet.getTotalCoinCount();
-        final Cardinality leastSolutionNumCoins = leastSolution.getTotalCoinCount();
+        final Cardinality coinSetNumCoins = coinSet.totalCoinCount();
+        final Cardinality leastSolutionNumCoins = leastSolution.totalCoinCount();
         if( null == leastSolution || coinSetNumCoins.compareTo( leastSolutionNumCoins ) == -1) {
             leastSolution = coinSet;
         }

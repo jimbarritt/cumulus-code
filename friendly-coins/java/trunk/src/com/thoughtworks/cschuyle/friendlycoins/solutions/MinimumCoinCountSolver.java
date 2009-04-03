@@ -1,9 +1,9 @@
-package com.thoughtworks.cschuyle.friendlycoins.solvers;
+package com.thoughtworks.cschuyle.friendlycoins.solutions;
 
-import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
-import com.thoughtworks.cschuyle.friendlycoins.solutions.*;
+import com.thoughtworks.cschuyle.WrappedIntegerHelpers;
 import com.thoughtworks.cschuyle.friendlycoins.collections.*;
-import com.thoughtworks.cschuyle.util.WrappedIntegerHelpers;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
+import com.thoughtworks.cschuyle.friendlycoins.solutions.factories.SolutionFactoryContainer;
 
 public class MinimumCoinCountSolver extends SolutionFactoryContainer {
 
@@ -36,10 +36,7 @@ public class MinimumCoinCountSolver extends SolutionFactoryContainer {
         for( Denomination denomination: denominations ) {
             solveForDenomination( total, coinSets, denomination );
         }
-        if( coinSets.size() > 0 ) {
-            Solution solution = createSolution( coinSets );
-            chart.put( total, solution );
-        }
+        createNewSolution( chart, total, coinSets );
     }
 
     private void solveForDenomination( Money total, CoinSetCollection coinSets, Denomination denomination ) {

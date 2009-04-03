@@ -1,12 +1,12 @@
 package com.thoughtworks.cschuyle.friendlycoins.collections;
 
+import com.thoughtworks.cschuyle.util.*;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
-import com.thoughtworks.cschuyle.util.ClassHelpers;
-import com.thoughtworks.cschuyle.util.StringHelpers;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
 
 public class CoinSetBase {
+
     protected Money total = new Money();
     protected CoinRollCollection coinRolls = new CoinRollCollection();
 
@@ -14,19 +14,15 @@ public class CoinSetBase {
         return this.total;
     }
 
-    public Cardinality getCoinCount( Denomination denomination ) {
+    public Cardinality denominationCount( Denomination denomination ) {
         if( containsDenomination( denomination ) ) {
-            return coinRolls.get( denomination ).getCount();
+            return coinRolls.get( denomination ).count;
         }
         return Cardinality.getInstance( 0 );
     }
 
-    protected void setCount( Denomination denomination, Cardinality count ) {
-        coinRolls.put( new CoinRoll( denomination,  count ) );
-    }
-
-    public Cardinality getTotalCoinCount() {
-        return coinRolls.getTotalCoinCount();
+    public Cardinality totalCoinCount() {
+        return coinRolls.totalCoinCount();
     }
 
     public @Override boolean equals( Object rhs ) {

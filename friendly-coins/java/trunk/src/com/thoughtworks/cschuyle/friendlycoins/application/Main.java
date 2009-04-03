@@ -1,6 +1,5 @@
-package com.thoughtworks.cschuyle.main;
+package com.thoughtworks.cschuyle.friendlycoins.application;
 
-import com.thoughtworks.cschuyle.friendlycoins.*;
 import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
 import com.thoughtworks.cschuyle.friendlycoins.recognizers.FriendlyRecognizer;
 import com.thoughtworks.cschuyle.friendlycoins.recognizers.FriendlinessResult;
@@ -11,7 +10,7 @@ import static com.thoughtworks.cschuyle.friendlycoins.TestConstants.*;
 
 import java.io.*;
 
-public class Application {
+public class Main {
 
     public static void main( String[] args ) {
         BufferedReader reader = new BufferedReader( new InputStreamReader( System.in ) );
@@ -42,7 +41,7 @@ public class Application {
     }
 
     private static void processLine( FriendlyRecognizer recognizer, DenominationSet denominationSet ) {
-        FriendlinessResult result = recognizer.checkFriendliness( denominationSet,  TOTAL_TEN_THOUSAND );
+        FriendlinessResult result = recognizer.checkFriendliness( denominationSet, TEN_THOUSAND_CENTS);
         final String message = result.getMessage();
         String extraMessage = (StringHelpers.isEmpty( message )
                 ? ""

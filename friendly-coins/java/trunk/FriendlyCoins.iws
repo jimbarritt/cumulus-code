@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project relativePaths="false" version="4">
   <component name="BookmarkManager">
-    <editor_bookmark url="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/collections/CoinSetCollectionTest.java" line="25" description="assertEquals( &quot;&quot;, coinSets.toString()] );" />
+    <editor_bookmark url="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/collections/CoinSetCollectionTest.java" line="23" description="assertEquals( &quot;&quot;, coinSets.toString()] );" />
   </component>
   <component name="CCaseConfig">
     <option name="checkoutReserved" value="false" />
@@ -37,7 +37,7 @@
   </component>
   <component name="DebuggerManager">
     <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/collections/CoinSetTest.java" line="21" class="com.thoughtworks.cschuyle.friendlycoins.collections.CoinSetTest" package="com.thoughtworks.cschuyle.friendlycoins.collections">
+      <breakpoint url="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/collections/CoinSetTest.java" line="19" class="com.thoughtworks.cschuyle.friendlycoins.solutions.CoinSetTest" package="com.thoughtworks.cschuyle.friendlycoins.solutions">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -50,7 +50,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/solvers/HighestFirstSolverTest.java" line="53" class="com.thoughtworks.cschuyle.friendlycoins.solvers.HighestFirstSolverTest" package="com.thoughtworks.cschuyle.friendlycoins.solvers">
+      <breakpoint url="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/solutions/HighestFirstSolverTest.java" line="52" class="com.thoughtworks.cschuyle.friendlycoins.solvers.HighestFirstSolverTest" package="com.thoughtworks.cschuyle.friendlycoins.solvers">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -108,19 +108,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CoinRollCollection.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/collections/CoinRollCollection.java">
+      <file leaf-file-name="TestConstants.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/TestConstants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="13" selection-start="137" selection-end="137" vertical-scroll-proportion="0.11510792">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CoinRollCollectionBase.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/collections/CoinRollCollectionBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="13" selection-start="209" selection-end="209" vertical-scroll-proportion="0.17266187">
+            <state line="9" column="28" selection-start="352" selection-end="352" vertical-scroll-proportion="0.25775656">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -128,68 +119,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CoinRollSet.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/collections/CoinRollSet.java">
+      <file leaf-file-name="MinimumCoinCountSolver.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/MinimumCoinCountSolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="62" selection-end="62" vertical-scroll-proportion="0.04796163">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CoinSet.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/collections/CoinSet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="123" selection-end="123" vertical-scroll-proportion="0.086330935">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CoinSetBase.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/collections/CoinSetBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="0" selection-start="270" selection-end="270" vertical-scroll-proportion="0.13669065">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CoinSetCollection.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/collections/CoinSetCollection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="62" selection-end="169" vertical-scroll-proportion="0.04796163">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DenominationSet.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/collections/DenominationSet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="13" selection-start="379" selection-end="379" vertical-scroll-proportion="0.31654677">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SortedCoinRollList.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/collections/SortedCoinRollList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="134" selection-end="134" vertical-scroll-proportion="0.086330935">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SortedList.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/SortedList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="13" selection-start="125" selection-end="125" vertical-scroll-proportion="0.17266187">
+            <state line="7" column="13" selection-start="346" selection-end="346" vertical-scroll-proportion="0.20792079">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -198,9 +131,82 @@
         </entry>
       </file>
       <file leaf-file-name="HighestFirstSolver.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solvers/HighestFirstSolver.java">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/HighestFirstSolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="46" column="0" selection-start="1993" selection-end="1993" vertical-scroll-proportion="0.8281623">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompleteSolution.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/CompleteSolution.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="13" selection-start="281" selection-end="281" vertical-scroll-proportion="0.1646778">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SolutionFactoryContainer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/factories/SolutionFactoryContainer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="0" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.8281623">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SolutionFactory.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/factories/SolutionFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="17" selection-start="233" selection-end="233" vertical-scroll-proportion="0.14319809">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SolutionFactories.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/factories/SolutionFactories.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="65" selection-start="205" selection-end="213" vertical-scroll-proportion="0.08591885">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OptimizedSolution.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/OptimizedSolution.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="13" selection-start="311" selection-end="311" vertical-scroll-proportion="0.22673032">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SolutionChart.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/SolutionChart.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="0" selection-start="125" selection-end="125" vertical-scroll-proportion="0.08591885">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Solution.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/Solution.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="0" selection-start="60" selection-end="60" vertical-scroll-proportion="0.057279237">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -336,63 +342,11 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/src/com/thoughtworks/cschuyle/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="FriendlyCoins" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="FriendlyCoins" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/src/com/thoughtworks/cschuyle" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/src/com/thoughtworks/cschuyle/friendlycoins" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="FriendlyCoins" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="FriendlyCoins" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/src/com/thoughtworks/cschuyle" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
           <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/src/com/thoughtworks/cschuyle/friendlycoins" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/src/com/thoughtworks/cschuyle/friendlycoins/solvers" />
+          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/src/com/thoughtworks/cschuyle/friendlycoins/solutions" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -423,6 +377,10 @@
         </PATH_ELEMENT>
         <PATH_ELEMENT>
           <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/src/com/thoughtworks/cschuyle/friendlycoins/solutions" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/src/com/thoughtworks/cschuyle/friendlycoins/solutions/factories" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -511,10 +469,6 @@
           <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/src/com/thoughtworks/cschuyle/friendlycoins" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/src/com/thoughtworks/cschuyle/friendlycoins/exception" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
       </PATH>
       <PATH>
         <PATH_ELEMENT>
@@ -542,7 +496,7 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/src/com/thoughtworks/cschuyle/friendlycoins/collections" />
+          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/src/com/thoughtworks/cschuyle/friendlycoins/application" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -620,7 +574,37 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/junit/com/thoughtworks/cschuyle/friendlycoins/solvers" />
+          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/junit/com/thoughtworks/cschuyle/friendlycoins/solutions" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="FriendlyCoins" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="FriendlyCoins" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/junit" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/junit/com/thoughtworks/cschuyle" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/junit/com/thoughtworks/cschuyle/friendlycoins" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/junit/com/thoughtworks/cschuyle/friendlycoins/recognizers" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -684,6 +668,36 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="FriendlyCoins" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="FriendlyCoins" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/junit" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/junit/com/thoughtworks/cschuyle" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/junit/com/thoughtworks/cschuyle/friendlycoins" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/Users/admin/HOME/Carl/Thoughtworks/New Coding Problems/FriendlyCoins/friendly-coins/java/trunk/junit/com/thoughtworks/cschuyle/friendlycoins/application" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
     </subPane>
   </component>
   <component name="ProjectReloadState">
@@ -740,8 +754,8 @@
       <module name="FriendlyCoins" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.thoughtworks.cschuyle.friendlycoins.solvers" />
-      <option name="MAIN_CLASS_NAME" value="com.thoughtworks.cschuyle.friendlycoins.solvers.HighestFirstSolverTest" />
+      <option name="PACKAGE_NAME" value="com.thoughtworks.cschuyle.friendlycoins.solutions" />
+      <option name="MAIN_CLASS_NAME" value="com.thoughtworks.cschuyle.friendlycoins.solutions.HighestFirstSolverTest" />
       <option name="METHOD_NAME" value="testImpossibleCase" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
@@ -969,7 +983,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="22" width="1440" height="784" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
@@ -986,7 +1000,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="5" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="12" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31204644" order="2" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3091437" order="2" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24946082" order="2" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38026124" order="4" />
@@ -1058,124 +1072,136 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/solvers/HighestFirstSolverTest.java">
+    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/recognizers/FriendlyRecognizerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="20" selection-start="2711" selection-end="2711" vertical-scroll-proportion="0.67164177">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/recognizers/ResultError.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="13" selection-start="75" selection-end="75" vertical-scroll-proportion="0.057416268">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solvers/MinimumCoinCountSolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="303" selection-end="303" vertical-scroll-proportion="0.20895523">
+        <state line="17" column="38" selection-start="615" selection-end="615" vertical-scroll-proportion="0.32673267">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/SolutionFactoryContainer.java">
+    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/solutions/HighestFirstSolverTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="13" selection-start="152" selection-end="152" vertical-scroll-proportion="0.11510792">
+        <state line="11" column="13" selection-start="484" selection-end="484" vertical-scroll-proportion="0.32673267">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/solutions/MinimumCoinCountSolverTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="371" selection-end="371" vertical-scroll-proportion="-2.5107398">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/application/DenominationSetReaderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="272" selection-end="272" vertical-scroll-proportion="0.22911695">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/collections/DenominationSetTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="13" selection-start="325" selection-end="325" vertical-scroll-proportion="0.3150358">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/primitives/DenominationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="13" selection-start="258" selection-end="258" vertical-scroll-proportion="0.28639618">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/factories/SolutionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="17" selection-start="233" selection-end="233" vertical-scroll-proportion="0.14319809">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/factories/SolutionFactories.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="65" selection-start="205" selection-end="213" vertical-scroll-proportion="0.08591885">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/factories/SolutionFactoryContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.8281623">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/SolutionChart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="125" selection-end="125" vertical-scroll-proportion="0.086330935">
+        <state line="3" column="0" selection-start="125" selection-end="125" vertical-scroll-proportion="0.08591885">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/collections/CoinRoll.java">
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="13" selection-start="137" selection-end="137" vertical-scroll-proportion="0.11510792">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/collections/CoinRollCollection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="13" selection-start="137" selection-end="137" vertical-scroll-proportion="0.11510792">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/collections/CoinRollCollectionBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="209" selection-end="209" vertical-scroll-proportion="0.17266187">
+        <state line="2" column="0" selection-start="60" selection-end="60" vertical-scroll-proportion="0.057279237">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/collections/CoinRollSet.java">
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/OptimizedSolution.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="62" selection-end="62" vertical-scroll-proportion="0.04796163">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/collections/CoinSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="123" selection-end="123" vertical-scroll-proportion="0.086330935">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/collections/CoinSetBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="270" selection-end="270" vertical-scroll-proportion="0.13669065">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/collections/CoinSetCollection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="62" selection-end="169" vertical-scroll-proportion="0.04796163">
+        <state line="8" column="13" selection-start="311" selection-end="311" vertical-scroll-proportion="0.22673032">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/collections/DenominationSet.java">
+    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/TestConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="379" selection-end="379" vertical-scroll-proportion="0.31654677">
+        <state line="9" column="28" selection-start="352" selection-end="352" vertical-scroll-proportion="0.25775656">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/collections/SortedCoinRollList.java">
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/MinimumCoinCountSolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="134" selection-end="134" vertical-scroll-proportion="0.086330935">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/SortedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="125" selection-end="125" vertical-scroll-proportion="0.17266187">
+        <state line="7" column="13" selection-start="346" selection-end="346" vertical-scroll-proportion="0.20792079">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solvers/HighestFirstSolver.java">
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/CompleteSolution.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="6" column="13" selection-start="281" selection-end="281" vertical-scroll-proportion="0.1646778">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/HighestFirstSolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="0" selection-start="1993" selection-end="1993" vertical-scroll-proportion="0.8281623">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

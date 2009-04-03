@@ -1,20 +1,18 @@
 package com.thoughtworks.cschuyle.friendlycoins.collections;
 
 import junit.framework.TestCase;
-import junit.framework.Assert;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collection;
 
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
-import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
 import com.thoughtworks.cschuyle.friendlycoins.TestConstants;
 
 public class DenominationSetTest extends TestCase {
 
     public void testOrdering() {
-        DenominationSet denominationSet1 = new DenominationSet( TestConstants.TWO, TestConstants.ONE );
+        DenominationSet denominationSet1 = new DenominationSet( TestConstants.TWOER, TestConstants.ONER);
         Collection<Denomination> list = new ArrayList<Denomination>();
         list.addAll( denominationSet1 );
         List<Denomination> expected = new ArrayList<Denomination>();
@@ -22,36 +20,8 @@ public class DenominationSetTest extends TestCase {
         expected.add( Denomination.getInstance( 1 ) );
         assertEquals( expected, list );
     }
-
-    public void testHighest() {
-        DenominationSet denominationSet1 = new DenominationSet(TestConstants.ONE);
-        final Denomination highest = denominationSet1.highest();
-        Assert.assertEquals(TestConstants.ONE, highest );
-    }
-
-    public void testHighestSimple() {
-        DenominationSet DenominationSet12 = new DenominationSet(TestConstants.ONE, TestConstants.TWO);
-        final Denomination highest = DenominationSet12.highest();
-        Assert.assertEquals(TestConstants.TWO, highest );
-    }
-
-    public void testHighestSimpleBackwards() {
-        DenominationSet denominationSet21 = new DenominationSet(TestConstants.TWO, TestConstants.ONE);
-        final Denomination highest = denominationSet21.highest();
-        Assert.assertEquals(TestConstants.TWO, highest );
-    }
-
-    public void testHighestEmpty() {
-        DenominationSet denominationSet = new DenominationSet();
-        try {
-            denominationSet.highest();
-            fail();
-        } catch( IllegalStateException e) {
-        }
-    }
-
     public void testToString() {
-        DenominationSet denominationSet21 = new DenominationSet(TestConstants.TWO, TestConstants.ONE);
+        DenominationSet denominationSet21 = new DenominationSet(TestConstants.TWOER, TestConstants.ONER);
         assertEquals( "DenominationSet<Denomination<2>,Denomination<1>>", denominationSet21.toString() );
     }
 

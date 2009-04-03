@@ -4,9 +4,9 @@ import com.thoughtworks.cschuyle.util.IntegerHelpers;
 
 import java.util.*;
 
-public class SortedList<T extends WrappedInteger> extends TreeSet<T> {
+public class SortedWrappedIntegerList<T extends WrappedInteger> extends TreeSet<T> {
 
-    public SortedList() {
+    public SortedWrappedIntegerList() {
         super( new Comparator<WrappedInteger>() {
 
             public int compare( WrappedInteger wrappedInteger, WrappedInteger wrappedInteger1 ) {

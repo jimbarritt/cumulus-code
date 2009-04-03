@@ -1,12 +1,12 @@
 package com.thoughtworks.cschuyle.friendlycoins.solutions;
 
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
-import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSetCollection;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
 import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
+import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSetCollection;
 
 import java.util.Collection;
 
-class OptimizedSolution extends Solution {
+public class OptimizedSolution extends Solution {
 
     private CoinSet solution;
     
@@ -19,7 +19,8 @@ class OptimizedSolution extends Solution {
         return solution;
     }
 
-    public @Override CoinSetCollection getCoinSets() {
+    public @Override
+    CoinSetCollection getCoinSets() {
         final CoinSetCollection coinSets = new CoinSetCollection();
         coinSets.add( solution );
         return coinSets;
@@ -37,10 +38,10 @@ class OptimizedSolution extends Solution {
         if( null == theLeast ) {
             return coinSet;
         }
-        final Cardinality coinSetNumCoins = coinSet.getTotalCoinCount();
+        final Cardinality coinSetNumCoins = coinSet.totalCoinCount();
         final int coinSetNumCoinsInt = coinSetNumCoins.intValue();
 
-        final Cardinality theLeastNumCoins = theLeast.getTotalCoinCount();
+        final Cardinality theLeastNumCoins = theLeast.totalCoinCount();
         final int theLeastNumCoinsInt = theLeastNumCoins.intValue();
 
         if( coinSetNumCoinsInt < theLeastNumCoinsInt ) {

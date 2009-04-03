@@ -3,7 +3,6 @@ package com.thoughtworks.cschuyle.friendlycoins.primitives;
 import com.thoughtworks.cschuyle.util.IntegerHelpers;
 import com.thoughtworks.cschuyle.WrappedInteger;
 
-import java.util.Collection;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -11,14 +10,6 @@ public class Cardinality extends WrappedInteger implements Comparable<Cardinalit
 
     private Cardinality( int value ) {
         super( value );
-    }
-
-    public static Cardinality total( Collection<Cardinality> cardinalities ) {
-        int value = 0;
-        for( Cardinality cardinality : cardinalities ) {
-            value += cardinality.intValue();
-        }
-        return getInstance( value );
     }
 
     public int compareTo( Cardinality rhs ) {

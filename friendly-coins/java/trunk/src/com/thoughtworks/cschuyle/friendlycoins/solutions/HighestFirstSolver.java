@@ -1,10 +1,11 @@
-package com.thoughtworks.cschuyle.friendlycoins.solvers;
+package com.thoughtworks.cschuyle.friendlycoins.solutions;
 
-import static com.thoughtworks.cschuyle.util.WrappedIntegerHelpers.*;
-import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
-import com.thoughtworks.cschuyle.friendlycoins.collections.*;
 import com.thoughtworks.cschuyle.friendlycoins.exception.NoSolutionException;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
+import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
+import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
 import com.thoughtworks.cschuyle.WrappedInteger;
+import com.thoughtworks.cschuyle.WrappedIntegerHelpers;
 
 public class HighestFirstSolver {
 
@@ -16,7 +17,7 @@ public class HighestFirstSolver {
         }
         CoinSet solution = new CoinSet();
 
-        while( null != solution && lessThan( solution.total(), requiredTotal ) ) {
+        while( null != solution && WrappedIntegerHelpers.lessThan( solution.total(), requiredTotal ) ) {
             solution = accumulateHighestPossibleValue( denominations, requiredTotal, solution );
         }
         if( null == solution ) {
@@ -32,10 +33,10 @@ public class HighestFirstSolver {
     private static CoinSet accumulateHighestPossibleValue(
             DenominationSet denominations, Money total, CoinSet destinationCoinSet ) {
         final Money targetTotal = destinationCoinSet.total();
-        final WrappedInteger addable = minus( total, targetTotal );
+        final WrappedInteger addable = WrappedIntegerHelpers.minus( total, targetTotal );
 
         for( Denomination denomination : denominations ) {
-            if( ! greaterThan( denomination, addable ) ) {
+            if( ! WrappedIntegerHelpers.greaterThan( denomination, addable ) ) {
                 destinationCoinSet = CoinSet.createAugmentedCoinSet( destinationCoinSet, denomination );
                 return destinationCoinSet;
             }

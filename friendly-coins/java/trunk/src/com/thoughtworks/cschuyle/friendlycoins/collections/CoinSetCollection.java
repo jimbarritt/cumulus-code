@@ -1,16 +1,17 @@
 package com.thoughtworks.cschuyle.friendlycoins.collections;
 
+import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
 
 import java.util.*;
 
 public class CoinSetCollection extends AbstractSet<CoinSet> {
 
-    private Map<CoinSet,CoinSet> set = new HashMap<CoinSet,CoinSet>();
+    private Map<CoinSet, CoinSet> coinSets = new HashMap<CoinSet,CoinSet>();
 
-    public static CoinSetCollection createAugmented( CoinSetCollection coinSets, Denomination denomination ) {
+    public static CoinSetCollection createAugmented( CoinSetCollection theCoinSets, Denomination denomination ) {
         CoinSetCollection augmented = new CoinSetCollection();
-        for( CoinSet coinSet: coinSets ) {
+        for( CoinSet coinSet: theCoinSets ) {
             final CoinSet augmentedCoinSet = CoinSet.createAugmentedCoinSet( coinSet, denomination );
             augmented.add( augmentedCoinSet );
         }
@@ -18,27 +19,27 @@ public class CoinSetCollection extends AbstractSet<CoinSet> {
     }
 
     public int size() {
-        return set.size();
+        return coinSets.size();
     }
 
     public Iterator<CoinSet> iterator() {
-        final Collection<CoinSet> seValues = set.values();
+        final Collection<CoinSet> seValues = coinSets.values();
         return seValues.iterator();
     }
 
     public @Override boolean add( CoinSet coinSet ) {
-        if( ! set.containsKey( coinSet ) ) {
-            set.put( coinSet, coinSet );
+        if( ! coinSets.containsKey( coinSet ) ) {
+            coinSets.put( coinSet, coinSet );
             return true;
         }
         return false;
     }
 
-    public @Override boolean addAll( Collection<? extends CoinSet> coinSets ) {
-        boolean ret = true;
-        for( CoinSet coinSet: coinSets ) {
-            ret &= add( coinSet );
-        }
-        return ret;
-    }
+//    public @Override boolean addAll( Collection<? extends CoinSet> coinSets ) {
+//        boolean ret = true;
+//        for( CoinSet coinSet: coinSets ) {
+//            ret &= add( coinSet );
+//        }
+//        return ret;
+//    }
 }

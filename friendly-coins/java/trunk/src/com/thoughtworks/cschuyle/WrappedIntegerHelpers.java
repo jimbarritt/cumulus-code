@@ -1,6 +1,6 @@
-package com.thoughtworks.cschuyle.util;
+package com.thoughtworks.cschuyle;
 
-import com.thoughtworks.cschuyle.WrappedInteger;
+import com.thoughtworks.cschuyle.util.IntegerHelpers;
 
 public class WrappedIntegerHelpers {
 

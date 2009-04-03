@@ -3,9 +3,10 @@ package com.thoughtworks.cschuyle.friendlycoins.solutions;
 import com.thoughtworks.cschuyle.util.StringHelpers;
 import com.thoughtworks.cschuyle.util.ClassHelpers;
 
-import static com.thoughtworks.cschuyle.util.Joiner.*;
 import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSetCollection;
 import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
+
+import static com.thoughtworks.cschuyle.util.Joiner.*;
 
 public abstract class Solution {
 

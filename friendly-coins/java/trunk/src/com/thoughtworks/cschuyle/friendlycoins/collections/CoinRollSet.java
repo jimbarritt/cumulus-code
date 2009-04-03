@@ -6,7 +6,7 @@ class CoinRollSet extends AbstractMap<Integer, CoinRoll> {
 
     private Map<Integer, CoinRoll> coinRolls = new HashMap<Integer, CoinRoll>();
 
-    public Set<Entry<Integer, CoinRoll>> entrySet() {
+    public @Override Set<Entry<Integer, CoinRoll>> entrySet() {
         return coinRolls.entrySet();
     }
 

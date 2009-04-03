@@ -1,16 +1,10 @@
 package com.thoughtworks.cschuyle.friendlycoins.recognizers;
 
-import com.thoughtworks.cschuyle.friendlycoins.solutions.Solution;
-import com.thoughtworks.cschuyle.friendlycoins.solvers.MinimumCoinCountSolver;
-import com.thoughtworks.cschuyle.friendlycoins.solvers.HighestFirstSolver;
-import com.thoughtworks.cschuyle.friendlycoins.recognizers.ResultError;
-import com.thoughtworks.cschuyle.friendlycoins.recognizers.FriendlinessResult;
-import com.thoughtworks.cschuyle.friendlycoins.recognizers.ResultNoSolution;
-import com.thoughtworks.cschuyle.friendlycoins.recognizers.ResultNotFriendly;
-import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
-import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
+import com.thoughtworks.cschuyle.friendlycoins.solutions.*;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
-import com.thoughtworks.cschuyle.util.WrappedIntegerHelpers;
+import com.thoughtworks.cschuyle.WrappedIntegerHelpers;
+import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
+import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
 
 public class FriendlyChecker {
 
@@ -42,8 +36,8 @@ public class FriendlyChecker {
     }
 
     private static boolean isNotFriendly( CoinSet fewestCoinsSolution, CoinSet highestFirstSolution ) {
-        final Cardinality leastCoinsCount = fewestCoinsSolution.getTotalCoinCount();
-        final Cardinality highestFirstCoinsCount = highestFirstSolution.getTotalCoinCount();
+        final Cardinality leastCoinsCount = fewestCoinsSolution.totalCoinCount();
+        final Cardinality highestFirstCoinsCount = highestFirstSolution.totalCoinCount();
         return WrappedIntegerHelpers.lessThan( leastCoinsCount, highestFirstCoinsCount );
     }
 }

@@ -1,6 +1,8 @@
 package com.thoughtworks.cschuyle.friendlycoins.collections;
 
-import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
 
 public class CoinSet extends CoinSetBase {
 
@@ -16,7 +18,7 @@ public class CoinSet extends CoinSetBase {
         CoinSet newCoinSet = new CoinSet();
         final CoinRollCollection copyOfRhsCoinRolls = rhs.coinRolls.deepCopy();
         newCoinSet.coinRolls = copyOfRhsCoinRolls;
-        final Money copyOfRhsTotal = new Money(rhs.total());
+        final Money copyOfRhsTotal = new Money(rhs.total);
         newCoinSet.total = copyOfRhsTotal;
         return newCoinSet;
     }
@@ -29,9 +31,13 @@ public class CoinSet extends CoinSetBase {
     }
 
     private void incrementDenomination( Denomination denomination ) {
-        Cardinality cardinality = getCoinCount( denomination );
+        Cardinality cardinality = denominationCount( denomination );
         final int cardinalityPlus1 = cardinality.intValue() + 1;
-        setCount( denomination, Cardinality.getInstance( cardinalityPlus1 ));
+        setDenominationCount( denomination, Cardinality.getInstance( cardinalityPlus1 ));
         total.addCoin( denomination );
+    }
+
+    protected void setDenominationCount( Denomination denomination, Cardinality count ) {
+        coinRolls.put( new CoinRoll( denomination,  count ) );
     }
 }

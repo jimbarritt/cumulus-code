@@ -1,17 +1,14 @@
-package com.thoughtworks.cschuyle.friendlycoins.solvers;
+package com.thoughtworks.cschuyle.friendlycoins.solutions;
 
 import junit.framework.TestCase;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import static com.thoughtworks.cschuyle.friendlycoins.solutions.SolutionFactories.*;
-import com.thoughtworks.cschuyle.friendlycoins.solutions.Solution;
-import com.thoughtworks.cschuyle.friendlycoins.solutions.SolutionFactory;
-import com.thoughtworks.cschuyle.friendlycoins.*;
-import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
-import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSetCollection;
-import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
+import static com.thoughtworks.cschuyle.friendlycoins.solutions.factories.SolutionFactories.*;
+import com.thoughtworks.cschuyle.friendlycoins.solutions.factories.SolutionFactory;
+import com.thoughtworks.cschuyle.friendlycoins.collections.*;
+import com.thoughtworks.cschuyle.friendlycoins.application.DenominationSetReader;
 
 import static com.thoughtworks.cschuyle.friendlycoins.TestConstants.*;
 
@@ -70,9 +67,9 @@ public class MinimumCoinCountSolverTest extends TestCase {
         DenominationSet denominations = DenominationSetReader.readLine( "1" );
         MinimumCoinCountSolver solver = new MinimumCoinCountSolver( denominations );
         solver.setSolutionFactory( solutionFactory );
-        Solution solution = solver.solve(TOTAL_ONE);
+        Solution solution = solver.solve(ONE_CENT);
 
-        CoinSet expected = new CoinSet(ONE);
+        CoinSet expected = new CoinSet(ONER);
 
         final CoinSetCollection solutionCoinSets = solution.getCoinSets();
         final Iterator<CoinSet> iterator = solutionCoinSets.iterator();
@@ -92,8 +89,8 @@ public class MinimumCoinCountSolverTest extends TestCase {
         DenominationSet denominations = DenominationSetReader.readLine( "1" );
         MinimumCoinCountSolver solver = new MinimumCoinCountSolver( denominations );
         solver.setSolutionFactory( solutionFactory );
-        Solution solution = solver.solve(TOTAL_ONE);
-        CoinSet expected = new CoinSet(TWO);
+        Solution solution = solver.solve(ONE_CENT);
+        CoinSet expected = new CoinSet(TWOER);
 
         final CoinSetCollection solutionCoinSets = solution.getCoinSets();
         final Iterator<CoinSet> iterator = solutionCoinSets.iterator();
@@ -106,15 +103,15 @@ public class MinimumCoinCountSolverTest extends TestCase {
         DenominationSet denominations = DenominationSetReader.readLine( "1 2" );
         MinimumCoinCountSolver solver = new MinimumCoinCountSolver( denominations );
         solver.setSolutionFactory( COMPLETE_SOLUTION_FACTORY );
-        Solution solution = solver.solve(TOTAL_THREE);
+        Solution solution = solver.solve(THREE_CENTS);
 
         CoinSetCollection expectedList = new CoinSetCollection();
         {
-            CoinSet expected = new CoinSet( ONE, ONE, ONE );
+            CoinSet expected = new CoinSet(ONER, ONER, ONER);
             expectedList.add( expected );
         }
         {
-            CoinSet expected = new CoinSet( ONE, TWO );
+            CoinSet expected = new CoinSet(ONER, TWOER);
             expectedList.add( expected );
         }
 
@@ -128,15 +125,15 @@ public class MinimumCoinCountSolverTest extends TestCase {
         DenominationSet denominations = DenominationSetReader.readLine( "1 2" );
         MinimumCoinCountSolver solver = new MinimumCoinCountSolver( denominations );
         solver.setSolutionFactory( COMPLETE_SOLUTION_FACTORY );
-        Solution solution = solver.solve( TOTAL_TWO );
+        Solution solution = solver.solve(TWO_CENTS);
 
         CoinSetCollection expectedList = new CoinSetCollection();
         {
-            CoinSet expected = new CoinSet( TWO );
+            CoinSet expected = new CoinSet(TWOER);
             expectedList.add( expected );
         }
         {
-            CoinSet expected = new CoinSet( ONE, ONE );
+            CoinSet expected = new CoinSet(ONER, ONER);
             expectedList.add( expected );
         }
 

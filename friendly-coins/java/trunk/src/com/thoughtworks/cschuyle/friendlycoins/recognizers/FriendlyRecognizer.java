@@ -2,10 +2,7 @@ package com.thoughtworks.cschuyle.friendlycoins.recognizers;
 
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
 import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
-import com.thoughtworks.cschuyle.friendlycoins.recognizers.ResultIsFriendly;
-import com.thoughtworks.cschuyle.friendlycoins.recognizers.FriendlinessResult;
-import com.thoughtworks.cschuyle.friendlycoins.recognizers.FriendlyChecker;
-import com.thoughtworks.cschuyle.friendlycoins.solvers.MinimumCoinCountSolver;
+import com.thoughtworks.cschuyle.friendlycoins.solutions.MinimumCoinCountSolver;
 
 public class FriendlyRecognizer {
 

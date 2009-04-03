@@ -4,8 +4,6 @@ import junit.framework.TestCase;
 
 import static com.thoughtworks.cschuyle.friendlycoins.TestConstants.*;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
-import com.thoughtworks.cschuyle.friendlycoins.collections.CoinRollCollection;
-import com.thoughtworks.cschuyle.friendlycoins.collections.CoinRoll;
 
 public class CoinRollCollectionTest extends TestCase {
 
@@ -16,16 +14,16 @@ public class CoinRollCollectionTest extends TestCase {
 
     public void testSimplePut() {
         CoinRollCollection coinRolls = new CoinRollCollection();
-        CoinRoll coinRoll = new CoinRoll( ONE );
+        CoinRoll coinRoll = new CoinRoll(ONER);
         coinRolls.put( coinRoll );
         assertEquals( 1, coinRolls.size() );
     }
 
     public void testDoublePut() {
         CoinRollCollection coinRolls = new CoinRollCollection();
-        CoinRoll coinRoll1 = new CoinRoll( ONE );
-        CoinRoll coinRoll2 = new CoinRoll( TWO );
-        CoinRoll coinRoll3 = new CoinRoll( THREE );
+        CoinRoll coinRoll1 = new CoinRoll(ONER);
+        CoinRoll coinRoll2 = new CoinRoll(TWOER);
+        CoinRoll coinRoll3 = new CoinRoll(THREER);
         coinRolls.put( coinRoll1 );
         coinRolls.put( coinRoll2 );
         coinRolls.put( coinRoll3 );
@@ -37,34 +35,34 @@ public class CoinRollCollectionTest extends TestCase {
 
     public void testTotalCoinCount() {
         CoinRollCollection coinRolls = new CoinRollCollection();
-        CoinRoll coinRoll = new CoinRoll( ONE );
+        CoinRoll coinRoll = new CoinRoll(ONER);
         coinRolls.put( coinRoll );
-        Cardinality count = coinRolls.getTotalCoinCount();
+        Cardinality count = coinRolls.totalCoinCount();
         assertEquals( 1, count.intValue() );
     }
 
     public void testTotalCoinCountAfterReputting() {
         CoinRollCollection coinRolls = new CoinRollCollection();
-        CoinRoll coinRoll = new CoinRoll( ONE );
+        CoinRoll coinRoll = new CoinRoll(ONER);
         coinRolls.put( coinRoll );
-        Cardinality count = coinRolls.getTotalCoinCount();
+        Cardinality count = coinRolls.totalCoinCount();
         assertEquals( 1, count.intValue() );
     }
 
     public void testTotalCoinCountTwoDenominations() {
         CoinRollCollection coinRolls = new CoinRollCollection();
-        CoinRoll coinRoll = new CoinRoll( ONE );
-        CoinRoll coinRoll2 = new CoinRoll( TWO );
+        CoinRoll coinRoll = new CoinRoll(ONER);
+        CoinRoll coinRoll2 = new CoinRoll(TWOER);
         coinRolls.put( coinRoll );
         coinRolls.put( coinRoll2 );
-        Cardinality count = coinRolls.getTotalCoinCount();
+        Cardinality count = coinRolls.totalCoinCount();
         assertEquals( 2, count.intValue() );
     }
 
     public void testToString() {
         CoinRollCollection coinRolls = new CoinRollCollection();
-        CoinRoll coinRoll = new CoinRoll( ONE );
-        CoinRoll coinRoll2 = new CoinRoll( TWO );
+        CoinRoll coinRoll = new CoinRoll(ONER);
+        CoinRoll coinRoll2 = new CoinRoll(TWOER);
         coinRolls.put( coinRoll );
         coinRolls.put( coinRoll2 );
         assertEquals( "CoinRollCollection<1's:1,2's:1>", coinRolls.toString() );
@@ -72,8 +70,8 @@ public class CoinRollCollectionTest extends TestCase {
 
     public void testToStringOtherOrder() {
         CoinRollCollection coinRolls = new CoinRollCollection();
-        CoinRoll coinRoll = new CoinRoll( ONE );
-        CoinRoll coinRoll2 = new CoinRoll( TWO );
+        CoinRoll coinRoll = new CoinRoll(ONER);
+        CoinRoll coinRoll2 = new CoinRoll(TWOER);
         coinRolls.put( coinRoll2 );
         coinRolls.put( coinRoll );
         assertEquals( "CoinRollCollection<1's:1,2's:1>", coinRolls.toString() );
@@ -87,9 +85,9 @@ public class CoinRollCollectionTest extends TestCase {
 
     public void testEqualsSimple() {
         CoinRollCollection coinRolls = new CoinRollCollection();
-        coinRolls.put( new CoinRoll( ONE ));
+        coinRolls.put( new CoinRoll(ONER));
         CoinRollCollection coinRolls2 = new CoinRollCollection();
-        coinRolls2.put( new CoinRoll( ONE ));
+        coinRolls2.put( new CoinRoll(ONER));
         assertEquals( coinRolls, coinRolls2 );
     }
 

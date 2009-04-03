@@ -1,11 +1,12 @@
 package com.thoughtworks.cschuyle.friendlycoins.collections;
 
-import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
 
 public class CoinRoll {
 
-    private Denomination denomination;
-    private Cardinality count;
+    Denomination denomination;
+    Cardinality count;
 
     public CoinRoll( Denomination denomination ) {
         this.denomination = denomination;
@@ -15,14 +16,6 @@ public class CoinRoll {
     public CoinRoll( Denomination denomination, Cardinality count ) {
         this.denomination = denomination;
         this.count = count;
-    }
-
-    public Cardinality getCount() {
-        return count;
-    }
-
-    public Denomination getDenomination() {
-        return denomination;
     }
 
     public @Override String toString() {
