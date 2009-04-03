@@ -1,12 +1,12 @@
 package com.thoughtworks.cschuyle.friendlycoins.primitives;
 
-import com.thoughtworks.cschuyle.WrappedInteger;
 import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
+import com.thoughtworks.cschuyle.AbstractWrappedInteger;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Denomination extends WrappedInteger {
+public class Denomination extends AbstractWrappedInteger {
 
     public static boolean isEmpty( DenominationSet denominations ) {
         return null == denominations || 0 == denominations.size();

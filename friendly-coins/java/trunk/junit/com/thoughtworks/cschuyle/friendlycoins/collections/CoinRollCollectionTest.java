@@ -5,12 +5,11 @@ import junit.framework.TestCase;
 import static com.thoughtworks.cschuyle.friendlycoins.TestConstants.*;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
 import com.thoughtworks.cschuyle.AbstractWrappedInteger;
-import com.thoughtworks.cschuyle.WrappedInteger;
 
 public class CoinRollCollectionTest extends TestCase {
 
     private static AbstractWrappedInteger wrap( int i ) {
-        return new WrappedInteger( i );
+        return new AbstractWrappedInteger( i ) {};
     }
 
     public void testConstructor() {

@@ -1,15 +1,15 @@
 package com.thoughtworks.cschuyle.friendlycoins.primitives;
 
-import com.thoughtworks.cschuyle.WrappedInteger;
 import com.thoughtworks.cschuyle.AbstractWrappedInteger;
+import com.thoughtworks.cschuyle.WrappedInteger;
 
-public class Money extends WrappedInteger {
+public class Money extends AbstractWrappedInteger {
 
     public Money() {
         super( 0 );
     }
 
-    public Money( AbstractWrappedInteger rhs ) {
+    public Money( WrappedInteger rhs ) {
         super( rhs );
     }
 
@@ -17,12 +17,12 @@ public class Money extends WrappedInteger {
         super( value );
     }
 
-    public void add( AbstractWrappedInteger denomination ) {
+    public void add( WrappedInteger denomination ) {
         final int denominationInt = denomination.intValue();
         this.value += denominationInt;
     }
 
-    public void subtract( AbstractWrappedInteger denomination ) {
+    public void subtract( WrappedInteger denomination ) {
         final int denominationInt = denomination.intValue();
         this.value -= denominationInt;
     }

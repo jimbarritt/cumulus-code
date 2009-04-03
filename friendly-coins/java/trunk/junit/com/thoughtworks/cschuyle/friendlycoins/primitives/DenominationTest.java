@@ -3,17 +3,17 @@ package com.thoughtworks.cschuyle.friendlycoins.primitives;
 import junit.framework.TestCase;
 import junit.framework.Assert;
 
-import com.thoughtworks.cschuyle.WrappedInteger;
-
 import java.util.Collection;
 import java.util.HashSet;
 
 import static com.thoughtworks.cschuyle.friendlycoins.TestConstants.*;
+import com.thoughtworks.cschuyle.WrappedInteger;
+import com.thoughtworks.cschuyle.AbstractWrappedInteger;
 
 public class DenominationTest extends TestCase {
 
     private static WrappedInteger wrap( int i ) {
-        return new WrappedInteger( i );
+        return new AbstractWrappedInteger( i ) {};
     }
 
     public void testIntValue() {

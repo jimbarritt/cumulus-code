@@ -2,7 +2,7 @@ package com.thoughtworks.cschuyle.friendlycoins.collections;
 
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
-import com.thoughtworks.cschuyle.WrappedInteger;
+import com.thoughtworks.cschuyle.WrappedIntegerHelpers;
 
 public class CoinRoll {
 
@@ -36,6 +36,6 @@ public class CoinRoll {
     }
 
     public @Override int hashCode() {
-        return WrappedInteger.hashCode( denomination, count );
+        return WrappedIntegerHelpers.hashCode( denomination, count );
     }
 }

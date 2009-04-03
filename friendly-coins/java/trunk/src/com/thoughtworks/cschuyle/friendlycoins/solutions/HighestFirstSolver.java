@@ -4,8 +4,7 @@ import com.thoughtworks.cschuyle.friendlycoins.exception.NoSolutionException;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
 import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
 import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
-import com.thoughtworks.cschuyle.AbstractWrappedInteger;
-//import com.thoughtworks.cschuyle.WrappedIntegerHelpers;
+import com.thoughtworks.cschuyle.WrappedInteger;
 
 public class HighestFirstSolver {
 
@@ -33,7 +32,7 @@ public class HighestFirstSolver {
     private static CoinSet accumulateHighestPossibleValue(
             DenominationSet denominations, Money total, CoinSet destinationCoinSet ) {
         final Money targetTotal = destinationCoinSet.total();
-        final AbstractWrappedInteger addable = total.minus( targetTotal );
+        final WrappedInteger addable = total.minus( targetTotal );
 
         for( Denomination denomination : denominations ) {
             if( ! denomination.greaterThan( addable ) ) {

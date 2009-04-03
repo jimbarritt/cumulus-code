@@ -4,12 +4,11 @@ import junit.framework.TestCase;
 
 import com.thoughtworks.cschuyle.friendlycoins.TestConstants;
 import com.thoughtworks.cschuyle.AbstractWrappedInteger;
-import com.thoughtworks.cschuyle.WrappedInteger;
 
 public class MoneyTest extends TestCase {
 
     private static AbstractWrappedInteger wrap( int i ) {
-        return new WrappedInteger( i );
+        return new AbstractWrappedInteger( i ) {};
     }
     public void testDefault() {
         Money money = new Money();

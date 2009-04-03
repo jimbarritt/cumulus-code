@@ -3,7 +3,7 @@ package com.thoughtworks.cschuyle.friendlycoins.solutions;
 import com.thoughtworks.cschuyle.friendlycoins.collections.*;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
 import com.thoughtworks.cschuyle.friendlycoins.solutions.factories.SolutionFactoryContainer;
-import com.thoughtworks.cschuyle.WrappedInteger;
+import com.thoughtworks.cschuyle.*;
 
 public class MinimumCoinCountSolver extends SolutionFactoryContainer {
 
@@ -40,7 +40,7 @@ public class MinimumCoinCountSolver extends SolutionFactoryContainer {
     }
 
     private void solveForDenomination( Money total, CoinSetCollection coinSets, Denomination denomination ) {
-        if( new WrappedInteger( total ).equals( denomination ) ) {
+        if( wrap(total).equals( denomination ) ) {
             CoinSet coinSet = new CoinSet( denomination );
             coinSets.add( coinSet );
         }
@@ -48,6 +48,10 @@ public class MinimumCoinCountSolver extends SolutionFactoryContainer {
             Solution partialSolution = solve( new Money( total.minus( denomination ) ) );
             mergePartialSolution( coinSets, partialSolution.getCoinSets(), denomination );
         }
+    }
+
+    public static WrappedInteger wrap(final Money total) {
+        return new AbstractWrappedInteger( total ) {};
     }
 
     private void mergePartialSolution( CoinSetCollection destinationCoinSets,

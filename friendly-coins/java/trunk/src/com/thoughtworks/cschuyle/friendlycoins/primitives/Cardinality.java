@@ -1,12 +1,12 @@
 package com.thoughtworks.cschuyle.friendlycoins.primitives;
 
-import com.thoughtworks.cschuyle.WrappedInteger;
 import com.thoughtworks.cschuyle.AbstractWrappedInteger;
+import com.thoughtworks.cschuyle.WrappedInteger;
 
 import java.util.Map;
 import java.util.HashMap;
 
-public class Cardinality extends WrappedInteger {
+public class Cardinality extends AbstractWrappedInteger {
 
     private Cardinality( int value ) {
         super( value );
@@ -16,7 +16,7 @@ public class Cardinality extends WrappedInteger {
         return intern( value );
     }
 
-    public static Cardinality getInstance( AbstractWrappedInteger value ) {
+    public static Cardinality getInstance( WrappedInteger value ) {
         return getInstance( value.intValue() );
     }
 

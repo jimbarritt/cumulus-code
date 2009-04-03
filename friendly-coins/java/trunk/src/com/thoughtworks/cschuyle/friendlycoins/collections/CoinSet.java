@@ -3,7 +3,7 @@ package com.thoughtworks.cschuyle.friendlycoins.collections;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
-import com.thoughtworks.cschuyle.AbstractWrappedInteger;
+import com.thoughtworks.cschuyle.WrappedInteger;
 
 public class CoinSet extends CoinSetBase {
 
@@ -33,8 +33,8 @@ public class CoinSet extends CoinSetBase {
 
     private void incrementDenomination( Denomination denomination ) {
         Cardinality cardinality = denominationCount( denomination );
-        final AbstractWrappedInteger cardinalityPlus1 = cardinality.plusOne();
-        setDenominationCount( denomination, Cardinality.getInstance( cardinalityPlus1 ));
+        final WrappedInteger cardinalityPlus1 = cardinality.plusOne();
+        setDenominationCount( denomination, Cardinality.getInstance( cardinalityPlus1 ) );
         total.add( denomination );
     }
 

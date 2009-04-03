@@ -2,18 +2,26 @@ package com.thoughtworks.cschuyle;
 
 import com.thoughtworks.cschuyle.util.ClassHelpers;
 
-public abstract class AbstractWrappedInteger implements Comparable<AbstractWrappedInteger> {
+public abstract class AbstractWrappedInteger
+        extends ComparableInteger
+        implements WrappedInteger {
 
     protected Integer value;
 
-    @Deprecated
-    public int intValue() {
-        return value;
+    public AbstractWrappedInteger( WrappedInteger i ) {
+        value = i.intValue();
     }
 
+    public AbstractWrappedInteger( int i ) {
+        value = i;
+    }
+
+    public @Override @Deprecated Integer intValue() {
+        return value;
+    }
+    
     public String stringValue() {
-        final int intValue = value.intValue();
-        return String.format( "%d", intValue);
+        return String.format( "%d", value );
     }
 
     public @Override String toString() {
@@ -25,39 +33,31 @@ public abstract class AbstractWrappedInteger implements Comparable<AbstractWrapp
         return value;
     }
 
-    public int compareTo( AbstractWrappedInteger rhs ) {
-        return new Integer( value ).compareTo( rhs.value );
+    public int compareTo( WrappedInteger rhs ) {
+        return value.compareTo( rhs.intValue() );
     }
 
-    public AbstractWrappedInteger minus( AbstractWrappedInteger rhs ) {
-        return new WrappedInteger( value - rhs.value ) {};
+    public AbstractWrappedInteger minus( WrappedInteger rhs ) {
+        return new AbstractWrappedInteger( value - rhs.intValue() ) {};
     }
 
-    public AbstractWrappedInteger plus( AbstractWrappedInteger rhs ) {
-        return new WrappedInteger( value + rhs.value ) {};
+    public AbstractWrappedInteger plus( WrappedInteger rhs ) {
+        return new AbstractWrappedInteger( value + rhs.intValue() ) {};
     }
 
     public AbstractWrappedInteger plusOne() {
-        return plus( new WrappedInteger( 1 ) );
+        return plus( new AbstractWrappedInteger( 1 ) {} );
     }
 
-    public boolean greaterThan( AbstractWrappedInteger rhs ) {
-        return value > rhs.value;
-    }
-
-    public boolean lessThan( AbstractWrappedInteger rhs ) {
-        return value < rhs.value;
-    }
-
-    public boolean lessThanOrEqual( AbstractWrappedInteger rhs ) {
-        return ! greaterThan( rhs );
-    }
-
-    public boolean greaterThanOrEqual( AbstractWrappedInteger rhs ) {
-        return ! lessThan( rhs );
+    public @Override boolean greaterThan( WrappedInteger rhs ) {
+        return value > rhs.intValue();
     }
 
     public @Override boolean equals( Object rhs ) {
-        return ( rhs instanceof AbstractWrappedInteger && value == ((AbstractWrappedInteger)rhs).value.intValue() );
-    }    
+        return ( rhs instanceof WrappedInteger && value.equals( ((WrappedInteger)rhs).intValue() ) );
+    }
+
+    public int sign() {
+        return Integer.signum( value );
+    }
 }
