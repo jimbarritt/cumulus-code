@@ -35,7 +35,7 @@ public class CoinSet extends CoinSetBase {
         Cardinality cardinality = denominationCount( denomination );
         final AbstractWrappedInteger cardinalityPlus1 = cardinality.plusOne();
         setDenominationCount( denomination, Cardinality.getInstance( cardinalityPlus1 ));
-        total.addCoin( denomination );
+        total.add( denomination );
     }
 
     protected void setDenominationCount( Denomination denomination, Cardinality count ) {

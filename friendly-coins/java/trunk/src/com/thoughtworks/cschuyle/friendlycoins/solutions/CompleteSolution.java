@@ -3,6 +3,7 @@ package com.thoughtworks.cschuyle.friendlycoins.solutions;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
 import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
 import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSetCollection;
+import com.thoughtworks.cschuyle.WrappedInteger;
 
 public class CompleteSolution extends Solution {
 
@@ -39,7 +40,7 @@ public class CompleteSolution extends Solution {
     }
 
     private void accumulateTotal( CoinSet coinSet ) {
-        if( 0 == total.intValue() ) {
+        if( total.equals( new WrappedInteger( 0 ) ) ) {
             total = coinSet.total();
             return;
         }

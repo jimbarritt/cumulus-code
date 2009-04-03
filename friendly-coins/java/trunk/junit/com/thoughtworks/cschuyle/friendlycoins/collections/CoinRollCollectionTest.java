@@ -4,8 +4,14 @@ import junit.framework.TestCase;
 
 import static com.thoughtworks.cschuyle.friendlycoins.TestConstants.*;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
+import com.thoughtworks.cschuyle.AbstractWrappedInteger;
+import com.thoughtworks.cschuyle.WrappedInteger;
 
 public class CoinRollCollectionTest extends TestCase {
+
+    private static AbstractWrappedInteger wrap( int i ) {
+        return new WrappedInteger( i );
+    }
 
     public void testConstructor() {
         CoinRollCollection coinRolls = new CoinRollCollection();
@@ -38,7 +44,7 @@ public class CoinRollCollectionTest extends TestCase {
         CoinRoll coinRoll = new CoinRoll(ONER);
         coinRolls.put( coinRoll );
         Cardinality count = coinRolls.totalCoinCount();
-        assertEquals( 1, count.intValue() );
+        assertEquals( wrap( 1 ), count );
     }
 
     public void testTotalCoinCountAfterReputting() {
@@ -46,7 +52,7 @@ public class CoinRollCollectionTest extends TestCase {
         CoinRoll coinRoll = new CoinRoll(ONER);
         coinRolls.put( coinRoll );
         Cardinality count = coinRolls.totalCoinCount();
-        assertEquals( 1, count.intValue() );
+        assertEquals( wrap( 1 ), count );
     }
 
     public void testTotalCoinCountTwoDenominations() {
@@ -56,7 +62,7 @@ public class CoinRollCollectionTest extends TestCase {
         coinRolls.put( coinRoll );
         coinRolls.put( coinRoll2 );
         Cardinality count = coinRolls.totalCoinCount();
-        assertEquals( 2, count.intValue() );
+        assertEquals( wrap( 2 ), count );
     }
 
     public void testToString() {

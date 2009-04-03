@@ -14,11 +14,11 @@ public class CoinRollCollectionBase implements Iterable<CoinRoll> {
     }
 
     public CoinRoll get( Denomination denomination ) {
-        return coinRolls.get( denomination.intValue() );
+        return coinRolls.get( denomination );
     }
 
     public void put( CoinRoll coinRoll ) {
-        coinRolls.put( coinRoll.denomination.intValue(), coinRoll );
+        coinRolls.put( coinRoll.denomination, coinRoll );
     }
 
     public Iterator<CoinRoll> iterator() {

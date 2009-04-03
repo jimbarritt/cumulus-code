@@ -48,7 +48,7 @@ public class FriendlyRecognizerTest extends TestCase {
         Denomination[] intsArr = ints.toArray( new Denomination[ONE_HUNDRED] );
         try {
             DenominationSet denominations = new DenominationSet( intsArr );
-            FriendlinessResult result = recognizer.checkFriendliness( denominations, new Money( TEN_THOUSAND_CENTS.intValue() ) );
+            FriendlinessResult result = recognizer.checkFriendliness( denominations, new Money( TEN_THOUSAND_CENTS ) );
             assertTrue( result.isFriendly() );
         } catch ( Error e ) {
             /* Just return */

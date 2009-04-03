@@ -39,12 +39,9 @@ public class OptimizedSolution extends Solution {
             return coinSet;
         }
         final Cardinality coinSetNumCoins = coinSet.totalCoinCount();
-        final int coinSetNumCoinsInt = coinSetNumCoins.intValue();
-
         final Cardinality theLeastNumCoins = theLeast.totalCoinCount();
-        final int theLeastNumCoinsInt = theLeastNumCoins.intValue();
 
-        if( coinSetNumCoinsInt < theLeastNumCoinsInt ) {
+        if( coinSetNumCoins.lessThan( theLeastNumCoins ) ) {
             return coinSet;
         }
         return theLeast;

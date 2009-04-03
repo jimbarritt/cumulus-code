@@ -1,28 +1,28 @@
 package com.thoughtworks.cschuyle.friendlycoins.solutions;
 
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
+import com.thoughtworks.cschuyle.WrappedInteger;
 
 import java.util.Map;
 import java.util.HashMap;
 
 public class SolutionChart {
 
-    private Map<Integer, Solution> chart = new HashMap<Integer, Solution>();
+    private Map<WrappedInteger, Solution> chart = new HashMap<WrappedInteger, Solution>();
 
     public boolean containsTotal( Money total ) {
-        return chart.containsKey( total.intValue() );
+        return chart.containsKey( total );
     }
 
     public Solution put( Money solutionTotal, Solution solution ) {
         if( solution.size() <= 0 || containsTotal( solutionTotal ) ) {
             return null;
         }
-        final int solutionTotalInt = solutionTotal.intValue();
-        chart.put( solutionTotalInt, solution );
+        chart.put( solutionTotal, solution );
         return solution;
     }
 
     public Solution get( Money total ) {
-        return chart.get( total.intValue() );
+        return chart.get( total );
     }
 }

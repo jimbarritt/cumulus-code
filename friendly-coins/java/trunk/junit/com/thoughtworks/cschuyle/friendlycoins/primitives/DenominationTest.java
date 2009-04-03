@@ -3,49 +3,55 @@ package com.thoughtworks.cschuyle.friendlycoins.primitives;
 import junit.framework.TestCase;
 import junit.framework.Assert;
 
-import com.thoughtworks.cschuyle.friendlycoins.TestConstants;
+import com.thoughtworks.cschuyle.WrappedInteger;
 
 import java.util.Collection;
 import java.util.HashSet;
 
+import static com.thoughtworks.cschuyle.friendlycoins.TestConstants.*;
+
 public class DenominationTest extends TestCase {
+
+    private static WrappedInteger wrap( int i ) {
+        return new WrappedInteger( i );
+    }
 
     public void testIntValue() {
         {
             Denomination denomination1 = Denomination.getInstance( 1 );
-            assertEquals( 1, denomination1.intValue() );
+            assertEquals( wrap( 1 ), denomination1 );
         }
         {
             Denomination denomination2 = Denomination.getInstance( 2 );
-            assertEquals( 2, denomination2.intValue() );
+            assertEquals( wrap( 2 ), denomination2 );
         }
     }
 
     public void testEquality() {
         Denomination denomination1 = Denomination.getInstance( 1 );
-        Assert.assertEquals(TestConstants.ONER, denomination1 );
+        Assert.assertEquals( ONER, denomination1 );
     }
 
     public void testStringValue() {
-        Assert.assertEquals( "1", TestConstants.ONER.stringValue() );
-        Assert.assertEquals( "2", TestConstants.TWOER.stringValue() );
+        Assert.assertEquals( "1", ONER.stringValue() );
+        Assert.assertEquals( "2", TWOER.stringValue() );
     }
 
     public void testCompareTo() {
-        Assert.assertEquals( 0, TestConstants.ONER.compareTo(TestConstants.ONER) );
-        Assert.assertEquals( -1, TestConstants.ONER.compareTo(TestConstants.TWOER) );
-        Assert.assertEquals( 1, TestConstants.TWOER.compareTo(TestConstants.ONER) );
+        Assert.assertEquals( 0, ONER.compareTo(ONER) );
+        Assert.assertEquals( -1, ONER.compareTo(TWOER) );
+        Assert.assertEquals( 1, TWOER.compareTo(ONER) );
     }
 
     public void testHashCode() {
 
         Collection<Denomination> c = new HashSet<Denomination>();
-        assertFalse( c.contains(TestConstants.ONER) );
-        c.add(TestConstants.ONER);
-        assertTrue( c.contains(TestConstants.ONER) );
-        assertFalse( c.contains(TestConstants.TWOER) );
-        c.add(TestConstants.TWOER);
-        assertTrue( c.contains(TestConstants.TWOER) );
+        assertFalse( c.contains(ONER) );
+        c.add(ONER);
+        assertTrue( c.contains(ONER) );
+        assertFalse( c.contains(TWOER) );
+        c.add(TWOER);
+        assertTrue( c.contains(TWOER) );
         assertEquals( 2, c.size() );
     }
 

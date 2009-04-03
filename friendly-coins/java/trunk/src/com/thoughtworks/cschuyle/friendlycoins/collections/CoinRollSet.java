@@ -1,16 +1,18 @@
 package com.thoughtworks.cschuyle.friendlycoins.collections;
 
+import com.thoughtworks.cschuyle.WrappedInteger;
+
 import java.util.*;
 
-class CoinRollSet extends AbstractMap<Integer, CoinRoll> {
+class CoinRollSet extends AbstractMap<WrappedInteger, CoinRoll> {
 
-    private Map<Integer, CoinRoll> coinRolls = new HashMap<Integer, CoinRoll>();
+    private Map<WrappedInteger, CoinRoll> coinRolls = new HashMap<WrappedInteger, CoinRoll>();
 
-    public @Override Set<Entry<Integer, CoinRoll>> entrySet() {
+    public @Override Set<Entry<WrappedInteger, CoinRoll>> entrySet() {
         return coinRolls.entrySet();
     }
 
-    public @Override CoinRoll put( Integer denomination, CoinRoll coinRoll ) {
+    public @Override CoinRoll put( WrappedInteger denomination, CoinRoll coinRoll ) {
         coinRolls.put( denomination, coinRoll );
         return coinRoll;
     }

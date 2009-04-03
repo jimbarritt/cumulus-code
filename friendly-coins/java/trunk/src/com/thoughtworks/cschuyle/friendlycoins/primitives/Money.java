@@ -10,19 +10,19 @@ public class Money extends WrappedInteger {
     }
 
     public Money( AbstractWrappedInteger rhs ) {
-        super( rhs.intValue() );
+        super( rhs );
     }
 
     public Money( int value ) {
         super( value );
     }
 
-    public void addCoin( Denomination denomination ) {
+    public void add( AbstractWrappedInteger denomination ) {
         final int denominationInt = denomination.intValue();
         this.value += denominationInt;
     }
 
-    public void removeCoin( Denomination denomination ) {
+    public void subtract( AbstractWrappedInteger denomination ) {
         final int denominationInt = denomination.intValue();
         this.value -= denominationInt;
     }
