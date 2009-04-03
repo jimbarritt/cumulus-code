@@ -4,12 +4,10 @@ import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
 import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
 import com.thoughtworks.cschuyle.friendlycoins.solutions.MinimumCoinCountSolver;
 import com.thoughtworks.cschuyle.AbstractWrappedInteger;
-import com.thoughtworks.cschuyle.WrappedIntegerHelpers;
-import com.thoughtworks.cschuyle.WrappedInteger;
+import static com.thoughtworks.cschuyle.WrappedIntegerHelpers.*;
 
 public class FriendlyRecognizer {
 
-    private static WrappedInteger ONE = WrappedIntegerHelpers.wrap( 1 );
     public FriendlinessResult checkFriendliness( DenominationSet denominationSet, Money checkUpToTotal ) {
         if( checkUpToTotal.lessThan (new AbstractWrappedInteger( 1 ) {} ) ) {
             throw new IllegalArgumentException( "Must check up to at least total=1!" );

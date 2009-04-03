@@ -16,7 +16,7 @@ public class FriendlyChecker {
     }
 
     public FriendlinessResult checkIfFriendly( Money total ) {
-        Solution solution = null;
+        Solution solution;
         try {
             solution = solver.solve( total );
         } catch( Exception e) {
@@ -27,8 +27,7 @@ public class FriendlyChecker {
         }
         CoinSet fewestCoinsSolution = solution.getFewestCoinsSolution();
         final CoinSet highestFirstSolution = HighestFirstSolver.solve( denominationSet, total );
-        boolean isNotFriendly = isNotFriendly( fewestCoinsSolution, highestFirstSolution );
-        if( isNotFriendly ) {
+        if( isNotFriendly( fewestCoinsSolution, highestFirstSolution ) ) {
             return new ResultNotFriendly( fewestCoinsSolution, highestFirstSolution );
         }
         return null;

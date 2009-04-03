@@ -121,37 +121,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="WrappedInteger.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/WrappedInteger.java">
+      <file leaf-file-name="DenominationTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/primitives/DenominationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="39" selection-start="75" selection-end="75" vertical-scroll-proportion="0.056470588">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SortedWrappedIntegerList.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/SortedWrappedIntegerList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="13" selection-start="70" selection-end="70" vertical-scroll-proportion="0.112941176">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractWrappedInteger.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/AbstractWrappedInteger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="22" selection-start="111" selection-end="111" vertical-scroll-proportion="0.120300755">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CoinSet.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/collections/CoinSet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="67" selection-start="1308" selection-end="1308" vertical-scroll-proportion="0.9317647">
+            <state line="10" column="0" selection-start="318" selection-end="318" vertical-scroll-proportion="0.2806604">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -159,10 +132,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Cardinality.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/primitives/Cardinality.java">
+      <file leaf-file-name="MoneyTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/primitives/MoneyTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="43" selection-start="485" selection-end="485" vertical-scroll-proportion="0.5082353">
+            <state line="6" column="0" selection-start="222" selection-end="222" vertical-scroll-proportion="0.16981132">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -173,25 +146,7 @@
       <file leaf-file-name="FriendlyRecognizer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/recognizers/FriendlyRecognizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="13" selection-start="410" selection-end="410" vertical-scroll-proportion="0.19764706">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WrappedIntegerHelpers.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/WrappedIntegerHelpers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="13" selection-start="49" selection-end="49" vertical-scroll-proportion="0.056470588">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HighestFirstSolver.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/HighestFirstSolver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="0" selection-start="1868" selection-end="1868" vertical-scroll-proportion="1.2705883">
+            <state line="8" column="13" selection-start="420" selection-end="420" vertical-scroll-proportion="0.2264151">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -199,10 +154,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MinimumCoinCountSolver.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MinimumCoinCountSolver.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/MinimumCoinCountSolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="-0.30117646">
+            <state line="27" column="33" selection-start="959" selection-end="959" vertical-scroll-proportion="0.03773585">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractWrappedInteger.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/AbstractWrappedInteger.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="48" column="46" selection-start="1257" selection-end="1282" vertical-scroll-proportion="0.6603774">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HighestFirstSolverTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/solutions/HighestFirstSolverTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="13" selection-start="484" selection-end="484" vertical-scroll-proportion="0.32273838">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -210,11 +183,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ComparableInteger.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/ComparableInteger.java">
+      <file leaf-file-name="MinimumCoinCountSolverTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/solutions/MinimumCoinCountSolverTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="22" selection-start="58" selection-end="58" vertical-scroll-proportion="0.056470588">
+            <state line="37" column="91" selection-start="1288" selection-end="1288" vertical-scroll-proportion="1.0471698">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClassHelpersTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/util/ClassHelpersTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="13" selection-start="88" selection-end="88" vertical-scroll-proportion="0.11320755">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WrappedIntegerTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/WrappedIntegerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="54" selection-start="293" selection-end="293" vertical-scroll-proportion="0.2264151">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FriendlyChecker.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/recognizers/FriendlyChecker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="0" selection-start="1693" selection-end="1693" vertical-scroll-proportion="1.1580188">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1044,7 +1048,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="22" width="1440" height="784" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
@@ -1061,7 +1065,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="5" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="12" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30144927" order="2" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3018868" order="2" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24946082" order="2" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38026124" order="4" />
@@ -1133,55 +1137,116 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/WrappedIntegerTest.java">
+    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/collections/CoinRollTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="40" selection-start="195" selection-end="195" vertical-scroll-proportion="0.1981132">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/collections/CoinRoll.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="1381" selection-end="1381" vertical-scroll-proportion="1.1603774">
+        <state line="8" column="13" selection-start="324" selection-end="324" vertical-scroll-proportion="-0.016470589">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/collections/CoinSetCollectionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="181" selection-end="181" vertical-scroll-proportion="0.16941176">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/collections/CoinSetTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="181" selection-end="181" vertical-scroll-proportion="0.11320755">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/collections/DenominationSetTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="13" selection-start="325" selection-end="325" vertical-scroll-proportion="0.11320755">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/recognizers/FriendlyRecognizerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="16" selection-start="560" selection-end="560" vertical-scroll-proportion="0.24427481">
+        <state line="12" column="13" selection-start="452" selection-end="452" vertical-scroll-proportion="0.35207823">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/util/StringHelpersTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="13" selection-start="143" selection-end="143" vertical-scroll-proportion="0.1981132">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/solutions/HighestFirstSolverTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="13" selection-start="484" selection-end="484" vertical-scroll-proportion="0.32273838">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/solutions/MinimumCoinCountSolverTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="91" selection-start="1288" selection-end="1288" vertical-scroll-proportion="1.0471698">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/primitives/DenominationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="318" selection-end="318" vertical-scroll-proportion="0.2806604">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/primitives/MoneyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="222" selection-end="222" vertical-scroll-proportion="0.16981132">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/AbstractWrappedInteger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="46" selection-start="1257" selection-end="1282" vertical-scroll-proportion="0.6603774">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/util/ClassHelpersTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="13" selection-start="88" selection-end="88" vertical-scroll-proportion="0.11320755">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/WrappedIntegerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="54" selection-start="293" selection-end="293" vertical-scroll-proportion="0.2264151">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/recognizers/FriendlyChecker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="1052" selection-end="1052" vertical-scroll-proportion="0.7352941">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/util/StringHelpers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="13" selection-start="84" selection-end="84" vertical-scroll-proportion="0.112941176">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/primitives/Money.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="26" selection-start="588" selection-end="588" vertical-scroll-proportion="0.6792453">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/primitives/Cardinality.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="43" selection-start="485" selection-end="485" vertical-scroll-proportion="0.5082353">
+        <state line="41" column="0" selection-start="1693" selection-end="1693" vertical-scroll-proportion="1.1580188">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1190,23 +1255,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/recognizers/FriendlyRecognizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="410" selection-end="410" vertical-scroll-proportion="0.19764706">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/collections/CoinSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="67" selection-start="1308" selection-end="1308" vertical-scroll-proportion="0.9317647">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/HighestFirstSolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="0" selection-start="1868" selection-end="1868" vertical-scroll-proportion="1.2705883">
+        <state line="8" column="13" selection-start="420" selection-end="420" vertical-scroll-proportion="0.2264151">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1215,44 +1264,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/solutions/MinimumCoinCountSolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="-0.30117646">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/SortedWrappedIntegerList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="13" selection-start="70" selection-end="70" vertical-scroll-proportion="0.112941176">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/ComparableInteger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="22" selection-start="58" selection-end="58" vertical-scroll-proportion="0.056470588">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/WrappedInteger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="39" selection-start="75" selection-end="75" vertical-scroll-proportion="0.056470588">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/WrappedIntegerHelpers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="13" selection-start="49" selection-end="49" vertical-scroll-proportion="0.056470588">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/AbstractWrappedInteger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="22" selection-start="111" selection-end="111" vertical-scroll-proportion="0.120300755">
+        <state line="27" column="33" selection-start="959" selection-end="959" vertical-scroll-proportion="0.03773585">
           <folding />
         </state>
       </provider>

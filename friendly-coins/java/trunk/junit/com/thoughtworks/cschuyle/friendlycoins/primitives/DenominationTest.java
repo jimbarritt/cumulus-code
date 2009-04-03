@@ -7,14 +7,9 @@ import java.util.Collection;
 import java.util.HashSet;
 
 import static com.thoughtworks.cschuyle.friendlycoins.TestConstants.*;
-import com.thoughtworks.cschuyle.WrappedInteger;
-import com.thoughtworks.cschuyle.AbstractWrappedInteger;
+import static com.thoughtworks.cschuyle.WrappedIntegerHelpers.*;
 
 public class DenominationTest extends TestCase {
-
-    private static WrappedInteger wrap( int i ) {
-        return new AbstractWrappedInteger( i ) {};
-    }
 
     public void testIntValue() {
         {

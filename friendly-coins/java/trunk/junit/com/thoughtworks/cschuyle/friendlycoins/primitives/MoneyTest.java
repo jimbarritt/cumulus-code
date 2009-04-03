@@ -3,13 +3,10 @@ package com.thoughtworks.cschuyle.friendlycoins.primitives;
 import junit.framework.TestCase;
 
 import com.thoughtworks.cschuyle.friendlycoins.TestConstants;
-import com.thoughtworks.cschuyle.AbstractWrappedInteger;
+import static com.thoughtworks.cschuyle.WrappedIntegerHelpers.*;
 
 public class MoneyTest extends TestCase {
 
-    private static AbstractWrappedInteger wrap( int i ) {
-        return new AbstractWrappedInteger( i ) {};
-    }
     public void testDefault() {
         Money money = new Money();
         assertEquals( wrap( 0 ), money );

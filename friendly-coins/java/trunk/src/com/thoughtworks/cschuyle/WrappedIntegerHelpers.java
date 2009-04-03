@@ -2,6 +2,9 @@ package com.thoughtworks.cschuyle;
 
 public class WrappedIntegerHelpers {
 
+    public final static WrappedInteger ZERO = new AbstractWrappedInteger( 0 ) {};
+    public final static WrappedInteger ONE = new AbstractWrappedInteger( 1 ) {};
+
     public static int hashCode( WrappedInteger... sequence ) {
         int hashCode = 0;
         for( WrappedInteger i: sequence ) {

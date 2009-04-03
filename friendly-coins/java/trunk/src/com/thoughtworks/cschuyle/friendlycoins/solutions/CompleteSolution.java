@@ -1,14 +1,19 @@
 package com.thoughtworks.cschuyle.friendlycoins.solutions;
 
 import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
-import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
-import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSetCollection;
-import com.thoughtworks.cschuyle.AbstractWrappedInteger;
+import com.thoughtworks.cschuyle.friendlycoins.collections.*;
+import static com.thoughtworks.cschuyle.WrappedIntegerHelpers.*;
 
 public class CompleteSolution extends Solution {
-
     private CoinSetCollection coinSets;
     private Money total = new Money();
+
+    public CompleteSolution( CoinSetCollection coinSets ) {
+        this.coinSets = coinSets;
+        for( CoinSet coinSet: coinSets ) {
+            this.total = verifyTotalSame( coinSet, total );
+        }
+    }
 
     public @Override CoinSet getFewestCoinsSolution() {
         CoinSet leastSolution = null;
@@ -18,35 +23,27 @@ public class CompleteSolution extends Solution {
         return leastSolution;
     }
 
-    public CompleteSolution( CoinSetCollection coinSets ) {
-        this.coinSets = coinSets;
-        for( CoinSet coinSet: coinSets ) {
-            accumulateTotal( coinSet );
-        }
-    }    
-
-    public @Override
-    CoinSetCollection getCoinSets() {
+    public @Override CoinSetCollection getCoinSets() {
         return coinSets;
     }
     
     private CoinSet isItLess( CoinSet leastSolution, CoinSet coinSet ) {
         final Cardinality coinSetNumCoins = coinSet.totalCoinCount();
         final Cardinality leastSolutionNumCoins = leastSolution.totalCoinCount();
-        if( null == leastSolution || coinSetNumCoins.compareTo( leastSolutionNumCoins ) == -1) {
+        if( null == leastSolution || coinSetNumCoins.lessThan( leastSolutionNumCoins ) ) {
             leastSolution = coinSet;
         }
         return leastSolution;
     }
 
-    private void accumulateTotal( CoinSet coinSet ) {
-        if( total.equals( new AbstractWrappedInteger( 0 ) {} ) ) {
-            total = coinSet.total();
-            return;
+    private Money verifyTotalSame( CoinSet coinSet, Money total ) {
+        if( total.equals( ZERO ) ) {
+            return coinSet.total();
         }
-        final Money coinSetSum = coinSet.total();
-        if( ! coinSetSum.equals( total ) ) {
+        final Money coinSetTotal = coinSet.total();
+        if( ! coinSetTotal.equals( total ) ) {
             throw new IllegalStateException( "All coinSets must have the same sum" );
         }
+        return coinSetTotal;
     }
 }

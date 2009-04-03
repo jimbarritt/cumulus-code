@@ -46,7 +46,7 @@ public abstract class AbstractWrappedInteger
     }
 
     public AbstractWrappedInteger plusOne() {
-        return plus( new AbstractWrappedInteger( 1 ) {} );
+        return plus( WrappedIntegerHelpers.ONE );
     }
 
     public @Override boolean greaterThan( WrappedInteger rhs ) {

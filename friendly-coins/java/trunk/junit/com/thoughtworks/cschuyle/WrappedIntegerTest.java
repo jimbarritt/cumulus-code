@@ -5,6 +5,7 @@ import junit.framework.TestCase;
 public class WrappedIntegerTest extends TestCase {
 
     public void testEquality() {
-        assertTrue( new AbstractWrappedInteger( 1 ) {}.equals( new AbstractWrappedInteger( 1 ) {} ) );
+        final AbstractWrappedInteger anotherOne = new AbstractWrappedInteger(1) {};
+        assertTrue( WrappedIntegerHelpers.ONE.equals( anotherOne) );
     }
 }
