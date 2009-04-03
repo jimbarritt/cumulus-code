@@ -5,7 +5,7 @@ import junit.framework.TestCase;
 import java.util.Iterator;
 
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
-import com.thoughtworks.cschuyle.friendlycoins.DenominationSet;
+import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
 import com.thoughtworks.cschuyle.friendlycoins.DenominationSetReader;
 
 public class DenominationSetReaderTest extends TestCase {

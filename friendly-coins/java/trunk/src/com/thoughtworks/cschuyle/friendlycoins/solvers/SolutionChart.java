@@ -1,7 +1,7 @@
 package com.thoughtworks.cschuyle.friendlycoins.solvers;
 
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
-import com.thoughtworks.cschuyle.friendlycoins.Solution;
+import com.thoughtworks.cschuyle.friendlycoins.solutions.Solution;
 
 import java.util.Map;
 import java.util.HashMap;

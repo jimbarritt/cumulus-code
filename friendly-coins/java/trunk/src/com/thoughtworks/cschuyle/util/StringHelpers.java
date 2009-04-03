@@ -18,6 +18,10 @@ public class StringHelpers {
         return builder.toString();
     }
 
+    public static boolean isEmpty(String message) {
+        return ( null == message || message.length() == 0 );
+    }
+
     private static final String NULL_STRING = "null";
 
     private static class Joinee {

@@ -2,11 +2,11 @@ package com.thoughtworks.cschuyle.friendlycoins.solvers;
 
 import junit.framework.TestCase;
 
-import com.thoughtworks.cschuyle.friendlycoins.exception.NoSolutionException;
-import com.thoughtworks.cschuyle.friendlycoins.CoinSet;
-import com.thoughtworks.cschuyle.friendlycoins.DenominationSet;
+import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
+import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
 import com.thoughtworks.cschuyle.friendlycoins.DenominationSetReader;
 import com.thoughtworks.cschuyle.friendlycoins.TestConstants;
+import com.thoughtworks.cschuyle.friendlycoins.exception.NoSolutionException;
 
 import static com.thoughtworks.cschuyle.friendlycoins.TestConstants.*;
 
@@ -56,7 +56,7 @@ public class HighestFirstSolverTest extends TestCase {
             HighestFirstSolver.solve( denominations, TOTAL_THREE);
             fail();
         } catch( NoSolutionException e) {
-            assertEquals( "There is no solution given the denominations DenominationSet<Denomination<5>,Denomination<2>> to give Money<3> cents change.",
+            assertEquals( "There is no solution: I can't use DenominationSet<Denomination<5>,Denomination<2>> to arrive at Money<3> cents change",
                     e.getMessage() );            
         }
     }

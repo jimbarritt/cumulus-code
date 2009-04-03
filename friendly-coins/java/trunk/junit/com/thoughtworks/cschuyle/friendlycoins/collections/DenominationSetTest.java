@@ -1,4 +1,4 @@
-package com.thoughtworks.cschuyle.friendlycoins;
+package com.thoughtworks.cschuyle.friendlycoins.collections;
 
 import junit.framework.TestCase;
 import junit.framework.Assert;
@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
-import com.thoughtworks.cschuyle.friendlycoins.DenominationSet;
+import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
+import com.thoughtworks.cschuyle.friendlycoins.TestConstants;
 
 public class DenominationSetTest extends TestCase {
 

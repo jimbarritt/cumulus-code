@@ -1,9 +1,11 @@
 package com.thoughtworks.cschuyle.main;
 
-import com.thoughtworks.cschuyle.friendlycoins.exception.*;
 import com.thoughtworks.cschuyle.friendlycoins.*;
-import com.thoughtworks.cschuyle.friendlycoins.solvers.FriendlyRecognizer;
+import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
+import com.thoughtworks.cschuyle.friendlycoins.recognizers.FriendlyRecognizer;
+import com.thoughtworks.cschuyle.friendlycoins.recognizers.FriendlinessResult;
 import com.thoughtworks.cschuyle.util.IOHelpers;
+import com.thoughtworks.cschuyle.util.StringHelpers;
 
 import static com.thoughtworks.cschuyle.friendlycoins.TestConstants.*;
 
@@ -40,13 +42,11 @@ public class Application {
     }
 
     private static void processLine( FriendlyRecognizer recognizer, DenominationSet denominationSet ) {
-        try {
-            recognizer.checkFriendliness( denominationSet,  TOTAL_TEN_THOUSAND );
-            IOHelpers.message( recognizer.isFriendly() ? "Friendly" : "Not Friendly" );
-        } catch( NoSolutionException e) {
-            IOHelpers.message( "Not Complete: " + e.getMessage());
-        } catch( NotFriendlyException e) {
-            IOHelpers.message( "Not Friendly: " + e.getMessage() );
-        }
+        FriendlinessResult result = recognizer.checkFriendliness( denominationSet,  TOTAL_TEN_THOUSAND );
+        final String message = result.getMessage();
+        String extraMessage = (StringHelpers.isEmpty( message )
+                ? ""
+                : "[ " + message + " ]" );
+        IOHelpers.message( result.isFriendly() ? "Friendly" : "Not Friendly" + extraMessage );
     }
 }

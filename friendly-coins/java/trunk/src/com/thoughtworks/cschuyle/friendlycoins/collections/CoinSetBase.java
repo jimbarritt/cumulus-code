@@ -1,8 +1,11 @@
-package com.thoughtworks.cschuyle.friendlycoins;
+package com.thoughtworks.cschuyle.friendlycoins.collections;
 
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
+import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
+import com.thoughtworks.cschuyle.friendlycoins.collections.CoinRollCollection;
+import com.thoughtworks.cschuyle.friendlycoins.collections.CoinRoll;
 import com.thoughtworks.cschuyle.util.ClassHelpers;
 import com.thoughtworks.cschuyle.util.StringHelpers;
 

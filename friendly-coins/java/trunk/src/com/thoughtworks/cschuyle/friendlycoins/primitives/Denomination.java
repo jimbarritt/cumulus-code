@@ -2,7 +2,7 @@ package com.thoughtworks.cschuyle.friendlycoins.primitives;
 
 import com.thoughtworks.cschuyle.util.IntegerHelpers;
 import com.thoughtworks.cschuyle.WrappedInteger;
-import com.thoughtworks.cschuyle.friendlycoins.DenominationSet;
+import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
 
 import java.util.HashMap;
 import java.util.Map;

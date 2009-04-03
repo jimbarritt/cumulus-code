@@ -1,10 +1,11 @@
-package com.thoughtworks.cschuyle.friendlycoins;
+package com.thoughtworks.cschuyle.friendlycoins.collections;
 
 import junit.framework.TestCase;
 
 import static com.thoughtworks.cschuyle.friendlycoins.TestConstants.*;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
+import com.thoughtworks.cschuyle.friendlycoins.collections.CoinRoll;
 
 public class CoinRollTest extends TestCase {
 

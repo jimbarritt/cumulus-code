@@ -1,7 +1,9 @@
-package com.thoughtworks.cschuyle.friendlycoins;
+package com.thoughtworks.cschuyle.friendlycoins.solutions;
 
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
+import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSetCollection;
+import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
 
 class CompleteSolution extends Solution {
 
@@ -23,7 +25,8 @@ class CompleteSolution extends Solution {
         }
     }    
 
-    public @Override CoinSetCollection getCoinSets() {
+    public @Override
+    CoinSetCollection getCoinSets() {
         return coinSets;
     }
     

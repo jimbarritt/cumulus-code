@@ -1,4 +1,6 @@
-package com.thoughtworks.cschuyle.friendlycoins;
+package com.thoughtworks.cschuyle.friendlycoins.solutions;
+
+import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSetCollection;
 
 public class SolutionFactoryContainer {
 

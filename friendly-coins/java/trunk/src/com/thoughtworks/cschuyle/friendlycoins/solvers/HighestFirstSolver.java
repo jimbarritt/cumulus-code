@@ -1,11 +1,11 @@
 package com.thoughtworks.cschuyle.friendlycoins.solvers;
 
 import static com.thoughtworks.cschuyle.util.WrappedIntegerHelpers.*;
-import com.thoughtworks.cschuyle.friendlycoins.exception.NoSolutionException;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
-import com.thoughtworks.cschuyle.friendlycoins.CoinSet;
-import com.thoughtworks.cschuyle.friendlycoins.DenominationSet;
+import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
+import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
+import com.thoughtworks.cschuyle.friendlycoins.exception.NoSolutionException;
 import com.thoughtworks.cschuyle.WrappedInteger;
 
 public class HighestFirstSolver {
@@ -18,8 +18,11 @@ public class HighestFirstSolver {
         }
         CoinSet solution = new CoinSet();
 
-        while( lessThan( solution.total(), requiredTotal ) ) {
+        while( null != solution && lessThan( solution.total(), requiredTotal ) ) {
             solution = accumulateHighestPossibleValue( denominations, requiredTotal, solution );
+        }
+        if( null == solution ) {
+            throw new NoSolutionException( denominations, requiredTotal );
         }
         final Money solutionTotal = solution.total();
         if( ! requiredTotal.equals( solutionTotal ) ) {
@@ -39,6 +42,6 @@ public class HighestFirstSolver {
                 return destinationCoinSet;
             }
         }
-        throw new NoSolutionException( denominations, total );
+        return null;
     }
 }

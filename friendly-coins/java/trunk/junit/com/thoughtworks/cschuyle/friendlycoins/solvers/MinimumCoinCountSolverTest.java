@@ -5,8 +5,13 @@ import junit.framework.TestCase;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import static com.thoughtworks.cschuyle.friendlycoins.SolutionFactories.*;
+import static com.thoughtworks.cschuyle.friendlycoins.solutions.SolutionFactories.*;
+import com.thoughtworks.cschuyle.friendlycoins.solutions.Solution;
+import com.thoughtworks.cschuyle.friendlycoins.solutions.SolutionFactory;
 import com.thoughtworks.cschuyle.friendlycoins.*;
+import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
+import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSetCollection;
+import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
 
 import static com.thoughtworks.cschuyle.friendlycoins.TestConstants.*;
 

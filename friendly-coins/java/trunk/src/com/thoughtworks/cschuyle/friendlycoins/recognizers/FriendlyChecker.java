@@ -1,7 +1,14 @@
-package com.thoughtworks.cschuyle.friendlycoins.solvers;
+package com.thoughtworks.cschuyle.friendlycoins.recognizers;
 
-import com.thoughtworks.cschuyle.friendlycoins.*;
-import com.thoughtworks.cschuyle.friendlycoins.exception.*;
+import com.thoughtworks.cschuyle.friendlycoins.solutions.Solution;
+import com.thoughtworks.cschuyle.friendlycoins.solvers.MinimumCoinCountSolver;
+import com.thoughtworks.cschuyle.friendlycoins.solvers.HighestFirstSolver;
+import com.thoughtworks.cschuyle.friendlycoins.recognizers.ResultError;
+import com.thoughtworks.cschuyle.friendlycoins.recognizers.FriendlinessResult;
+import com.thoughtworks.cschuyle.friendlycoins.recognizers.ResultNoSolution;
+import com.thoughtworks.cschuyle.friendlycoins.recognizers.ResultNotFriendly;
+import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
+import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
 import com.thoughtworks.cschuyle.util.WrappedIntegerHelpers;
 
@@ -15,21 +22,21 @@ public class FriendlyChecker {
         this.solver = solver;
     }
 
-    public Exception checkIfFriendly( Money total ) {
+    public FriendlinessResult checkIfFriendly( Money total ) {
         Solution solution = null;
         try {
             solution = solver.solve( total );
         } catch( Exception e) {
-            return e;
+            return new ResultError( e );
         }
         if( null == solution ) {
-            return new NoSolutionException( denominationSet, total );
+            return new ResultNoSolution( denominationSet, total );
         }
         CoinSet fewestCoinsSolution = solution.getFewestCoinsSolution();
         final CoinSet highestFirstSolution = HighestFirstSolver.solve( denominationSet, total );
         boolean isNotFriendly = isNotFriendly( fewestCoinsSolution, highestFirstSolution );
         if( isNotFriendly ) {
-            return new NotFriendlyException( fewestCoinsSolution, highestFirstSolution );
+            return new ResultNotFriendly( fewestCoinsSolution, highestFirstSolution );
         }
         return null;
     }

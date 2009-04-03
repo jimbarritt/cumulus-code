@@ -1,4 +1,4 @@
-package com.thoughtworks.cschuyle.friendlycoins;
+package com.thoughtworks.cschuyle.friendlycoins.collections;
 
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
 

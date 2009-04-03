@@ -1,12 +1,11 @@
-package com.thoughtworks.cschuyle.friendlycoins;
+package com.thoughtworks.cschuyle.friendlycoins.solutions;
 
 import com.thoughtworks.cschuyle.util.StringHelpers;
 import com.thoughtworks.cschuyle.util.ClassHelpers;
 
 import static com.thoughtworks.cschuyle.util.Joiner.*;
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
-
-import java.util.Collection;
+import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSetCollection;
+import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
 
 public abstract class Solution {
 

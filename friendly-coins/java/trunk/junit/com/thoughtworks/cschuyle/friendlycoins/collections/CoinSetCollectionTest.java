@@ -1,8 +1,10 @@
-package com.thoughtworks.cschuyle.friendlycoins;
+package com.thoughtworks.cschuyle.friendlycoins.collections;
 
 import junit.framework.TestCase;
 
 import static com.thoughtworks.cschuyle.friendlycoins.TestConstants.*;
+import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSetCollection;
+import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
 
 public class CoinSetCollectionTest extends TestCase {
 

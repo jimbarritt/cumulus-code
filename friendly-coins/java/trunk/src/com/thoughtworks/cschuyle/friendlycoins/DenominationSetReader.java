@@ -1,6 +1,7 @@
 package com.thoughtworks.cschuyle.friendlycoins;
 
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
+import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
 
 import java.util.StringTokenizer;
 import java.util.Collection;

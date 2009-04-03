@@ -1,16 +1,21 @@
-package com.thoughtworks.cschuyle.friendlycoins.exception;
+package com.thoughtworks.cschuyle.friendlycoins.recognizers;
 
-import com.thoughtworks.cschuyle.friendlycoins.CoinSet;
+import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
 
-public class NotFriendlyException extends RuntimeException {
-    public NotFriendlyException( String msg ) {
-        super( msg );
+public class ResultNotFriendly extends FriendlinessResult {
+
+    public ResultNotFriendly( String theMessage ) {
+        super(theMessage);
     }
 
-    public NotFriendlyException( CoinSet fewestCoinsSolution, CoinSet highestFirstSolution ) {
-        super( createMessage( fewestCoinsSolution, highestFirstSolution ) );
+    public boolean isFriendly() {
+        return false;
+    }
+
+    public ResultNotFriendly( CoinSet fewestCoinsSolution, CoinSet highestFirstSolution ) {
+        this( createMessage( fewestCoinsSolution, highestFirstSolution ) );
     }
 
     private static String createMessage( CoinSet leastCoinsSolution, CoinSet greedySolution ) {

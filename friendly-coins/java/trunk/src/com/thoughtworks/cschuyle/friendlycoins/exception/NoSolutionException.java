@@ -1,16 +1,16 @@
 package com.thoughtworks.cschuyle.friendlycoins.exception;
 
-import com.thoughtworks.cschuyle.friendlycoins.DenominationSet;
+import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
 
 public class NoSolutionException extends RuntimeException {
 
-    public NoSolutionException( String msg ) {
-        super( msg );
+    public NoSolutionException( String message ) {
+        super( message );
     }
 
-    public NoSolutionException(DenominationSet denominations, Money total) {
-        super( "There is no solution given the denominations " + denominations +
-                " to give " + total + " cents change." );
+    public NoSolutionException( DenominationSet denominationSet, Money requiredTotal ) {
+        this(  "There is no solution: I can't use " + denominationSet +
+                " to arrive at " + requiredTotal + " cents change" );
     }
 }
