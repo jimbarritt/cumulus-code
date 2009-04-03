@@ -7,7 +7,7 @@ import java.util.Iterator;
 
 import static com.thoughtworks.cschuyle.friendlycoins.solutions.factories.SolutionFactories.*;
 import com.thoughtworks.cschuyle.friendlycoins.solutions.factories.SolutionFactory;
-import com.thoughtworks.cschuyle.friendlycoins.collections.*;
+import com.thoughtworks.cschuyle.friendlycoins.model.*;
 import com.thoughtworks.cschuyle.friendlycoins.application.DenominationSetReader;
 
 import static com.thoughtworks.cschuyle.friendlycoins.TestConstants.*;

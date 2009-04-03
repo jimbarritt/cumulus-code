@@ -17,4 +17,8 @@ public class WrappedIntegerHelpers {
     public static WrappedInteger wrap( int i ) {
         return new AbstractWrappedInteger( i ) {};
     }
+
+    public static WrappedInteger wrap( WrappedInteger i ) {
+        return new AbstractWrappedInteger( i.intValue() ) {};
+    }
 }

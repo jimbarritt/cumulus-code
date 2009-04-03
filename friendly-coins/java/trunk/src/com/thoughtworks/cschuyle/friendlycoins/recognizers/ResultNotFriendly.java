@@ -1,8 +1,8 @@
 package com.thoughtworks.cschuyle.friendlycoins.recognizers;
 
-import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Cardinality;
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
+import com.thoughtworks.cschuyle.friendlycoins.model.CoinSet;
+import com.thoughtworks.cschuyle.friendlycoins.model.primitives.Cardinality;
+import com.thoughtworks.cschuyle.friendlycoins.model.primitives.Money;
 
 public class ResultNotFriendly extends FriendlinessResult {
 

@@ -1,8 +1,10 @@
 package com.thoughtworks.cschuyle.friendlycoins.solutions;
 
-import com.thoughtworks.cschuyle.friendlycoins.collections.*;
-import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
+import com.thoughtworks.cschuyle.friendlycoins.model.*;
+import com.thoughtworks.cschuyle.friendlycoins.model.primitives.Denomination;
+import com.thoughtworks.cschuyle.friendlycoins.model.primitives.Money;
 import com.thoughtworks.cschuyle.friendlycoins.solutions.factories.SolutionFactoryContainer;
+import com.thoughtworks.cschuyle.WrappedIntegerHelpers;
 
 public class MinimumCoinCountSolver extends SolutionFactoryContainer {
 
@@ -39,7 +41,7 @@ public class MinimumCoinCountSolver extends SolutionFactoryContainer {
     }
 
     private void solveForDenomination( Money total, CoinSetCollection coinSets, Denomination denomination ) {
-        if( total.equals( denomination ) ) {
+        if( WrappedIntegerHelpers.wrap( total ).equals( denomination ) ) {
             CoinSet coinSet = new CoinSet( denomination );
             coinSets.add( coinSet );
         }

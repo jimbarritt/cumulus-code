@@ -1,7 +1,7 @@
 package com.thoughtworks.cschuyle.friendlycoins;
 
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
+import com.thoughtworks.cschuyle.friendlycoins.model.primitives.Denomination;
+import com.thoughtworks.cschuyle.friendlycoins.model.primitives.Money;
 
 public class TestConstants {
     private TestConstants() {}

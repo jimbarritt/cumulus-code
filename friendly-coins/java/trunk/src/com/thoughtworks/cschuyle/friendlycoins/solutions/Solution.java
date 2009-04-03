@@ -3,8 +3,8 @@ package com.thoughtworks.cschuyle.friendlycoins.solutions;
 import com.thoughtworks.cschuyle.util.StringHelpers;
 import com.thoughtworks.cschuyle.util.ClassHelpers;
 
-import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSetCollection;
-import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
+import com.thoughtworks.cschuyle.friendlycoins.model.CoinSetCollection;
+import com.thoughtworks.cschuyle.friendlycoins.model.CoinSet;
 
 import static com.thoughtworks.cschuyle.util.Joiner.*;
 

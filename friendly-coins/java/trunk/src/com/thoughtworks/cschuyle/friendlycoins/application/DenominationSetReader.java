@@ -1,7 +1,7 @@
 package com.thoughtworks.cschuyle.friendlycoins.application;
 
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
-import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
+import com.thoughtworks.cschuyle.friendlycoins.model.primitives.Denomination;
+import com.thoughtworks.cschuyle.friendlycoins.model.DenominationSet;
 
 import java.util.StringTokenizer;
 import java.util.Collection;

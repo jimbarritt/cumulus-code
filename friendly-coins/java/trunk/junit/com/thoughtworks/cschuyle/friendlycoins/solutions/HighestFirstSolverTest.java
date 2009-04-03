@@ -2,8 +2,8 @@ package com.thoughtworks.cschuyle.friendlycoins.solutions;
 
 import junit.framework.TestCase;
 
-import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
-import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
+import com.thoughtworks.cschuyle.friendlycoins.model.CoinSet;
+import com.thoughtworks.cschuyle.friendlycoins.model.DenominationSet;
 import com.thoughtworks.cschuyle.friendlycoins.application.DenominationSetReader;
 import com.thoughtworks.cschuyle.friendlycoins.exception.NoSolutionException;
 

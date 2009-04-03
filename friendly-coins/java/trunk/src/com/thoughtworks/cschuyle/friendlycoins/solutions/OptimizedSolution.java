@@ -1,8 +1,8 @@
 package com.thoughtworks.cschuyle.friendlycoins.solutions;
 
-import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
-import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
-import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSetCollection;
+import com.thoughtworks.cschuyle.friendlycoins.model.CoinSet;
+import com.thoughtworks.cschuyle.friendlycoins.model.CoinSetCollection;
+import com.thoughtworks.cschuyle.friendlycoins.model.primitives.Cardinality;
 
 import java.util.Collection;
 

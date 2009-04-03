@@ -1,7 +1,8 @@
 package com.thoughtworks.cschuyle.friendlycoins.solutions;
 
-import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
-import com.thoughtworks.cschuyle.friendlycoins.collections.*;
+import com.thoughtworks.cschuyle.friendlycoins.model.*;
+import com.thoughtworks.cschuyle.friendlycoins.model.primitives.Cardinality;
+import com.thoughtworks.cschuyle.friendlycoins.model.primitives.Money;
 import static com.thoughtworks.cschuyle.WrappedIntegerHelpers.*;
 
 public class CompleteSolution extends Solution {

@@ -1,9 +1,10 @@
 package com.thoughtworks.cschuyle.friendlycoins.solutions;
 
 import com.thoughtworks.cschuyle.friendlycoins.exception.NoSolutionException;
-import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
-import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
-import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
+import com.thoughtworks.cschuyle.friendlycoins.model.CoinSet;
+import com.thoughtworks.cschuyle.friendlycoins.model.DenominationSet;
+import com.thoughtworks.cschuyle.friendlycoins.model.primitives.Money;
+import com.thoughtworks.cschuyle.friendlycoins.model.primitives.Denomination;
 import com.thoughtworks.cschuyle.WrappedInteger;
 
 public class HighestFirstSolver {

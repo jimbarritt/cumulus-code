@@ -1,6 +1,6 @@
 package com.thoughtworks.cschuyle.friendlycoins.application;
 
-import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
+import com.thoughtworks.cschuyle.friendlycoins.model.DenominationSet;
 import com.thoughtworks.cschuyle.friendlycoins.recognizers.FriendlyRecognizer;
 import com.thoughtworks.cschuyle.friendlycoins.recognizers.FriendlinessResult;
 import com.thoughtworks.cschuyle.util.IOHelpers;

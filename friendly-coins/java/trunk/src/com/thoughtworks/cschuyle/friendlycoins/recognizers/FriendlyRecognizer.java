@@ -1,7 +1,7 @@
 package com.thoughtworks.cschuyle.friendlycoins.recognizers;
 
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
-import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
+import com.thoughtworks.cschuyle.friendlycoins.model.primitives.Money;
+import com.thoughtworks.cschuyle.friendlycoins.model.DenominationSet;
 import com.thoughtworks.cschuyle.friendlycoins.solutions.MinimumCoinCountSolver;
 import com.thoughtworks.cschuyle.AbstractWrappedInteger;
 import static com.thoughtworks.cschuyle.WrappedIntegerHelpers.*;

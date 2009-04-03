@@ -1,6 +1,6 @@
 package com.thoughtworks.cschuyle.friendlycoins.solutions;
 
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
+import com.thoughtworks.cschuyle.friendlycoins.model.primitives.Money;
 import com.thoughtworks.cschuyle.WrappedInteger;
 
 import java.util.Map;
