@@ -1,7 +1,6 @@
 package com.thoughtworks.cschuyle.friendlycoins.collections;
 
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
-import com.thoughtworks.cschuyle.friendlycoins.collections.CoinRollCollectionBase;
 import com.thoughtworks.cschuyle.WrappedInteger;
 import com.thoughtworks.cschuyle.util.WrappedIntegerHelpers;
 

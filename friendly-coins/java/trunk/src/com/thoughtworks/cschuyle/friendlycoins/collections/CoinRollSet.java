@@ -1,7 +1,5 @@
 package com.thoughtworks.cschuyle.friendlycoins.collections;
 
-import com.thoughtworks.cschuyle.friendlycoins.collections.CoinRoll;
-
 import java.util.*;
 
 class CoinRollSet extends AbstractMap<Integer, CoinRoll> {

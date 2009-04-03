@@ -1,10 +1,8 @@
 package com.thoughtworks.cschuyle.friendlycoins.solvers;
 
 import static com.thoughtworks.cschuyle.util.WrappedIntegerHelpers.*;
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
-import com.thoughtworks.cschuyle.friendlycoins.primitives.Money;
-import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
-import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
+import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
+import com.thoughtworks.cschuyle.friendlycoins.collections.*;
 import com.thoughtworks.cschuyle.friendlycoins.exception.NoSolutionException;
 import com.thoughtworks.cschuyle.WrappedInteger;
 

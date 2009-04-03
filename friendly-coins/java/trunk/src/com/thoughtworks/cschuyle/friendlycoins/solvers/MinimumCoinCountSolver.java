@@ -1,11 +1,8 @@
 package com.thoughtworks.cschuyle.friendlycoins.solvers;
 
 import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
-import com.thoughtworks.cschuyle.friendlycoins.solutions.Solution;
-import com.thoughtworks.cschuyle.friendlycoins.solutions.SolutionFactoryContainer;
-import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
-import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSetCollection;
-import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
+import com.thoughtworks.cschuyle.friendlycoins.solutions.*;
+import com.thoughtworks.cschuyle.friendlycoins.collections.*;
 import com.thoughtworks.cschuyle.util.WrappedIntegerHelpers;
 
 public class MinimumCoinCountSolver extends SolutionFactoryContainer {
