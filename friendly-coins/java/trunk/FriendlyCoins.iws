@@ -124,7 +124,7 @@
       <file leaf-file-name="CoinSet.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/CoinSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="13" selection-start="345" selection-end="345" vertical-scroll-proportion="-0.21411765">
+            <state line="7" column="13" selection-start="345" selection-end="345" vertical-scroll-proportion="0.19764706">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -157,7 +157,7 @@
       <file leaf-file-name="CoinRollCollection.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/CoinRollCollection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="56" selection-end="56" vertical-scroll-proportion="0.051764704">
+            <state line="2" column="0" selection-start="56" selection-end="56" vertical-scroll-proportion="0.056470588">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -168,7 +168,7 @@
       <file leaf-file-name="CoinRoll.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/CoinRoll.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="13" selection-start="281" selection-end="281" vertical-scroll-proportion="-0.15764706">
+            <state line="6" column="13" selection-start="281" selection-end="281" vertical-scroll-proportion="0.16941176">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -201,7 +201,7 @@
       <file leaf-file-name="Denomination.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/primitives/Denomination.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="13" selection-start="257" selection-end="257" vertical-scroll-proportion="0.21882352">
+            <state line="8" column="13" selection-start="257" selection-end="257" vertical-scroll-proportion="0.22588235">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1030,13 +1030,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="22" width="1440" height="784" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24946082" order="0" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24946082" order="0" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32608697" order="1" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32608697" order="14" />
@@ -1175,7 +1175,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/CoinSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="345" selection-end="345" vertical-scroll-proportion="-0.21411765">
+        <state line="7" column="13" selection-start="345" selection-end="345" vertical-scroll-proportion="0.19764706">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1202,7 +1202,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/CoinRollCollection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="56" selection-end="56" vertical-scroll-proportion="0.051764704">
+        <state line="2" column="0" selection-start="56" selection-end="56" vertical-scroll-proportion="0.056470588">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1211,7 +1211,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/CoinRoll.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="281" selection-end="281" vertical-scroll-proportion="-0.15764706">
+        <state line="6" column="13" selection-start="281" selection-end="281" vertical-scroll-proportion="0.16941176">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1238,7 +1238,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/primitives/Denomination.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="257" selection-end="257" vertical-scroll-proportion="0.21882352">
+        <state line="8" column="13" selection-start="257" selection-end="257" vertical-scroll-proportion="0.22588235">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
