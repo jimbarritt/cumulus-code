@@ -1,8 +1,0 @@
-#summary Project Information
-
-= Project Information =
-
-This Google Code site is the source code repository for the Cumulus Code project.  
-
-The project home page is: [http://cumulus.ixcode.org]
-
