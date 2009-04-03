@@ -2,7 +2,6 @@ package com.thoughtworks.cschuyle.friendlycoins.recognizers;
 
 import com.thoughtworks.cschuyle.friendlycoins.solutions.*;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
-import com.thoughtworks.cschuyle.WrappedIntegerHelpers;
 import com.thoughtworks.cschuyle.friendlycoins.collections.CoinSet;
 import com.thoughtworks.cschuyle.friendlycoins.collections.DenominationSet;
 
@@ -38,6 +37,6 @@ public class FriendlyChecker {
     private static boolean isNotFriendly( CoinSet fewestCoinsSolution, CoinSet highestFirstSolution ) {
         final Cardinality leastCoinsCount = fewestCoinsSolution.totalCoinCount();
         final Cardinality highestFirstCoinsCount = highestFirstSolution.totalCoinCount();
-        return WrappedIntegerHelpers.lessThan( leastCoinsCount, highestFirstCoinsCount );
+        return leastCoinsCount.lessThan( highestFirstCoinsCount );
     }
 }

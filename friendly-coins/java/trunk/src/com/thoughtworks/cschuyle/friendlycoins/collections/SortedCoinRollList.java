@@ -1,7 +1,5 @@
 package com.thoughtworks.cschuyle.friendlycoins.collections;
 
-import com.thoughtworks.cschuyle.WrappedInteger;
-import com.thoughtworks.cschuyle.WrappedIntegerHelpers;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.Denomination;
 
 import java.util.TreeSet;
@@ -15,8 +13,7 @@ class SortedCoinRollList extends TreeSet<CoinRoll> {
             public int compare( CoinRoll coinRoll1, CoinRoll coinRoll2 ) {
                 final Denomination denomination1 = coinRoll1.denomination;
                 final Denomination denomination2 = coinRoll2.denomination;
-                final WrappedInteger comparison = WrappedIntegerHelpers.compareTo( denomination1, denomination2 );
-                return comparison.intValue();
+                return denomination1.compareTo( denomination2 );
             }
         });
 

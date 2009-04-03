@@ -1,9 +1,9 @@
 package com.thoughtworks.cschuyle.friendlycoins.solutions;
 
-import com.thoughtworks.cschuyle.WrappedIntegerHelpers;
 import com.thoughtworks.cschuyle.friendlycoins.collections.*;
 import com.thoughtworks.cschuyle.friendlycoins.primitives.*;
 import com.thoughtworks.cschuyle.friendlycoins.solutions.factories.SolutionFactoryContainer;
+import com.thoughtworks.cschuyle.WrappedInteger;
 
 public class MinimumCoinCountSolver extends SolutionFactoryContainer {
 
@@ -40,17 +40,18 @@ public class MinimumCoinCountSolver extends SolutionFactoryContainer {
     }
 
     private void solveForDenomination( Money total, CoinSetCollection coinSets, Denomination denomination ) {
-        if( WrappedIntegerHelpers.areEqual( total, denomination ) ) {
+        if( new WrappedInteger( total ).equals( denomination ) ) {
             CoinSet coinSet = new CoinSet( denomination );
             coinSets.add( coinSet );
         }
-        if( WrappedIntegerHelpers.lessThan( denomination, total ) ) {
-            Solution partialSolution = solve( new Money( WrappedIntegerHelpers.minus( total, denomination ) ) );
+        if( denomination.lessThan( total ) ) {
+            Solution partialSolution = solve( new Money( total.minus( denomination ) ) );
             mergePartialSolution( coinSets, partialSolution.getCoinSets(), denomination );
         }
     }
 
-    private void mergePartialSolution( CoinSetCollection destinationCoinSets, CoinSetCollection partialSolution, Denomination denomination ) {
+    private void mergePartialSolution( CoinSetCollection destinationCoinSets,
+                                       CoinSetCollection partialSolution, Denomination denomination ) {
         if( null != partialSolution ) {
             CoinSetCollection coinSets = CoinSetCollection.createAugmented( partialSolution, denomination );
             destinationCoinSets.addAll( coinSets );
