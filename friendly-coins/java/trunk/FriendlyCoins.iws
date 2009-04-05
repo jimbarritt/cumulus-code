@@ -37,7 +37,7 @@
   </component>
   <component name="DebuggerManager">
     <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/model/CoinSetTest.java" line="19" class="com.thoughtworks.cschuyle.friendlycoins.collections.CoinSetTest" package="com.thoughtworks.cschuyle.friendlycoins.collections">
+      <breakpoint url="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/model/CoinSetTest.java" line="19" class="com.thoughtworks.cschuyle.friendlycoins.model.CoinSetTest" package="com.thoughtworks.cschuyle.friendlycoins.model">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -121,79 +121,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CoinSet.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/CoinSet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="13" selection-start="345" selection-end="345" vertical-scroll-proportion="0.19764706">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CoinRollSet.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/CoinRollSet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="6" selection-start="133" selection-end="133" vertical-scroll-proportion="0.16941176">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CoinRollCollectionBase.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/CoinRollCollectionBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="6" selection-start="203" selection-end="203" vertical-scroll-proportion="0.19764706">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CoinRollCollection.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/CoinRollCollection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="56" selection-end="56" vertical-scroll-proportion="0.056470588">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CoinRoll.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/CoinRoll.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="13" selection-start="281" selection-end="281" vertical-scroll-proportion="0.16941176">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MoneyTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/primitives/MoneyTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="13" selection-start="242" selection-end="242" vertical-scroll-proportion="0.19764706">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Money.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/primitives/Money.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="13" selection-start="187" selection-end="187" vertical-scroll-proportion="0.14117648">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="34" column="82" selection-start="1046" selection-end="1046" vertical-scroll-proportion="0.87323946">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -201,10 +133,8 @@
       <file leaf-file-name="Denomination.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/primitives/Denomination.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="13" selection-start="257" selection-end="257" vertical-scroll-proportion="0.22588235">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="8" column="13" selection-start="257" selection-end="257" vertical-scroll-proportion="0.112676054">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -212,7 +142,16 @@
       <file leaf-file-name="Cardinality.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/primitives/Cardinality.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="13" selection-start="236" selection-end="236" vertical-scroll-proportion="0.22588235">
+            <state line="8" column="13" selection-start="236" selection-end="236" vertical-scroll-proportion="0.112676054">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NoSolutionException.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/exception/NoSolutionException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="13" selection-start="215" selection-end="215" vertical-scroll-proportion="0.14084508">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -220,13 +159,56 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NoSolutionException.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/exception/NoSolutionException.java">
+      <file leaf-file-name="StringHelpers.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/util/StringHelpers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="13" selection-start="215" selection-end="215" vertical-scroll-proportion="0.14117648">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="17" column="0" selection-start="444" selection-end="444" vertical-scroll-proportion="0.47887325">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractWrappedInteger.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/AbstractWrappedInteger.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="22" selection-start="111" selection-end="111" vertical-scroll-proportion="0.112676054">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Joiner.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/util/Joiner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="0" selection-start="361" selection-end="361" vertical-scroll-proportion="0.47887325">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HighestFirstSolverTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/solutions/HighestFirstSolverTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="16" selection-start="1116" selection-end="1116" vertical-scroll-proportion="0.5839416">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StringJoiner.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/util/StringJoiner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="0" selection-start="1060" selection-end="1060" vertical-scroll-proportion="0.73239434">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DenominationSet.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/DenominationSet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="28" selection-start="1031" selection-end="1031" vertical-scroll-proportion="0.6760563">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -776,6 +758,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="com.thoughtworks.cschuyle.util.Joiner" />
       <recent name="com.thoughtworks.cschuyle.util.IntegerHelpers" />
       <recent name="com.thoughtworks.cschuyle.util.ClassHelpers" />
     </key>
@@ -795,19 +778,19 @@
     <RUBY_DOC NAME="DEFAULTS" VALUE="true" />
     <RUBY_DOC NAME="NUMBER" VALUE="0" />
   </component>
-  <component name="RunManager" selected="JUnit.FriendlyRecognizerTest.testFriendly">
+  <component name="RunManager" selected="JUnit.All">
     <tempConfiguration default="false" name="FriendlyRecognizerTest.testFriendly" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <pattern value="com.thoughtworks.cschuyle.friendlycoins.recognizers.*" />
       <module name="FriendlyCoins" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="PACKAGE_NAME" value="com.thoughtworks.cschuyle.friendlycoins.recognizers" />
       <option name="MAIN_CLASS_NAME" value="com.thoughtworks.cschuyle.friendlycoins.recognizers.FriendlyRecognizerTest" />
       <option name="METHOD_NAME" value="testFriendly" />
       <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="ADDITIONAL_CLASS_PATH" />
@@ -825,65 +808,6 @@
         <option name="Make" value="true" />
       </method>
     </tempConfiguration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="ADDITIONAL_CLASS_PATH" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <envs />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="MODULE_NAME" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="[none]" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="-fs" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUN_SPECS_SEPARATELY" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_COLOURED_OUTPUT_ENABLED" VALUE="true" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -909,6 +833,65 @@
       <envs />
       <properties />
       <listeners />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="MODULE_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="[none]" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="-fs" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUN_SPECS_SEPARATELY" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_COLOURED_OUTPUT_ENABLED" VALUE="true" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="ADDITIONAL_CLASS_PATH" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <envs />
       <method>
         <option name="Make" value="true" />
       </method>
@@ -1030,13 +1013,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="22" width="1440" height="784" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24946082" order="0" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24946082" order="0" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32608697" order="1" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32608697" order="14" />
@@ -1047,7 +1030,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="5" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="12" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30043542" order="2" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29898402" order="2" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24946082" order="2" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38026124" order="4" />
@@ -1119,147 +1102,117 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/recognizers/ResultNoSolution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="217" selection-end="217" vertical-scroll-proportion="0.14117648">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/recognizers/ResultNotFriendly.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="286" selection-end="286" vertical-scroll-proportion="0.16941176">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/SortedCoinRollList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="6" selection-start="197" selection-end="197" vertical-scroll-proportion="0.19764706">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/DenominationSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="329" selection-end="329" vertical-scroll-proportion="0.28235295">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/CoinSetCollection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1139" selection-end="1139" vertical-scroll-proportion="1.0164706">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/CoinSetBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="6" selection-start="330" selection-end="330" vertical-scroll-proportion="0.19764706">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/CoinSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="345" selection-end="345" vertical-scroll-proportion="0.19764706">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="7" column="13" selection-start="345" selection-end="345" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/CoinRollSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="6" selection-start="133" selection-end="133" vertical-scroll-proportion="0.16941176">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/CoinRollCollectionBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="6" selection-start="203" selection-end="203" vertical-scroll-proportion="0.19764706">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="6" column="6" selection-start="133" selection-end="133" vertical-scroll-proportion="0.07511737">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/CoinRollCollection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="56" selection-end="56" vertical-scroll-proportion="0.056470588">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="2" column="0" selection-start="56" selection-end="56" vertical-scroll-proportion="0.05882353">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/CoinRoll.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="281" selection-end="281" vertical-scroll-proportion="0.16941176">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="6" column="13" selection-start="281" selection-end="281" vertical-scroll-proportion="0.11764706">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/primitives/MoneyTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="242" selection-end="242" vertical-scroll-proportion="0.19764706">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="7" column="13" selection-start="242" selection-end="242" vertical-scroll-proportion="0.112676054">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/primitives/Money.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="187" selection-end="187" vertical-scroll-proportion="0.14117648">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="5" column="13" selection-start="187" selection-end="187" vertical-scroll-proportion="0.112676054">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/primitives/Denomination.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="257" selection-end="257" vertical-scroll-proportion="0.22588235">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="8" column="13" selection-start="257" selection-end="257" vertical-scroll-proportion="0.112676054">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/primitives/Cardinality.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="236" selection-end="236" vertical-scroll-proportion="0.22588235">
+        <state line="8" column="13" selection-start="236" selection-end="236" vertical-scroll-proportion="0.112676054">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/DenominationSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="28" selection-start="1031" selection-end="1031" vertical-scroll-proportion="0.6760563">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/model/CoinRollCollectionBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="82" selection-start="1046" selection-end="1046" vertical-scroll-proportion="0.87323946">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/junit/com/thoughtworks/cschuyle/friendlycoins/solutions/HighestFirstSolverTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="16" selection-start="1116" selection-end="1116" vertical-scroll-proportion="0.5839416">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/exception/NoSolutionException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="215" selection-end="215" vertical-scroll-proportion="0.14084508">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/friendlycoins/exception/NoSolutionException.java">
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/AbstractWrappedInteger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="215" selection-end="215" vertical-scroll-proportion="0.14117648">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="4" column="22" selection-start="111" selection-end="111" vertical-scroll-proportion="0.112676054">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/util/Joiner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="361" selection-end="361" vertical-scroll-proportion="0.47887325">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/util/StringHelpers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="444" selection-end="444" vertical-scroll-proportion="0.47887325">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/util/StringJoiner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="0" selection-start="1060" selection-end="1060" vertical-scroll-proportion="0.73239434">
+          <folding />
         </state>
       </provider>
     </entry>
