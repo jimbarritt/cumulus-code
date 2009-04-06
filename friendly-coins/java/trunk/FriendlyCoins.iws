@@ -198,7 +198,7 @@
       <file leaf-file-name="StringJoiner.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/util/StringJoiner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="0" selection-start="1060" selection-end="1060" vertical-scroll-proportion="0.73239434">
+            <state line="47" column="0" selection-start="1232" selection-end="1232" vertical-scroll-proportion="0.8309859">
               <folding />
             </state>
           </provider>
@@ -1211,7 +1211,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thoughtworks/cschuyle/util/StringJoiner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="1060" selection-end="1060" vertical-scroll-proportion="0.73239434">
+        <state line="47" column="0" selection-start="1232" selection-end="1232" vertical-scroll-proportion="0.8309859">
           <folding />
         </state>
       </provider>
